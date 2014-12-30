@@ -1,0 +1,141 @@
+%% texify: XeLaTeX + MakeIndex + BibTeX, modificated
+%% texify
+%% --pdf
+%% --engine=xelatex
+%% --tex-option=$synctexoption // You may delete this, affords to skip from preview to code in one click, that i seldom do
+%% --tex-option=-8bit // Else minted fails on tabs
+%% --tex-option=--shell-escape // For minted to live
+%% $fullname
+%% I prefer to build with TeXworks for better view of errors and warnings. It's hard to read all log file. 
+
+\documentclass[12pt]{book}
+\usepackage{polyglossia} %% Better than babel on XeLaTeX
+\usepackage{amsmath, amssymb} %% Cool math!
+\usepackage{xcolor} %% Coloring almost anything
+\usepackage[russian]{hyperref} %% Clickable links in pdf
+%% WARNING: latest minted is used. Download directly from github!
+%% Works fine, though
+\usepackage{minted} %% Highlighting code. Installation is hard: requires python2 and script Pygments. Look at documentation for help!
+\usepackage[math-style=ISO,vargreek-shape=unicode]{unicode-math} %% MAGIC! INCLUDE AS LAST!
+
+\setdefaultlanguage[spelling=modern]{russian} %% Languages for polyglossia
+\setotherlanguage{english}
+
+\defaultfontfeatures{Ligatures={TeX}} %% Fonts and ligatures.
+\setmainfont{CMU Serif} %% There are original Knuth's fonts in Unicode, called Computer Modern Unicode. Download anywhere, just install them.
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}  
+\setmathfont{Latin Modern Math} %% Download too. Wery close to original Computer Modern. You may change it :)
+\newcommand{\Setminus}{\mathbin{\backslash}} %% Latin Modern Math contains an Elder bug~--- no setminus(
+
+%% Magic as black as my working table
+\DeclareSymbolFont{cyrletters}{\encodingdefault}{\familydefault}{m}{it}
+\newcommand{\makecyrmathletter}[1]{%
+  \begingroup\lccode`a=#1\lowercase{\endgroup
+  \Umathcode`a}="0 \csname symcyrletters\endcsname\space #1
+}
+%% Add all russian to math mode
+\count255="409
+\loop\ifnum\count255<"44F
+  \advance\count255 by 1
+  \makecyrmathletter{\count255}
+\repeat
+%% Simpy adds cyrillic to maths!
+
+\frenchspacing %% One space before sentence, not two!
+
+%% Shortcuts:
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\lra{\leftrightarrow}
+\def\La{\Leftarrow}
+\def\Ra{\Rightarrow}
+\def\Lra{\Leftrightarrow}
+\def\lrh{\leftrightharpoons}
+\def\btu{\bigtriangleup}
+
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+
+\def\LraDef{\stackrel{\mathrm{Def}}{\Lra}}
+\def\eqDef{\stackrel{\mathrm{Def}}{=}}
+
+%% Change Chapter and Section numeration style
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+%% Indent for first par in chapter
+\makeatletter
+\renewcommand{\chapter}{\clearpage %% no double page, only
+\thispagestyle{empty}%% not plain, empty. wanna number of page!
+\global\@topnum=0
+\@afterindenttrue %% Set to true!
+\secdef\@chapter\@schapter}
+\makeatother
+
+%% Environment for theorem body
+\newcounter{theorem}[section]
+\renewcommand{\thetheorem}{\thesection.\arabic{theorem}}
+\newcommand*{\theoremheader}[1]{\par\refstepcounter{theorem}%
+\textbf{Теорема \thetheorem.} #1}
+\newenvironment*{theorem}[1]{
+	\theoremheader{#1}%
+}{%
+}
+
+%% Environment for consequence body
+\newcounter{conseq}[theorem]
+\renewcommand{\theconseq}{\arabic{conseq}}
+\newcommand*{\conseqheader}{\par\refstepcounter{conseq}%
+\textit{Следствие \thetheorem.} }
+\newenvironment*{conseq}{
+	\conseqheader%
+}{%
+}
+
+%% Environment for proof body. I like this style, but you are free to change it.
+\newenvironment{proof}{%
+\par$\blacktriangleright$%
+}{%
+\hfill$\blacktriangleleft$\par%
+}
+
+%% Environment for definitions. Pretty raw one.
+\newenvironment{Def}{%
+\par$\mathfrak{Def\colon}$%
+}{%
+\par
+}
+
+%% Environment for remarks.
+\newenvironment{Rem}{%
+\par\textit{REM: }%
+}{%
+\par
+}
+
+% ==================================
+
+%% In-line code highlighting. Using: \py|a = input()|
+\newmintinline[cinl]{c}{} %\c is defined :(
+\newmintinline[cpp]{cpp}{}
+\newmintinline[python]{python}{}
+\newmintinline[bash]{bash}{}
+\newmintinline[make]{make}{}
+
+%% Escaped code highlighting. Using: \begin{cppcode} ... \end{cppcode}
+\setminted{obeytabs,tabsize=4,linenos,texcomments}
+\newminted{c}{}
+\newminted{cpp}{}
+\newminted{python}{}
+\newminted{bash}{}
+\newminted{make}{}
+
+% ==================================
+
+\begin{document}
+$$t=\int\frac{dr}{\sqrt{\frac2m\left(E-U(r)\right)-\frac{L^2}{m^2r^2}}} + Const$$
+\end{document}
