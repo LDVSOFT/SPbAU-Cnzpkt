@@ -51,12 +51,16 @@ You can typeset using different tools, like manually from terminal, via TeXworks
 * Windows:
   * Install MikTeX
   * To typeset, execute once
+
     texify --pdf --engine=xetex --tex-option=--shell-escape --tex-option=-8bit <document>
+
   * MikTeX will automaticly download missing packages
 * Linux: 
   * Install Tex Live (Download & Install as described [here](http://www.tug.org/texlive/debian.html))
   * To typeset, execute as many times as it will ask:
+
     xelatex -8bit -shell-escape <document>
+
   * If it misses packages, use `apt-get` if you installed Tex Live from it or `tlmgr install` if you installed it manually.
 
 ### Problems
