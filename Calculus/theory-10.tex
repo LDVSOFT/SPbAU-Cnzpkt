@@ -10,14 +10,14 @@ $\tg$ и $\ctg$ непрерывны.
 \end{conseq}
 
 \begin{conseq}
-$$\sin \arrowup   \left[-\frac\pi2,\frac\pi2\right]$$
-$$\cos \arrowdown \left[0,\pi]$$
-$$\tg  \arrowup   \left(-\frac\pi2,\frac\pi2\right)$$
+$$\sin \uparrow   \left[-\frac\pi2,\frac\pi2\right]$$
+$$\cos \downarrow \left[0,\pi\right]$$
+$$\tg  \uparrow   \left(-\frac\pi2,\frac\pi2\right)$$
 \end{conseq}
 
 \begin{Def}
 $$ \arcsin = \left(\sin \mid_{\left[-\frac\pi2,\frac\pi2\right]}\right)^-1 $$
-$$ \arccos = \left(\cos \mid_{\left[0,\pi]}\right)^-1 $$
+$$ \arccos = \left(\cos \mid_{\left[0,\pi\right]}\right)^-1 $$
 $$ \arctg  = \left(\tg  \mid_{\left(-\frac\pi2,\frac\pi2\right)}\right)^-1 $$
 \end{Def}
 
@@ -34,7 +34,7 @@ $$x^n \quad x \in [0;+\infty); n \in \N$$
 Больше нуля, непрерывна, инфимум 0, супремум бесконечен, строго монотонная.
 $$x^\frac1n\text{ обратная}$$
 Тоже непрерывна.
-$$x^{\frac{m}n} = \left(x^\frac1n)m$$
+$$x^{\frac{m}n} = \left(x^\frac1n\right)m$$
 $$x^{-\frac{m}n}=\frac1{x^{\frac{m}n}}$$
 
 \begin{assertion}
@@ -62,9 +62,9 @@ $$\lim_{n\ra+\infty} a^{\frac1n} = \frac1{\lim_{n\ra+\infty} \left(\frac1a\right
 $$a^{x_n} - a^{x_m} = a^{x_n}\left(a^{x_m-x_n} - 1\right)$$
 $$\forall n\; |x_n| \leqslant M \Ra a^{x_n} \in \left[a^{-M}; a^M\right]$$
 Т.о.
-$$\left|a^{x_n} - a^{x_m}\right| \leqsant \underbrace{a^M}_{\lrh C} \left(a_{x_n-x_m} - 1\right) < C\epsilon$$
+$$\left|a^{x_n} - a^{x_m}\right| \leqslant \underbrace{a^M}_{\lrh C} \left(a_{x_n-x_m} - 1\right) < C\epsilon$$
 По лемме 
-$$\exisits N\colon \forall k > N\; |a^{\frac1n} < 1| < \epsilon$$
+$$\exists N\colon \forall k > N\; |a^{\frac1n} < 1| < \epsilon$$
 $$|x_n - x_m| < \frac1N \ra -\epsilon < a^{-\frac1N} < a_{x_n-x_m} - 1 < a^{\frac1N} - 1 < 1 + \epsilon$$
 Т.о. предел существует.
 
@@ -92,14 +92,14 @@ $$x^a_n < x^b_n \Ra x^a \leqslant x^b$$
 Теперь хотим строгое
 $$\left(\frac{x}y\right)^n < 1$$
 $$z\lrh\frac{x}y$$
-$$z^{a_n} < 1 \land z^{a_n} \arrowdown \Ra z_a < 1$$
+$$z^{a_n} < 1 \land z^{a_n} \downarrow \Ra z_a < 1$$
 \end{proof}
 \item $x^a < x^b$ при $x>1 \land a < b$ или $0<x<1 \land a > b$
 \begin{proof}
 $x>1 \land a < b$:
 $$a < p < q < b \quad p,q \in Q$$
 $$x^{a_n} < x^p < x^q < x^{b_n}$$
-$$x^a \leqsalnt x^p < x^q \leqsalnt x^b$$
+$$x^a \leqslant x^p < x^q \leqslant x^b$$
 \end{proof}
 \end{enumerate}
 

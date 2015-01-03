@@ -28,9 +28,9 @@ $f\colon \left<a, b\right> \ra R$, $x_0 \in (a, b)$, $f$ дифференцир�
 \begin{proof}
 $$f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x-x_0) + \cdots + \frac{f^{(n-1)}}{(n-1)!}(x-x_0)^{n-1} + \frac{f^{(n)}}{n!}(x-x_0)^{n} + o((x-x_0)^n)$$
 $$f(x) - f(x_0) = \frac{f^{(n)}}{n!}(x-x_0)^{n} + o((x-x_0)^n) = (x-x_0)^n \left(\frac{f^{(n)}(x_0)}{n!} + o(1)\right)$$
-$2 \div n \land f^{(n)}(x_0) > 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsiln,x_0)\cup(x_0, x_0+\epsilon)\; f(x) - f(x_0) > 0$
-$2 \div n \land f^{(n)}(x_0) < 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsiln,x_0)\cup(x_0, x_0+\epsilon)\; f(x) - f(x_0) < 0$
-$2 \not\div n \land f^{(n)}(x_0) \ne 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsiln,x_0)\cup(x_0, x_0+\epsilon)\; sign(f(x) - f(x_0)) = sign(x-x_0)$
+$2 \div n \land f^{(n)}(x_0) > 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; f(x) - f(x_0) > 0$
+$2 \div n \land f^{(n)}(x_0) < 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; f(x) - f(x_0) < 0$
+$2 \not\div n \land f^{(n)}(x_0) \ne 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; sign(f(x) - f(x_0)) = sign(x-x_0)$
 \end{proof}
 
 \section{Выпуклость}
@@ -38,11 +38,11 @@ $2 \not\div n \land f^{(n)}(x_0) \ne 0 \Ra \exists \epsilon>0\colon \forall x\in
 \begin{Def}
 $f\colon \left<a, b\right> \ra \R$. \\
 $f$ выпукла вниз, если 
-$$\forall x, y \in \left<a, b\right>\; \forall \lambda \in (0, 1) f(\lambda x + (1-\lambda)y) \leqsalnt \lambda f(x) + (1-\lambda) f(y)$$
+$$\forall x, y \in \left<a, b\right>\; \forall \lambda \in (0, 1) f(\lambda x + (1-\lambda)y) \leqslant \lambda f(x) + (1-\lambda) f(y)$$
 $f$ строго выпукла вниз, если 
 $$\forall x, y \in \left<a, b\right>\colon x \ne y\; \forall \lambda \in (0, 1) f(\lambda x + (1-\lambda)y) < \lambda f(x) + (1-\lambda) f(y)$$
 $f$ выпукла вверх, если 
-$$\forall x, y \in \left<a, b\right>\; \forall \lambda \in (0, 1) f(\lambda x + (1-\lambda)y) \geqsalnt \lambda f(x) + (1-\lambda) f(y)$$
+$$\forall x, y \in \left<a, b\right>\; \forall \lambda \in (0, 1) f(\lambda x + (1-\lambda)y) \geqslant \lambda f(x) + (1-\lambda) f(y)$$
 $f$ строго выпукла вверх, если 
 $$\forall x, y \in \left<a, b\right>\colon x \ne y\; \forall \lambda \in (0, 1) f(\lambda x + (1-\lambda)y) > \lambda f(x) + (1-\lambda) f(y)$$
 \end{Def}
@@ -112,8 +112,8 @@ $$f'(x_1) \leqslant \frac{f(x_2)-f(x_1)}{x_2-x_1} \leqslant f'(x_2)$$
 $La$:
 Нужно проверить, что 
 $$\frac{f(u)-f(v)}{u-v} \leqslant \frac{f(v) - f(w)}{v-w}$$
-По теороеме Лагранжа, есть точки $\ksi < \eta$
-$$\frac{f(u)-f(v)}{u-v} = f'(\ksi) \leqslant f'(\eta) = \frac{f(v) - f(w)}{v-w}$$
+По теороеме Лагранжа, есть точки $\xi < \eta$
+$$\frac{f(u)-f(v)}{u-v} = f'(\xi) \leqslant f'(\eta) = \frac{f(v) - f(w)}{v-w}$$
 \end{proof}
 
 \begin{theorem}{Критерий выпуклости через вторую производную}
@@ -132,7 +132,7 @@ $$f\left(\sum_{i=1}^n \lambda_i x_i\right) \leqslant \sum_{i=1}^n \lambda_i f(x_
 \begin{proof}
 Метод математической индукции. Теорема при $n = 2$ совпадает с определением выпуклости.
 $$f\left(\underbrace{\sum_{i=1}^n \lambda_i x_i}_{\lrh y} + \lambda x_{n+1} x_{n+1}\right) = f((1 - \lambda_{n+1})y + \lambda_{n+1} x_{n+1}) \geqslant $$
-$$ \geqlant (1-\lambda_{n+1}) f(y) + \lambda_{n+1} f(x_{n+1}) = (1 - \lambda_{n+1}) f\left(\sum_{i=1}^n \frac{\lambda_i}{1 - \lambda_{n+1}} x_i\right) \leqslant (1 - \lambda_{n+1}) \sum_{i=1}^n \frac{\lambda_i}{1-\lambda_{n+1}} f(x_i) + \lambda_{n+1} f(x_{n+1}) = $$
+$$ \geqslant (1-\lambda_{n+1}) f(y) + \lambda_{n+1} f(x_{n+1}) = (1 - \lambda_{n+1}) f\left(\sum_{i=1}^n \frac{\lambda_i}{1 - \lambda_{n+1}} x_i\right) \leqslant (1 - \lambda_{n+1}) \sum_{i=1}^n \frac{\lambda_i}{1-\lambda_{n+1}} f(x_i) + \lambda_{n+1} f(x_{n+1}) = $$
 $$= \sum_{i=1}^n \lambda_i f(x_i) + \lambda_{n+1} f(x_{n+1})$$
 \end{proof}
 
