@@ -1,17 +1,14 @@
-SPbAU-Cnzpkt
-============
+# SPbAU-Cnzpkt
 
 SPbAU MIT Lectures, written and supported by MIT bachelor students.
 
 To read conspects, just download corresponding PDF.
 
-Structure
-=========
+## Structure
 
 Every course has corresponding directory.
 
-Templates
----------
+### Templates
 
 In `.templates` directory are stored documents to create and test new document templates (checking new packages, solving technical issues with TeX).
 
@@ -20,8 +17,7 @@ In `.templates` directory are stored documents to create and test new document t
 
 In every directory, there could be `template.tex`, which should be used as a base for writing new documents. They are slightly modified global templates.
 
-Full-course conspect
---------------------
+### Full-course conspect
 
 Full-course conspects are ones that have global course program and are written as a single document. This is recommened for maths courses.
 
@@ -37,8 +33,7 @@ Full-course conspects are ones that have global course program and are written a
   * Lectures themselves. Should contain only lectures.
   * Add new lecture as a new file.
 
-Stanalone conspect
-------------------
+### Stanalone conspect
 
 Standalone conspects are ones that have no sence as one document. This is very good for Advanced Algorithms, because every lecture has it's own theme.
 
@@ -47,10 +42,24 @@ Standalone conspects are ones that have no sence as one document. This is very g
 * `theory-XX/theory-XX.pdf`
   * Lecture conspect itself.
 
-Typesetting
-===========
+## Typesetting
 
-Documents probably will be typeset every so often on `LDVSOFT` machine. Anyone with Windows OS can install MikTeX and typeset easily, while Linux users are suffering from Tex Live for now. Main issues are:
+You can typeset using different tools, like manually from terminal, via TeXworks, etc.
 
-* `minted`. I recommend using alpha version from [github](https://github.com/gpoore/minted) - install normal version, then download and overwrite with the new one.
-* Russian fonts. Without XeTeX, install `PsCyr`. With XeTeX, install Computer Modern Unicode fonts. Any option is quite a headache. 
+### XeLaTeX
+
+* Windows:
+  * Install MikTeX
+  * To typeset, execute once
+    texify --pdf --engine=xetex --tex-option=--shell-escape --tex-option=-8bit <document>
+  * MikTeX will automaticly download missing packages
+* Linux: 
+  * Install Tex Live (Download & Install as described [here](http://www.tug.org/texlive/debian.html))
+  * To typeset, execute as many times as it will ask:
+    xelatex -8bit -shell-escape <document>
+  * If it misses packages, use `apt-get` if you installed Tex Live from it or `tlmgr install` if you installed it manually.
+
+### Problems
+
+* `minted` used for syntax highlighting. I recommend using alpha version from [github](https://github.com/gpoore/minted) - install normal version, then download and overwrite with the new one.
+* Russian letters. Without XeTeX, install `PsCyr`. With XeTeX, install Computer Modern Unicode fonts (on Linux, they can be easily downloaded as `cm-unicode` TeX package). Any option is quite a headache. 
