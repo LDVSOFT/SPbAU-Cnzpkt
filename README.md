@@ -2,7 +2,7 @@
 
 SPbAU MIT Lectures, written and supported by MIT bachelor students.
 
-To read conspects, just download corresponding PDF.
+To read compendium, just download corresponding PDF.
 
 ## Structure
 
@@ -13,34 +13,34 @@ Every course has corresponding directory.
 In `.templates` directory are stored documents to create and test new document templates (checking new packages, solving technical issues with TeX).
 
 * `XeLaTeX.tex`
-  * LDVSOFT's document used for all conspects.
+  * LDVSOFT's document used for all compendia.
 
 In every directory, there could be `template.tex`, which should be used as a base for writing new documents. They are slightly modified global templates.
 
-### Full-course conspect
+### Full-course compendium
 
-Full-course conspects are ones that have global course program and are written as a single document. This is recommened for maths courses.
+Full-course compendia are ones that have global course program and are written as a single document. This is recommened for maths courses.
 
 * `theory.tex`
   * Main tex file, contains preauble, table of contents and includes other files with actual TeX.
   * All defines and settings should be placed here.
   * Typeset this file to get result.
 * `theory.pdf`
-  * Final, processed conspect.
-  * If you don't want to have headache with editing conspect, look only this file!
+  * Final, processed compendium.
+  * If you don't want to have headache with editing compendium, look only this file!
   * DO NOT EDIT DIRECTLY.
 * `theory-XX.tex`
   * Lectures themselves. Should contain lectures only.
   * Add new lecture as a new file.
 
-### Standalone conspect
+### Standalone compendium
 
-Standalone conspects are ones that have no sense as a single document. This is very good for Advanced Algorithms, because every lecture has its own theme.
+Standalone compendia are ones that have no sense as a single document. This is very good for Advanced Algorithms, because every lecture has its own theme.
 
 * `theory-XX/theory-XX.tex`
   * TeX document for one lecture. It's standalone: preambule, settings and document itself.
 * `theory-XX/theory-XX.pdf`
-  * Lecture conspect itself.
+  * Lecture compendium itself.
 
 ## Typesetting
 
