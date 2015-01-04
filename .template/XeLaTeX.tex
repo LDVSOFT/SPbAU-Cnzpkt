@@ -8,11 +8,12 @@
 %% $fullname
 %% I prefer to build with TeXworks for better view of errors and warnings. It's hard to read all log file. 
 
-\documentclass[12pt]{book}
+\documentclass[12pt,a4paper]{book}
 \usepackage{polyglossia} %% Better than babel on XeLaTeX
 \usepackage{amsmath, amssymb} %% Cool math!
 \usepackage{xcolor} %% Coloring almost anything
 \usepackage[russian]{hyperref} %% Clickable links in pdf
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
 %% WARNING: latest minted is used. Download directly from github!
 %% Works fine, though
 \usepackage{minted} %% Highlighting code. Installation is hard: requires python2 and script Pygments. Look at documentation for help!
