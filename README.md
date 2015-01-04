@@ -30,12 +30,12 @@ Full-course conspects are ones that have global course program and are written a
   * If you don't want to have headache with editing conspect, look only this file!
   * DO NOT EDIT DIRECTLY.
 * `theory-XX.tex`
-  * Lectures themselves. Should contain only lectures.
+  * Lectures themselves. Should contain lectures only.
   * Add new lecture as a new file.
 
-### Stanalone conspect
+### Standalone conspect
 
-Standalone conspects are ones that have no sence as one document. This is very good for Advanced Algorithms, because every lecture has it's own theme.
+Standalone conspects are ones that have no sense as a single document. This is very good for Advanced Algorithms, because every lecture has its own theme.
 
 * `theory-XX/theory-XX.tex`
   * TeX document for one lecture. It's standalone: preambule, settings and document itself.
