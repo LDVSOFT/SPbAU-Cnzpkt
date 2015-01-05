@@ -93,9 +93,9 @@
 
 %% Environment for consequence body
 \newcounter{conseq}[theorem]
-\renewcommand{\theconseq}{\arabic{conseq}}
+\renewcommand{\theconseq}{\thetheorem.\arabic{conseq}}
 \newcommand*{\conseqheader}{\par\refstepcounter{conseq}%
-\textit{Следствие \thetheorem.} }
+\textit{Следствие \theconseq.} }
 \newenvironment*{conseq}{
 \conseqheader%
 }{%
