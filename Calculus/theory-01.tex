@@ -274,8 +274,8 @@ $$\Ra \exists z = r + \sqrt{2}: z \in \R - \Q: x < z < y$$
 
 \begin{Def}
 $A \subset \R$.\\
-$x \in R $ --- верхняя граница $A$, если $$\forall a \in A: a <= x$$
-$x \in R $ --- нижняя граница $A$, если $$\forall a \in A: a >= x$$
+$x \in R $ --- верхняя граница $A$, если $$\forall a \in A: a \leqslant x$$
+$x \in R $ --- нижняя граница $A$, если $$\forall a \in A: a \geqslant x$$
 \end{Def}
 \begin{Def}
 $A$ ограничено сверху, если
@@ -317,7 +317,7 @@ $A \neq \emptyset$.
 \begin{proof}
 \begin{enumerate}
 \item $Y$~--- множество всех верхних границ $A$.
-$$\forall a \in A\: \forall B \in B\: a \leqslant b \Ra \exists c \in \R: \forall a \in A: a \leqslant c \land \forall b \in B c \leqslant b \Ra \exists \sup A = c$$
+$$\forall a \in A\: \forall B \in B\: a \leqslant b \Ra \exists c \in \R\colon \forall a \in A\: a \leqslant c \land \forall b \in B\: c \leqslant b \Ra \exists \sup A = c$$
 \item Рассмотрим $ B = \{-a : a \in A\}$. Тогда $$\inf A = -\sup B$$
 \end{enumerate}
 \end{proof}
@@ -326,15 +326,15 @@ $$\forall a \in A\: \forall B \in B\: a \leqslant b \Ra \exists c \in \R: \foral
 Без аксиомы полноты это неверно. Рассмотрим $ A = \{x \in \Q : x^2 < 2\}, U = \Q$
 \end{Rem}
 
-\begin{theorem}{}
+\begin{theorem}{Свойство и признак точной границы}
 \begin{enumerate}
-\item $A$ ограничено сверху. Тогда $$b = \sup A \Lra (\forall a \in A a \leqslant b \land \forall \epsilon > 0 \exists a \in A: a > b - \epsilon)$$
-\item $A$ ограничено снизу. Тогда $$c = \inf A \Lra (\forall a \in A a \geqslant c \land \forall \epsilon > 0 \exists a \in A: a < c + \epsilon)$$
+\item $A$ ограничено сверху. Тогда $$b = \sup A \Lra (\forall a \in A\: a \leqslant b \land \forall \epsilon > 0\: \exists a \in A\colon a > b - \epsilon)$$
+\item $A$ ограничено снизу. Тогда $$c = \inf A \Lra (\forall a \in A\: a \geqslant c \land \forall \epsilon > 0\: \exists a \in A\colon a < c + \epsilon)$$
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-$$b = \sup A \Lra (b \text{~--- верхняя граница } A \land \forall \epsilon > 0 b - \epsilon\text{~--- не верхняя граница}) \Lra $$ 
-$$ \Lra (\forall a \in A a \leqslant b \land \forall \epsilon > 0 \exists a \in A: a > b - \epsilon)$$
+$$b = \sup A \Lra (b \text{~--- верхняя граница } A \land \forall \epsilon > 0\: b - \epsilon\text{~--- не верхняя граница}) \Lra $$ 
+$$ \Lra (\forall a \in A\: a \leqslant b \land \forall \epsilon > 0\: \exists a \in A\colon a > b - \epsilon)$$
 \end{proof}
 
 \begin{theorem}{Теорема о вложенных отрезках}
