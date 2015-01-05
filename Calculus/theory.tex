@@ -25,7 +25,8 @@
 \setmainfont{CMU Serif} %% There are original Knuth's fonts in Unicode, called Computer Modern Unicode. Download anywhere, just install them
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}  
-%\setmathfont{Latin Modern Math} %% Download too. You may change it :)
+\setmathfont{Latin Modern Math} %% Download too. You may change it :)
+\AtBeginDocument{\def\setminus{\mathbin{\backslash}}}
 %\setmathfont{XITS}
 
 %% Magic as black as my working table
