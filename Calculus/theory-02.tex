@@ -3,13 +3,13 @@
 \section{Метрические пространства}
 
 \begin{Def}
-Пусть есть множество $X$ и 2отображение $\rho \colon X \times X \ra \left[0; +\infty\right) $. Тогда $\rho$ называется метрикой, если:
+Пусть есть множество $X$ и отображение $\rho \colon X \times X \ra \left[0; +\infty\right) $. Тогда $\rho$ называется метрикой, если:
 \begin{enumerate}
 \item $\rho(x, y) = 0 \Lra x = y$
 \item $\rho(x, y) = \rho(y, x)$
 \item $\rho(x, y) + \rho(y, z) \geqslant \rho(x, z)$
-Также пара $(X, \rho)$ называется метричесикм пространством.
 \end{enumerate} 
+Также пара $(X, \rho)$ называется метричесикм пространством.
 \end{Def}
 
 Примеры:
@@ -19,32 +19,33 @@ $\rho(x, y) = \begin{cases}0 & x \ne y \\ 1 & x = y\end{cases}$
 \item $\rho(x, y) = \left|x - y\right|$
 \item Евклидовская метрика. $\rho$ --- длина отрезка на плоскости между точками
 \item Манхеттанская метрика. $\rho\left((x_1, y_1), (x_2, y_2)\right) = |x_1 - x_2| + |y_1 - y_2|$
-\item Расстояния на сфере
-\item Французская железнодорожная метрика. Есть центр --- точка $O$. Тогда для точек на одном луче из $O$ расстояние $\rho(A, B) = |AB|$, иначе $\rho(A, B) = |AO| + |BO|$.
-\item Пространство $\R^n$, метрика $$\rho(x, y) = \sqrt{\sum_{i=1}^n \left(x_i-y_i\right)^2}$$.
+\item Расстояния на сфере.
+\item Французская железнодорожная метрика. Есть центр --- точка $O$. Тогда для точек на одном луче из $O$ расстояние $\rho(A, B) = |AB|$, иначе $\rho(A, B) = |AO| + |BO|$/
+\item Пространство $\R^n$, метрика $$\rho(x, y) = \sqrt{\sum_{i=1}^n \left(x_i-y_i\right)^2}$$
 
-Неравенство Коши-Буняковского:                                            
-$$a_1, a_2, \ldots a_n, b_1, b_2, \ldots, b_n \in \R$$
+\begin{theorem}{Неравенство Коши-Буняковского}
+$a_1, a_2, \ldots a_n, b_1, b_2, \ldots, b_n \in \R$
 $$\left(\sum_{k=1}^n a_kb_k\right){}^2 \leqslant \sum_{k=1}^n a_k^2 \sum_{k=1}^n b_k^2 $$
+\end{theorem}
 \begin{proof}
 $$f(t) \lrh \sum_{k=1}^n(a_kt-b_k)^2 = \left(\underbrace{a_1^2 + a_2^2 + \ldots + a_n^2}_{\lrh A}\right)t^2 - 
-2\left(\underbrace{a_1b_1 + \ldots + a_nb_n}_{\lrh C}\right)t + $$
-$$ +\left(\underbrace{b_1^2 + \ldots + b_2^2}_{\lrh B}\right)$$
-$$f \text{ имеет не более 1 корня} \Ra (2С)^2 - 4AB \leqslant 4\left(C^2 - 4AB\right) \geqslant 0 \Lra C^2 \leqslant 0$$
-Можно считать, что все числа не равны 0 --- cслишком просто.
+2\left(\underbrace{a_1b_1 + \ldots + a_nb_n}_{\lrh C}\right)t + \left(\underbrace{b_1^2 + \ldots + b_2^2}_{\lrh B}\right)$$
+$f$ имеет не более 1 корня, следовательно
+$$ (2C)^2 - 4AB \leqslant 0 \Ra 4\left(C^2 - AB\right) \leqslant 0 \Lra C^2 \leqslant AB$$
+Можно считать, что все числа не равны 0~--- иначе всё тривиально.
 \begin{Rem}
 Равентсво в случае, если числа пропорциональны.
 \end{Rem}
 \end{proof}
 
-Неравенство Минковского:
+\begin{theorem}{Неравенство Минковского}
 $$\sqrt{\sum_{i=1}^n (a_i+b_i)^2} \leqslant \sqrt{\sum_{i=1}^k a_i^2} + \sqrt{\sum_{i=1}^k b_i^2}$$
+\end{theorem}
 \begin{proof}
 Возведём в квадрат
-$$ \Lra \sum_{i=1}^n (a_i + b_i)^2 \leqslant A + 2\sqrt{AB} + B \Lra$$
-$$ \Lra A + B + 2\sum_{i=1}^n a_ib_i \Lra A + B + 2\sqrt{AB} \Lra$$
-$$ \Lra \sum_{i=1}^n a_ib_i \leqslant \sqrt{AB} \Ra$$
-$$ \Ra \text{Неравенство Коши-Буняковского}$$
+$$ \sqrt{\sum_{i=1}^n (a_i+b_i)^2} \leqslant \sqrt{\underbrace{\sum_{i=1}^k a_i^2}_{\lrh A}} + \sqrt{\underbrace{\sum_{i=1}^k b_i^2}_{\lrh B}} \Lra \sum_{i=1}^n (a_i + b_i)^2 \leqslant A + 2\sqrt{AB} + B \Lra$$
+$$ \Lra A + B + 2\sum_{i=1}^n a_ib_i \Lra A + B + 2\sqrt{AB} \Lra \sum_{i=1}^n a_ib_i \leqslant \sqrt{AB} \La$$
+$$ \La \text{Неравенство Коши-Буняковского}$$
 \begin{Rem}
 Равентсво в случае, если числа пропорциональны.
 \end{Rem}
@@ -71,7 +72,7 @@ $\bar B_r(a) = \left\{x \in X \mid \rho(x, a) \leqslant r\right\}$ --- замк�
 Пусть $(X, \rho)$ --- метрическое пространство. Тогда $(Y, \rho|_{Y \times Y})$ --- подпространство X. $Y \subset X$.
 \end{Def}
 \begin{Def}
-$(X, \rho)$ --- метрическое пространство. $G \subset X$ --- открытое множество, если $\forall x \in G\; \exists r > 0\colon B_r{x} \subset G$.
+$(X, \rho)$ --- метрическое пространство. $G \subset X$ --- открытое множество, если $$\forall x \in G\: \exists r > 0\colon B_r(x) \subset G$$
 \end{Def}
 
 \begin{theorem}{О свойтсвах открытых множеств}
@@ -87,9 +88,9 @@ $(X, \rho)$ --- метрическое пространство. $G \subset X$ -
 \begin{enumerate}
 \item Очевидно.
 \item $$x \in \bigcup G_\alpha \Ra \exists \alpha_0 \colon x \in G_{\alpha_0} \Ra \exists r > 0: B_r(x) \in \bigcup G_\alpha$$
-\item $$x \in \bigcap_{k=1}^n G_k \forall k=1..n\; x \in G_k \Ra \forall k=1..n\; \exists r_k > 0 \colon B_{r_k}(x) \in G_k \Ra $$
-$$ \Ra \exists r = \min{r_k}\colon G_r \in \bigcap_{k=1}^n G_k$$
-\item $$\forall x \in B_r(x)\; \exists r_x = \frac12 \left(r - \rho(a, x)\right)$$
+\item $x \in \bigcap_{k=1}^n G_k$ 
+$$ \forall k=1..n\: x \in G_k \Ra \forall k=1..n\: \exists r_k > 0\colon B_{r_k}(x) \in G_k \Ra \exists r = \min{r_k}\colon G_r \in \bigcap_{k=1}^n G_k$$
+\item $$\forall x \in B_r(x)\: \exists r_x = \frac12 \left(r - \rho(a, x)\right)$$
 $$y \in B_{r_x}(x) \Ra \rho(y, x) < r_x \Ra \rho(y, x) + \rho(a, x) < r_x + \rho(a, x) \Ra \rho(y, a) < r$$
 \end{enumerate}
 \end{proof}
