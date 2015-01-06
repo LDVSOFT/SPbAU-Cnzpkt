@@ -119,38 +119,41 @@ $$K\text{ компактно в } (X, \rho) \Lra K\text{ компактно в }
 \begin{proof}
 $\Ra$: Пусть $B_\alpha$~--- открытое в $Y$, что 
 $$K \subset \bigcup_{\alpha \in A} B_\alpha = \bigcup_{\alpha \in A} (G_\alpha \cap Y) \subset \bigcup_{\alpha \in A} G_\alpha$$
-Тогда можно заменить покрытие в $Y$ покрытием в $X$, а потом сжать его обратно в $Y$.
+Тогда можно заменить покрытие в $Y$ покрытием соотвествующими множествами в $X$, выбрать конечное подпокрытие, а потом перейти обратно в $Y$.
 
-$\La$: Пусть $K = \bigcup_{\alpha \in I} G_\alpha$. Тогда кажжый шарик можно сжать в $Y$. Получим покрытие, в нём есть конечное подпокрытие. Выберем соответствующие шарики из $X$.
+$\La$: Пусть $K = \bigcup_{\alpha \in I} G_\alpha$. Тогда 
+$$K = K \cap Y \subset \left(\bigcup_{\alpha \in I} G_\alpha\right) \cap Y = \bigcup_{\alpha \in I} \left(G_\alpha \cap Y\right)$$
+Получим покрытие в пространстве $Y$, в нём есть конечное подпокрытие. Выберем соответствующие шарики из $X$.
 \end{proof}
 
-Например, $(0, 1)$ не компактно. Например, из $\bigcup_{i=2}^\infty \left(\frac1i, 1\right)$ не выбрать.
+\begin{Rem}
+Например, $(0, 1)$ не компактно. Например, из $$\bigcup_{i=2}^\infty \left(\frac1i, 1\right)$$ не выбрать.
+\end{Rem}
 
-\begin{theorem}{}
+\begin{theorem}{Свойства компактного множества}
 Если $K$ компактно, то $K$ замкнуто и ограниченно.
 \end{theorem}
 \begin{proof}
-Возьмём произвольный $a \in X$. Тогда
-$$K \subset \bigcup_{n=1}^\infty B_n(x) \Ra K \subset \bigcup_{i=1}^k B_{r_i}(x) \La K \subset B_{r_k}(x) \Lra K\text{ ограниченно}$$
+$$K \subset \bigcup_{n=1}^\infty B_n(x) \Ra K \subset \bigcup_{i=1}^k B_{r_i}(x) \Ra K \subset B_{R}(x) \Lra K\text{ ограниченно}$$
 Возьмём произвольный $a \notin X$. Тогда                                                                
-$$K \subset \bigcup_{x\in K} B_{\frac12\rho(x, a)}(x) \Ra K \subset \bigcup_{i=1}^k B_{\frac12 \rho(a, x_i)}(x_i)$$
+$$K \subset \bigcup_{x\in K} B_{\frac12\rho(a, x)}(x) \Ra K \subset \bigcup_{i=1}^k B_{\frac12 \rho(a, x_i)}(x_i)$$
 Но ($r \lrh \min_{i=1}^k\left\{\frac12 \rho(a, x_i)\right\}$)
 $$\forall i=1..k\; B_r(a) \cap B_{\frac12 \rho(a, x_i)}(x_i) = \varnothing \Ra B_r(a) \cap \bigcup_{i=1}^k B_{\frac12 \rho(a, x_i)}(x_i) = \varnothing$$
 Но $K \subset \bigcup_{i=1}^k B_{\frac12 \rho(a, x_i)}(x_i)$. Т. о. $B_r(a) \cap K = \varnothing$.
 \end{proof}
 
-\begin{theorem}{}
+\begin{theorem}{Признак компактного множества}
 Замкнутое подмножество компактного компактно.
 \end{theorem}
 \begin{proof}
 Добавим к покрытию подмножества $X \setminus K_1$.
 \end{proof}
 
-\begin{theorem}{}
+\begin{theorem}{Пересечение компактных}
 Дан набор компактных множеств, любое конечное пересечение которых не пусто. Тогда их пересечение не пусто.
 \end{theorem}
 \begin{proof}
-$K_0$---любое их них. Пусть пересечение всех пусто. Тогда объединение всех дополнений остальных покроет наше. 
+$K_0$~--- любое их них. Пусть пересечение всех пусто. Тогда объединение всех дополнений остальных покроет наше. 
 Но тогда можно выбрать конечное покрытие. Тогда в дополнении до $K_0$ содержится объединиение всех. Но тогда пересечение этого множества и всех остальных пусто, что противоречит условию.
 \end{proof}
 
