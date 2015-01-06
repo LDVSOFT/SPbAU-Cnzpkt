@@ -24,7 +24,7 @@ $$\lim x_n = -\infty \LraDef \forall E\; \exists N\colon \forall n > N\; x_n < E
 $$\lim x_n = \infty \LraDef \forall E\; \exists N\colon \forall n > N\; \left|x_n\right| > E$$
 \end{Def}
 \begin{Rem}
-$$\left[\begin{array}{ll}\lim x_n = +\infty\\\lim x_n = -\infty\end{array}\right.\Ra lim x_n = \infty$$
+$$\left[\begin{array}{ll}\lim x_n = +\infty\\\lim x_n = -\infty\end{array}\right.\Ra \lim x_n = \infty$$
 Также заметим, что обратное неверно ($x_n = (-1)^n n$).
 \end{Rem}
 
@@ -39,10 +39,10 @@ $\lim x_n = \infty \Ra x_n\text{ неограниченна}$
 \end{Rem}
 
 \begin{Rem}
-$\over{\R} = \R \cup \{+\infty, -\infty\}$
+${\bar\R} = \R \cup \{+\infty, -\infty\}$
 \begin{enumerate}
-\item $\pm c\pm\infty = \pm\infty$
-\item $\pm c\pm\infty = \pm\infty$
+\item $\pm c+\pm\infty = \pm\infty$
+\item $\pm c-\pm\infty = \mp\infty$
 \item $c>0\colon \pm \infty \times c = \pm \infty$
 \item $c<0\colon \pm \infty \times c = \mp \infty$
 \item $c>0\colon \frac{\pm \infty}{c} = \pm \infty$
@@ -74,7 +74,7 @@ $$x_n \ra \infty \Lra \forall E > 0\; \exists N\colon \forall n > N\; |x_n| > E 
 \end{proof}
 
 \begin{theorem}{Об арифметических действиях с бесконечно малыми}
-Пусть $x_n, y_n$~--- бесконечно малые, $z_n$ ограниченна. Тогда
+Пусть $\{x_n\}$, $\{y_n\}$~--- бесконечно малые, $\{z_n\}$ ограниченна. Тогда
 \begin{enumerate}
 \item $x_n \pm y_n$~--- бесконечно малая
 \item $x_n z_n$~--- бесконечно малая
@@ -87,7 +87,7 @@ $$x_n \ra \infty \Lra \forall E > 0\; \exists N\colon \forall n > N\; |x_n| > E 
 \item $x_n \ra \infty \land y_n\text{ ограниченна} \Ra x_n + y_n \ra +\infty$
 \item $x_n \ra \pm\infty \land y_n\geqslant a > 0 \Ra x_n y_n \ra +\infty$
 \item $x_n \ra \pm\infty \land y_n\leqslant a < 0 \Ra x_n y_n \ra -\infty$
-\item $x_n \ra \infty \land \left|\right| \geqslant a > 0 \Ra x_ny_n \ra \infty$
+\item $x_n \ra \infty \land \left|y_n\right| \geqslant a > 0 \Ra x_ny_n \ra \infty$
 \item $x_n \ra a \ne 0 \land y_n \ra 0 \land y_n \ne 0 \Ra \frac{x_n}{y_n} \ra \infty$
 \item $x_n\text{ ограниченна} \land y_n \ra \infty \Ra \frac{x_n}{y_n} \ra 0$
 \item $x_n \ra \infty \land y_n\text{ ограниченна} \land y_n \ne 0 \Ra \frac{x_n}{y_n} \ra \infty$
@@ -109,10 +109,10 @@ $$\lim x_n = l \in \bar \R \land l < 0 \Ra \exists a < 0\colon \exists N\colon \
 \end{Def}
 \begin{Def}
 Множество $A$ компактно, если из любого его открытого покрытия можно выбрать конечное подкокрытие.
-$$\forall B_\alpha\colon K \subset \bigcup_{\alpha \in A} B_\alpha\; \exists \alpha_1, \alpha_2, \ldots, \alpha_n\colon \bigcup_{i=1}^{n} B_{\alpha_i}$$
+$$\forall B_\alpha\colon K \subset \bigcup_{\alpha \in A} B_\alpha\; \exists \alpha_1, \alpha_2, \ldots, \alpha_n\colon K\subset \bigcup_{i=1}^{n} B_{\alpha_i}$$
 \end{Def}
 
-\begin{theorem}{компактность и подпространства}
+\begin{theorem}{Компактность и подпространства}
 Пусть $(X, \rho)$~--- метрическое пространство, $K \subset Y \subset X$. Тогда 
 $$K\text{ компактно в } (X, \rho) \Lra K\text{ компактно в } (Y, \rho)$$
 \end{theorem}
