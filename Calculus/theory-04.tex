@@ -82,11 +82,11 @@ $$\|x + y\| = \max_{k=1..d} |x_k + y_k| \leqslant \max_{k=1..d} (|x_k| + |y_k|) 
 $$\lim x_n = 0 \Lra \forall \epsilon > 0\;\exists N\colon\forall n>N\; \|x_n\| < \epsilon \Lra \lim \|x_n\| = 0$$
 \end{proof}
 \begin{Rem}
-$A \subset \R^d\text{ ограниченно} \Lra \exists M\colon \forall x \in A \|x\| \leqslant M$
+$A \subset \R^d\text{ ограниченно} \Lra \exists M\colon \forall x \in A\: \|x\| \leqslant M$
 \end{Rem}
 
 \begin{theorem}{Арифметические свойства предела}
-$x_n, y_n \in \R^d; \lambda \in \R;\lim x_n = x_0; \lim y_n = y_0; \lim \lambda = \lambda_0$
+$x_n, y_n \in \R^d$, $\lambda \in \R$, $\lim x_n = x_0$, $\lim y_n = y_0$, $\lim \lambda = \lambda_0$.
 \begin{enumerate}
 \item $\lim (x_n + y_n) = x_0 + y_0$
 \item $\lim (\lambda x_n) = \lambda_0x_0$
@@ -98,12 +98,13 @@ $x_n, y_n \in \R^d; \lambda \in \R;\lim x_n = x_0; \lim y_n = y_0; \lim \lambda 
 \begin{proof}
 $$\forall \epsilon > 0\; \exists N_1\colon \forall n > N_1\; \|x_n - x_0\| < \epsilon$$
 $$\forall \epsilon > 0\; \exists N_2\colon \forall n > N_2\; \|y_n - y_0\| < \epsilon$$
-$$\forall \epsilon > 0\; \exists N_3\colon \forall n > N_3\; |\lambda - \lambda_0\| < \epsilon$$
+$$\forall \epsilon > 0\; \exists N_3\colon \forall n > N_3\; |\lambda - \lambda_0| < \epsilon$$
 \begin{enumerate}
 \item $$\forall \epsilon > 0\;\begin{cases}\|x_n-x_0\| < \epsilon \\ \|y_n-y_0\| < \epsilon\end{cases} \Ra 
 \|x_n + y_n - x_0 - y_0\| \leqslant \|x_n - x_0\| + \|y_n - y_0\| < \epsilon + \epsilon = 2\epsilon$$
 \item $$\|\lambda_nx_n-\lambda_0x_0\| = \|\lambda_nx_n - \lambda_nx_0 + \lambda_nx_0 - \lambda_0x_0\| \leqslant
-\|\lambda_nx_n - \lambda_nx_0\|+\|\lambda_nx_0-\lambda_0x_0\| = |\lambda_n| \|x_n-x_0\| + |\lambda_n - \lambda_0| \|x_0\| \leqslant
+\|\lambda_nx_n - \lambda_nx_0\|+\|\lambda_nx_0-\lambda_0x_0\| = $$
+$$ = |\lambda_n| \|x_n-x_0\| + |\lambda_n - \lambda_0| \|x_0\| \leqslant
 M \|x_n-x_0\| + |\lambda_n - \lambda_0| \|x_0\|$$
 Но тогда
 $$\forall n > \max{N_1, N_3}\; \begin{cases}\|x_n-x_0\| < \frac{\epsilon}M \\ |\lambda_n - \lambda_0| < \frac{\epsilon}{\|x_0\|}\end{cases} \Ra
