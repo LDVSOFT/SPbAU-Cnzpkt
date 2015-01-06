@@ -182,7 +182,7 @@ $$\rho(x; y) = \begin{cases}0 & x = y \\ 1 & x \ne y \end{cases}$$ предел 
 \begin{theorem}{Свойства предела}
 \begin{enumerate}
 \item $x^* = \lim_{n\ra\infty} x_n \Lra$ каждая окрестность $x^*$ содержит всю последовательность с некотрого элемента
-\item $x^* = \lim_{n\ra\infty} x_n \land x^{**} = \lim_{n\ra\infty} \Ra x^* = x^{**}$
+\item $x^* = \lim_{n\ra\infty} x_n \land x^{**} = \lim_{n\ra\infty} x_n \Ra x^* = x^{**}$
 \item $\exists x^* = \lim_{n\ra\infty} x_n \Ra (x_n) \text{ ограниченна}$
 \item $x \in A' \Ra \exists (x_n) \subset A\colon \lim_{n\ra\infty} x_n = x$
 \end{enumerate}
@@ -225,7 +225,7 @@ $$x = \lim_{n\ra\infty} x_n \land x_n \in A \Ra x \in \cl A$$
 Далее будем работать с $(\R; |x - y|)$.
 
 \begin{theorem}{Предельный переход в неравенстве}
-Пусть $x_n, y_n \in \R; x = \lim x_n; y = \lim y_n; x_n \leqslant y_n$ (или $y_n < x_n$). Тогда $x \leqslant y$.
+Пусть $x_n, y_n \in \R; x = \lim x_n; y = \lim y_n; x_n \leqslant y_n$ (или $x_n < y_n$). Тогда $x \leqslant y$.
 \end{theorem}
 \begin{proof}
 Пусть $y < x$; $\epsilon \lrh \frac{x - y}2$. Тогда 
@@ -273,9 +273,9 @@ $(x_n)$ нестрого монотонно возрастает, если $$x_1
 
 $(x_n)$ строго монотонно возрастает, если $$x_1 < x_2 < x_3 < \cdots$$
 
-$(x_n)$ нестрого монотонно возрастает, если $$x_1 \leqslant x_2 \leqslant x_3 \leqslant \cdots$$
+$(x_n)$ нестрого монотонно убывает, если $$x_1 \geqslant x_2 \geqslant x_3 \geqslant \cdots$$
 
-$(x_n)$ строго монотонно возрастает, если $$x_1 > x_2 > x_3 > \cdots$$
+$(x_n)$ строго монотонно убывает, если $$x_1 > x_2 > x_3 > \cdots$$
 \end{Def}
 
 \begin{theorem}{Теорема Вейерштрасса}
