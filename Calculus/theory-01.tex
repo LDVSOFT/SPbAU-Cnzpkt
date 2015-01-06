@@ -151,29 +151,29 @@ $$ \rho_R = ran_R =\{b \in B \mid \exists a \in A\colon (a, b) \in R\}$$
 \end{Def}
 \begin{Def}
 Обратное отношение
-$$R^{-1} \colon \beta_{R^{-1}} = \rho_R; \rho_{R^{-1}} = \beta_R; b \mathop{R^{-1}} a \LraDef b \mathop{R} a$$
+$$R^{-1} \colon \beta_{R^{-1}} = \rho_R; \rho_{R^{-1}} = \beta_R; b \mathop{R^{-1}} a \LraDef a \mathop{R} b$$
 \end{Def}
 \begin{Def}
 Композиция отношений
 $$ R_1\colon A \ra B; R_2\colon B \ra C $$
 $$ R_1 \circ R_2 = \{(a, c) \mid a \mathop{R_1} b \land b \mathop{R_2} c\} $$
-Про значок --- его использовать не будем
+Про значок ~--- его использовать не будем
 \end{Def}
 
 Пример композиции: $<\colon \N \ra \N$. $$< \circ < = \{(a, b) \mid b - a \geqslant 2\}$$
 
 \begin{Def}
-Функция (отображение) --- такое отношение, что первый ключ уникален.
+Функция (отображение) ~--- такое отношение, что первый ключ уникален.
 $$f\colon A \ra B$$
-$$ a_1 \mathop{f} b \land a_2 \mathop{f} b \Ra a_1 = a_2 $$
+$$ a \mathop{f} b_1 \land a \mathop{f} b_2 \Ra b_1 = b_2 $$
 $$ a \mathop{f} b \LraDef f(a) = b $$
-$$ A = \beta_f$$
+$$ A = \beta_f \quad \text{($A$~--- область определения)}$$
 \end{Def}
 
 \begin{Def}Свойтва отображеий:
 \begin{enumerate}
 \item Рефлексивность $a \mathop{R} a$
-\item Cимметричность $a \mathop{R} a \Lra b \mathop{R} a$
+\item Cимметричность $a \mathop{R} b \Lra b \mathop{R} a$
 \item Транзитивность $a \mathop{R} b \land b \mathop{R} c \Ra a \mathop{R} c$
 \item Иррефлексивность $\lnot a \mathop{R} a$
 \item Антисимметричность $a \mathop{R} b \land b \mathop{R} a \Ra a = b$
