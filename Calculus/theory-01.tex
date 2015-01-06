@@ -232,8 +232,10 @@ $$b < a \Ra b < a < ny \Ra b \in A \text{ --- противоречие}$$
 Тогда $$\exists c \in \R\colon \forall a \in A\: a \leqslant c \land \forall b \in B\: c \leqslant b$$
 $$c \in A \Ra c + y \in A \Ra c > c + y \Ra y < 0 \text{ --- противоречие}$$
 Тогда $c \in B$.
-$$c - y \notin B \Ra c - y \in A \Ra c - y \geqslant c \in A$$
-Но тогда $$c - y < c \Ra c - y \in B \Ra c - y \geqslant c \Ra y \leqslant 0$$
+Пусть $c - y \notin B$, тогда $c - y \in A \Ra c - y < ny$ для некоторого n. $\Ra c < (n + 1)y \Ra c \in A$ противоречие. 
+
+Значит $c - y \in B \Ra c - y < c$ ~--- противоречие. 
+
 Таким образом $$A = \R$$
 \end{proof}
 
