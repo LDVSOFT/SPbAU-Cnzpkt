@@ -15,7 +15,7 @@ $$\times\colon \R \times \R^d \ra \R^d; \lambda x = (\lambda x_1, \lambda x_2, \
 \item Существует обратный элемент
 \end{enumerate}
 \item $\alpha (x + y) = \alpha x + \alpha y$
-\item $(\alpha + \beta) x \alpha x + \beta x$
+\item $(\alpha + \beta) x = \alpha x + \beta x$
 \item $(\alpha\beta)x = \alpha(\beta x)$
 \item $1x = x$
 \end{enumerate}
@@ -29,7 +29,7 @@ $$\langle x, y\rangle = \sum_{i=1}^d x_iy_i$$
 \end{Def}
 Свойства:~%
 \begin{enumerate}
-\item $\langle x, x\rangle \geqslant; \langle x, x\rangle = 0 \Lra x = \vec 0$
+\item $\langle x, x\rangle \geqslant 0; \langle x, x\rangle = 0 \Lra x = \vec 0$
 \item $\langle \lambda x, y\rangle = \lambda \langle x, y\rangle$
 \item $\langle x, y\rangle = \langle y, x\rangle$
 \item $\langle x + y, z\rangle = \langle x, z\rangle + \langle y, z\rangle$
@@ -46,13 +46,14 @@ $$\|x\| = \sqrt{\langle x, x\rangle}$$
 \end{Def}
 \begin{enumerate}
 \item $\|x\| \geqslant 0; \|x\| = 0 \Lra x = \vec 0$
-\item $\|\lambda x\| = |x| \|x\|$
+\item $\|\lambda x\| = |\lambda| \|x\|$
 \item $|\langle x,y\rangle| \leqslant \|x\|\|y\|$ (нер-во Коши--Вуняковкского)
 \item $\|x + y\| \leqslant \|x\| + \|y\|$ (нер-во треугольника)
 \item $\|x - z\| \leqslant \|x - y\| + \|y - z\|$ (нер-во Минковского)
 \item $\|x - y\| \geqslant \left|\|x\| - \|y\|\right|$
 \begin{proof}
-$\|x - y\| = \|y - x\|$. Таким образом достаточно показать, что $\|x - y\| \geqslant \|x\| - \|y\| \La \|x - y\| + \|y\| \geqslant$
+$\|x - y\| = \|y - x\|$. Таким образом достаточно показать, что 
+$$\|x - y\| \geqslant \|x\| - \|y\| \La \|x - y\| + \|y\| \geqslant ?$$
 \end{proof}
 \item $\rho(x, y) = \|x - y\|$~--- метрика. Это ровно евклидово пространтво на $\R^d$.
 \end{enumerate}
