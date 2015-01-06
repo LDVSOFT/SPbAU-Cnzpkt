@@ -3,8 +3,8 @@
 \item Ограничена
 \item Если есть сходящаяся подпоследовательность, то она сходится.
 \begin{proof}
-$$\forall \epsilon > 0\; \exists K\colon \forall k > K\; \rho(x_{n_k}, a) < \epsilon$$
-$$\forall \epsilon > 0\; \exists N\colon \forall n,m > K\; \rho(x_n, x_m) < \epsilon$$
+$$\forall \epsilon > 0\: \exists K\colon \forall k > K\: \rho(x_{n_k}, a) < \epsilon$$
+$$\forall \epsilon > 0\: \exists N\colon \forall n,m > K\: \rho(x_n, x_m) < \epsilon$$
 
 Т.о.
 $$\exists n_k > M = \max\{N, K\}\colon \forall n > n_k \rho(x_n, a) \leqslant \rho(x_{n_k}, a) + \rho(x_{n_k}, x_k) < 2\epsilon$$
@@ -19,7 +19,7 @@ $$\exists n_k > M = \max\{N, K\}\colon \forall n > n_k \rho(x_n, a) \leqslant \r
 \end{theorem}
 \begin{proof}
 $\lim x_n = a$
-$$\forall \epsilon > 0\; \exists N>n\colon \begin{aligned}\forall n>N \rho(x_n, a) &< \epsilon \\ \forall m>N \rho(x_m, a) &< \epsilon\end{aligned}$$
+$$\forall \epsilon > 0\: \exists N\colon \begin{aligned}\forall n>N \rho(x_n, a) &< \epsilon \\ \forall m>N \rho(x_m, a) &< \epsilon\end{aligned} \Ra \forall \epsilon>0\: \exists N\colon \forall n,m>N\: \rho(x_m, x_n) < 2\epsilon$$
 
 $x_n$~--- фундаментальная последовательность в $\R^d$. $E_n \lrh \{x_n, x_{n+1}, \ldots\}$~--- ограниченно.
 $\cl E_n$~--- ещё и замкнуто. Т.е. компактно.
@@ -28,7 +28,7 @@ $$\diam \cl E_n = \diam E_n \ra 0$$
 
 Т.о.
 $$\exists! a\colon a \in \bigcap_{i=1}^{\infty} \cl E_n$$
-$$a \in \cl E_n \Ra \forall i>n\;0\leqslant\rho(a, x_i) \leqslant \diam E_n \ra 0$$
+$$a \in \cl E_n \Ra \forall i>n\:0\leqslant\rho(a, x_i) \leqslant \diam E_n \ra 0$$
 
 Т.о $x_n \ra a$.
 \end{proof}
@@ -58,16 +58,16 @@ $$\limsup x_n = \varlimsup x_n = \lim_{x\ra\infty}\sup_{k>n} x_k$$
 \begin{Rem}
 $y_n \lrh \inf_{k>n} x_n$, $z_n \lrh \sup_{k>n} x_n$.
 $$y_n<x_n<z_n$$
-$$y_n \nearrow; z_n \searrow$$
+$$y_n \nearrow{}; z_n \searrow$$
 \end{Rem}
 
 \begin{Def}
 $a$~--- частичный предел последовательности, если $a$ предел подпоследовательности.
 \end{Def}
 
-%\begin{lemma}
+\begin{lemma}
 Если $x_n$ монотонно возрастает и неограничена, то $\lim x_n = +\infty$
-%\end{lemma}
+\end{lemma}
 
 \begin{theorem}{Существование верхнего и нижнего пределов}
 У любой последовательности есть верхний и нижний предел в $\bar\R$, при этом
@@ -90,7 +90,7 @@ $y_n \lrh \inf_{k>n} x_n$, $z_n \lrh \sup_{k>n} x_n$.
 \begin{enumerate}
 \item 
 $a = \liminf x_n$. Покажем, что $a$~--- частичный предел.
-$$z_n \searrow \Ra \sup_{k>n} x_k \geqslant a$$
+$$z_n \searrow{} \Ra \sup_{k>n} x_k \geqslant a$$
 
 Выберем $$x_{k_m}\colon x_{k_m} > a - \frac1m; k_{m+1} > k_m$$
 Оно стремится к $a$.
@@ -103,14 +103,14 @@ $$z_n \searrow \Ra \sup_{k>n} x_k \geqslant a$$
 
 \begin{theorem}{}
 \begin{enumerate}
-\item $$a = \varliminf x_n \Lra \begin{cases}\forall \epsilon > 0\; \exists N\colon \forall n>N\; x_n > a - \epsilon \\ \forall \epsilon > 0\; \exists N\colon \forall n>N\; x_n < a + \epsilon\end{cases}$$
-\item $$a = \varlimsup x_n \Lra \begin{cases}\forall \epsilon > 0\; \exists N\colon \forall n>N\; x_n > a - \epsilon \\ \forall \epsilon > 0\; \exists N\colon \forall n>N\; x_n < a + \epsilon\end{cases}$$
+\item $$a = \varliminf x_n \Lra \begin{cases}\forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n > a - \epsilon \\ \forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n < a + \epsilon\end{cases}$$
+\item $$a = \varlimsup x_n \Lra \begin{cases}\forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n > a - \epsilon \\ \forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n < a + \epsilon\end{cases}$$
 \end{enumerate}
 \end{theorem}
 \begin{proof}
 \begin{enumerate}
 \item Запишем в терминах $y_n$:
-$$\forall \epsilon > 0\; \exists N\colon \inf_{n>N} > a-\epsilon ; \forall \epsilon > 0\; \exists N\colon \inf_{n>N} < a+\epsilon$$
+$$\forall \epsilon > 0\: \exists N\colon \inf_{n>N} > a-\epsilon ; \forall \epsilon > 0\: \exists N\colon \inf_{n>N} < a+\epsilon$$
 Уже видно, что эти условия и задают предел.
 \item Аналогично.
 \end{enumerate}
@@ -124,7 +124,7 @@ $$a_n \leqslant b_n \Ra \begin{cases}\varliminf a_n \leqslant \varliminf b_n \\ 
 \end{proof}
 
 \begin{theorem}{Неравенство Бернулли}
-$$\forall x>-1\; \forall n \in \N\; (1+x)^n \geqslant 1 + nx$$
+$$\forall x>-1\: \forall n \in \N\: (1+x)^n \geqslant 1 + nx$$
 \end{theorem}
 \begin{proof}
 Индукция: база очевидна. Пусть $(1+x)^k \geqslant 1 + nk$. Тогда
@@ -190,7 +190,7 @@ $a = 0$:
 $$\epsilon_n \lrh \frac{x_n - x_{n+1}}{y_n - y_{n+1}}$$
 $$x_n = x_1 + \sum_{i=2}^n (x_i - x_i-1) = x_1 + \sum_{i=2}^n \epsilon_i(y_i - y_{i-1})$$
 $$\frac{x_n}{y_n} = \frac{x_1}{y_n} + \sum_{i=2}^n \epsilon_i \frac{y_i - y_{i-1}}{y_n} = $$
-$$\forall \epsilon > 0\; \exists N\colon \forall n > N\; |\epsilon_n| < \epsilon$$
+$$\forall \epsilon > 0\: \exists N\colon \forall n > N\: |\epsilon_n| < \epsilon$$
 $$= \frac{x_1}{y_n} + \sum_{i=2}^N + \sum_{i=N+1}^n$$
 
 $$\left|\sum_{i=N+1}^n \epsilon_i \frac{y_i - y_{i-1}}{y_n}\right| \leqslant \sum_{i=N+1}^n |\epsilon_i| \frac{y_i - y_{i-1}}{y_n} < 
@@ -229,9 +229,9 @@ $(X, \rho_x)$ и $(Y, \rho_y)$~--- метрические пространств
 Тогда говорят, что
 $$\lim_{x \ra a} f(x) = b$$
 если $b \in Y$ и
-$$\forall \epsilon>0\; \exists \delta > 0\colon \forall x \in \dot B_\delta(a)\; \cap E \Ra f(x) \in B_\epsilon (b)$$
+$$\forall \epsilon>0\: \exists \delta > 0\colon \forall x \in \dot B_\delta(a)\: \cap E \Ra f(x) \in B_\epsilon (b)$$
 или, что то же самое
-$$\forall \epsilon>0\; \exists \delta > 0\colon \forall x\; (x \ne a \land \rho(x, a) < \delta) \Ra \rho(f(x), b) < \epsilon$$
+$$\forall \epsilon>0\: \exists \delta > 0\colon \forall x\: (x \ne a \land \rho(x, a) < \delta) \Ra \rho(f(x), b) < \epsilon$$
 \end{Def}
 
 \begin{Rem}
@@ -240,7 +240,7 @@ $$\forall \epsilon>0\; \exists \delta > 0\colon \forall x\; (x \ne a \land \rho(
 
 \begin{Def}
 По Гейне,
-$$\lim_{x \ra a} f(x) = b \Lra \forall \{x_n\}\subset E\colon x_n \ne a\; \lim_{n\ra \infty} x_n = a \Ra \lim_{n \ra \infty} f(x_n) = b$$
+$$\lim_{x \ra a} f(x) = b \Lra \forall \{x_n\}\subset E\colon x_n \ne a\: \lim_{n\ra \infty} x_n = a \Ra \lim_{n \ra \infty} f(x_n) = b$$
 \end{Def}
 
 \begin{theorem}{Равносильность определений предела функции}

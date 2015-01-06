@@ -73,7 +73,8 @@ $$\forall \epsilon > 0\: \exists x_0, y_0\colon \rho(x_0, y_0) > d - \epsilon$$
 $$x_0 \in \cl E \Ra \exists x_1 \in E\colon \rho (x_0, x_1) < \epsilon$$ 
 $$y_0 \in \cl E \Ra \exists y_1 \in E\colon \rho (y_0, y_1) < \epsilon$$ 
 Тогда
-$$\rho(x_1, y_1) < 3\epsilon$$
+$$\rho(x_1, y_1) + 2\epsilon > \rho(x_0, x_1) + \rho(x_1, y_1) + \rho(y_1, y_0) \geqslant \rho(x_0, y_0) > d - \epsilon$$
+$$\rho(x_1, y_1) > \rho(x_0, y_0) - 3\epsilon$$
 Устремив $\epsilon \ra 0$, получим
 $$\diam E \geqslant \diam \cl E$$
 
