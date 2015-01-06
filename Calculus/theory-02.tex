@@ -22,6 +22,29 @@ $\rho(x, y) = \begin{cases}0 & x \ne y \\ 1 & x = y\end{cases}$
 \item Расстояния на сфере.
 \item Французская железнодорожная метрика. Есть центр --- точка $O$. Тогда для точек на одном луче из $O$ расстояние $\rho(A, B) = |AB|$, иначе $\rho(A, B) = |AO| + |BO|$/
 \item Пространство $\R^n$, метрика $$\rho(x, y) = \sqrt{\sum_{i=1}^n \left(x_i-y_i\right)^2}$$
+\end{enumerate}
+
+\begin{Def}
+Пусть $(X, \rho)$ --- метрическое пространство. Тогда $(Y, \rho|_{Y \times Y})$ --- подпространство X. $Y \subset X$.
+\end{Def}
+
+
+\begin{Def}
+$B_r(a) = \left\{x \in X \mid \rho(x, a) < r\right\}$ --- открытый шар.
+\end{Def}
+\begin{Def}
+$\bar B_r(a) = \left\{x \in X \mid \rho(x, a) \leqslant r\right\}$ --- замкнутый шар.
+\end{Def}
+
+Свойства:
+\begin{enumerate}
+\item $B_{r_1}(a) \cap B_{r_2}(a) = B_{\min\{r_1, r_2\}}(a)$
+\item $x \ne y \Ra \exists r > 0\colon B_r(x) \cap B_r(y) = \varnothing$
+\begin{proof}
+Рассмотрим $r = \frac13 \rho(x,y) > 0$.
+\end{proof}
+\end{enumerate}
+         
 
 \begin{theorem}{Неравенство Коши-Буняковского}
 $a_1, a_2, \ldots a_n, b_1, b_2, \ldots, b_n \in \R$
@@ -49,28 +72,8 @@ $$ \La \text{Неравенство Коши-Буняковского}$$
 \begin{Rem}
 Равентсво в случае, если числа пропорциональны.
 \end{Rem}
-\end{proof}
-\end{enumerate}
+\end{proof}      
 
-\begin{Def}
-$B_r(a) = \left\{x \in X \mid \rho(x, a) < r\right\}$ --- открытый шар.
-\end{Def}
-\begin{Def}
-$\bar B_r(a) = \left\{x \in X \mid \rho(x, a) \leqslant r\right\}$ --- замкнутый шар.
-\end{Def}
-
-Свойства:
-\begin{enumerate}
-\item $B_{r_1}(a) \cap B_{r_2}(a) = B_{\min\{r_1, r_2\}}(a)$
-\item $x \ne y \Ra \exists r > 0\colon B_r(x) \cap \colon B_r(y) = \varnothing$
-\begin{proof}
-Рассмотрим $r = \frac13 \rho(x,y) > 0$.
-\end{proof}
-\end{enumerate}
-
-\begin{Def}
-Пусть $(X, \rho)$ --- метрическое пространство. Тогда $(Y, \rho|_{Y \times Y})$ --- подпространство X. $Y \subset X$.
-\end{Def}
 \begin{Def}
 $(X, \rho)$ --- метрическое пространство. $G \subset X$ --- открытое множество, если $$\forall x \in G\: \exists r > 0\colon B_r(x) \subset G$$
 \end{Def}
