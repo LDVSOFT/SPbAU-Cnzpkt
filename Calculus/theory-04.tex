@@ -53,7 +53,8 @@ $$\|x\| = \sqrt{\langle x, x\rangle}$$
 \item $\|x - y\| \geqslant \left|\|x\| - \|y\|\right|$
 \begin{proof}
 $\|x - y\| = \|y - x\|$. Таким образом достаточно показать, что 
-$$\|x - y\| \geqslant \|x\| - \|y\| \La \|x - y\| + \|y\| \geqslant ?$$
+$$\|x - y\| \geqslant \|x\| - \|y\| \La \|x - y\| + \|y\| \geqslant \|x\|$$
+А это неравнство треугольника.
 \end{proof}
 \item $\rho(x, y) = \|x - y\|$~--- метрика. Это ровно евклидово пространтво на $\R^d$.
 \end{enumerate}
@@ -70,7 +71,7 @@ $$\|x - y\| \geqslant \|x\| - \|y\| \La \|x - y\| + \|y\| \geqslant ?$$
 \begin{proof}
 $$\|x + y\| = \max_{k=1..d} |x_k + y_k| \leqslant \max_{k=1..d} (|x_k| + |y_k|) = |x_{k_0}| + |y_{k_0}| \leqslant \|x\| + \|y\|$$
 \end{proof}
-\item $$\|x\|_\infty = \sqrt[p]{\sum\limits_{k=1}^d |x_k|^p}$$
+\item $$\|x\|_d = \sqrt[p]{\sum\limits_{k=1}^d |x_k|^p}$$
 \end{enumerate}
 
 \section{Арифметические свойства предела}
