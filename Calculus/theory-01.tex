@@ -228,15 +228,17 @@ $$ A \lrh \left\{u \in \R \mid \exists n \in \N: u < ny\right\}; y \in A$$
 Пусть $A \ne \R$. Тогда $B \lrh \R - A \ne \varnothing$.
 Рассмотрим $a \in A; b \in B$.
 $$b < a \Ra b < a < ny \Ra b \in A \text{ --- противоречие}$$
-Таким образом $$\forall a \in A\: \forall b \in B\: a \leqslant b$$
-Тогда $$\exists c \in \R\colon \forall a \in A\: a \leqslant c \land \forall b \in B\: c \leqslant b$$
-$$c \in A \Ra c + y \in A \Ra c > c + y \Ra y < 0 \text{ --- противоречие}$$
+Таким образом 
+$$\forall a \in A\: \forall b \in B\: a \leqslant b$$
+Тогда 
+$$\exists c \in \R\colon \forall a \in A\: a \leqslant c \land \forall b \in B\: c \leqslant b$$
+$$c \in A \Ra c + y \in A \Ra c > c + y \Ra y < 0 \text{~--- противоречие}$$
 Тогда $c \in B$.
-Пусть $c - y \notin B$, тогда $c - y \in A \Ra c - y < ny$ для некоторого n. $\Ra c < (n + 1)y \Ra c \in A$ противоречие. 
-
-Значит $c - y \in B \Ra c - y < c$ ~--- противоречие. 
-
-Таким образом $$A = \R$$
+Пусть $c - y \notin B$, тогда 
+$$c - y \in A \Ra c - y < ny \Ra c < (n + 1)y \Ra c \in A \text{~--- противоречие}$$
+Значит 
+$$c - y \in B \Ra c - y \geqslant c \Ra y \leqslant 0 \text{~--- противоречие}$$
+Таким образом $A = \R$
 \end{proof}
 
 \begin{conseq}
