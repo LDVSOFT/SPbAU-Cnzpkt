@@ -1,12 +1,12 @@
-\section{Теорема Штольца}
+п»ї\section{РўРµРѕСЂРµРјР° РЁС‚РѕР»СЊС†Р°}
 
-\begin{theorem}{Теорема Штольца}
+\begin{theorem}{РўРµРѕСЂРµРјР° РЁС‚РѕР»СЊС†Р°}
 $0<y_n<y_{n-1}$, $\lim x_n = \lim y_n = 0$, $\lim \frac{x_n-x_{n+1}}{y_n-y_{n+1}} = a \in \bar\R$.
-Тогда $\lim \frac{x_n}{y_n} = a$.
+РўРѕРіРґР° $\lim \frac{x_n}{y_n} = a$.
 \end{theorem}
 \begin{proof}
 \begin{enumerate}
-\item Пусть a = 0.
+\item РџСѓСЃС‚СЊ a = 0.
 
 $$\epsilon_n = \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} \to 0$$
 
@@ -14,17 +14,17 @@ $$x_n - x_m = \sum_{k = m + 1}^{n}(x_k - x_{k - 1}) = \sum_{k = m + 1}^{n}\epsil
 
 $$|x_n - x_m| = |\sum| \le \sum_{k = m + 1}^{n}|\epsilon_k|(y_{k - 1} - y_k)$$
 
-Выберем N, такое что $\forall k > N |\epsilon_k| < \epsilon$, тогда при n и m > N 
+Р’С‹Р±РµСЂРµРј N, С‚Р°РєРѕРµ С‡С‚Рѕ $\forall k > N |\epsilon_k| < \epsilon$, С‚РѕРіРґР° РїСЂРё n Рё m > N 
 
 $$< \sum^{n}_{k = m + 1}\epsilon(y_{k - 1} - y_k) = \epsilon\sum_{k = m + 1}^{n}(y_{k - 1} - y_k) = \epsilon(y_m - y_n)$$
 
 $$|x_n - x_m| < \epsilon|y_n - y_m|$$
 
-устремим n  к бесконености.
+СѓСЃС‚СЂРµРјРёРј n  Рє Р±РµСЃРєРѕРЅРµРЅРѕСЃС‚Рё.
 
 $$|x_m| < \epsilon(y_m)$$
 
-$$\frac{x_m}{y_m} < \epsilon \text{при $m > N$}$$
+$$\frac{x_m}{y_m} < \epsilon \text{РїСЂРё $m > N$}$$
 
 \item $a \in \R$
 
