@@ -1,0 +1,37 @@
+﻿\section{Непрерывность отображений из метрического пространства в $\R^m$}
+
+\begin{theorem}{}
+
+ $f: E \subset X \to \R^{d} a \in E$
+
+ Тогда f  непрерывна в точке a $Rla$ все координаты функции f непрерывны в точке a.
+ 
+\end{theorem}
+
+\begin{proof}
+ \begin{enumerate}
+ \item $\Ra$
+
+  $$\forall \epsilon > 0 \exists \delta > 0 \forall x \in B_{\delta}(a) \cap E: f(x) \in B_{\epsilon}(f(a)) $$
+
+  то есть 
+
+  $$\rho(f(x), f(a)) < \epsilon$$
+
+  $$|f_i(x) - f_i(a)| \le \sqrt{((f_1(x) - f_1(a))^2 + (f_2(x) - f_2(a))^2 + \ldots)}$$
+
+  $$\Ra |f_i(x) - f_i(a)| < \epsilon \Ra f_i \in B_{\epsilon}(f_i(a)) $$
+
+  $$f_i ~---$$ непрерывна в точке a.
+ \item $\La$
+  
+  Возьмем $\delta = \min\{\delta_1, \ldots, \delta_d\} > 0$
+
+  Тогда $\forall x \in B_{\delta}(a) \forall i = 1 \ldots d |f_i(x) - f_i(a)| < \epsilon$
+
+  $\Ra (f_1(x) - f_1(a))^2 + \ldots < d \epsilon$
+
+ $\rho(f(x), f(a)) < \sqrt{(d)} \epsilon$ 
+ 
+ \end{enumerate}
+\end{proof}
