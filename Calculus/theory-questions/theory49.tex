@@ -1,0 +1,75 @@
+﻿\section{Арифметические действия с непрерывными функциями}
+
+\begin{theorem}{Арифметические действия с непрерывными функциями}
+
+$$f, g: E \subset X \to \R^d, a \in E f, g \text{непрерывны в точке a}$$
+
+Тогда
+
+\begin{enumerate}
+\item f(x) + g(x) непрерывно в точке a
+\item сf(x) непрерывно в точке a
+\item f(x) - g(x) непрерывно в точке a
+\item $\| f(x) \|$ непрерывно в точке a
+\item < f(x), g(x) > непрерывно в точке a
+\end{enumerate}
+
+\end{theorem}
+
+\begin{theorem}{}
+
+$$f, g: E \subset X \to \R, a \in E f, g \text{непрерывны в точке a}$$
+
+Тогда
+
+\begin{enumerate}
+\item f(x) + g(x) непрерывно в точке a
+\item f(x)g(x) непрерывно в точке a
+\item f(x) - g(x) непрерывно в точке a
+\item |f(x)| непрерывно в точке a
+\item Если g(a) $\ne 0$, то $\frac{f(x)}{g(x)}$ непрерывно в точке a
+\end{enumerate}
+
+\begin{theorem}{о стабильном знаке}
+
+$$f: E \subset X \to \R a \in E, f \text{~--- непрерывно в точке a и} f(a) \ne 0$$
+
+Тогда 
+
+$$\exists B_{\delta}(a) \text{такое что } \forall x \in B_{\delta}(a) sign(f(x)) = sign(f(a))$$
+
+\end{theorem}
+ 
+\begin{proof}
+$$\epsilon = \frac{|f(a)|}{2}$$
+\end{proof}
+
+\begin{theorem}{о непрерывности композиции}
+
+$$f: E_1 \subset X \to Y$$
+
+$$g:E_2 \subset Y \to Z$$
+
+$$f(E_1) \subset E_2, a \in E_2$$
+
+f ~--- непрерывна в точке a
+
+g ~---  непрерывна в точке f(a)
+
+тогда $g \circ f$ ~--- непрерывно в точке a.
+
+\end{theorem}
+\begin{proof}
+Надо проверить, что 
+
+$$\forall \epsilon > 0 \exists \delta > 0 \forall x \in B_{\delta}(a) \cap E_1: g(f(x)) \in B_{\epsilon}(g(f(a))) $$
+
+Берем $\epsilon$
+
+$$\exists \gamma > 0 \forall y \in B_{\gamma}(f(a)) \cap E_2: g(y) \in B_{\epsilon}(g(f(a))) \text{(по непрерывности g в точке f(a))}$$
+
+$$\exists \delta > 0 \forall x \in B_{\delta}(a) \cap E_1: f(x) \in B_{\gamma}(f(a)) \text{(по непрерывности f в точке a)}$$
+
+$$\Ra g(f(x)) \in B_{\epsilon}(g(f(a))$$
+
+\end{proof}
