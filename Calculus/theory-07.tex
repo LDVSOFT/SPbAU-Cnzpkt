@@ -90,19 +90,19 @@ $y_n \lrh \inf_{k>n} x_n$, $z_n \lrh \sup_{k>n} x_n$.
 \begin{proof}
 \begin{enumerate}
 \item 
-$a = \liminf x_n$. Покажем, что $a$~--- частичный предел.
+$a = \limsup x_n$. Покажем, что $a$~--- частичный предел.
 $$z_n \searrow{} \Ra \sup_{k>n} x_k \geqslant a$$
 
 Выберем $$x_{k_m}\colon x_{k_m} > a - \frac1m; k_{m+1} > k_m$$
 Оно стремится к $a$.
 
 Пусть есть больший частичный предел. Но тогда с какого-то места последовательность, сходящаяся к $b$, уйдёт выше супремума, что плохо.
-\item Аналогично
-\item Два милличионера
+\item Аналогично.
+\item Два миллиционера.
 \end{enumerate}
 \end{proof}
 
-\begin{theorem}{}
+\begin{theorem}{Определение верхнего и нижнего предела через $N$ и $\epsilon$}
 \begin{enumerate}
 \item $$a = \varliminf x_n \Lra \begin{cases}\forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n > a - \epsilon \\ \forall \epsilon > 0\: \forall N\colon \exists n>N\: x_n < a + \epsilon\end{cases}$$
 \item $$a = \varlimsup x_n \Lra \begin{cases}\forall \epsilon > 0\: \forall N\colon \exists n>N\: x_n > a - \epsilon \\ \forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n < a + \epsilon\end{cases}$$
@@ -135,7 +135,7 @@ $$(1+x)^{k+1} = \underbrace{(1+x)^k}_{>0} (1+x) \geqslant (1+kx)(1+x) = 1 + kx +
 Если $|t| > 1$, то $\lim t^n = +\infty$. Если $|t| < 1$, то $\lim t^n = 0$.
 \end{conseq}
 
-\begin{theorem}{}
+\begin{theorem}{Предел убывающей по отношению}
 $x_n > 0$, $\lim \frac{x_{n+1}}{x_n} < 1$. Тогда $x_n \ra 0$.
 \end{theorem}
 \begin{proof}
@@ -146,7 +146,7 @@ $$\lim_{n\ra\infty} \frac{n^k}{a^n} = 0\quad a>1$$
 \end{conseq}
 \begin{proof}
 $$x_n = \frac{n^k}{a^n}$$
-$$\frac{x_{n+1}}{x_n} = \left(\frac{n+1}n\right)^k \frac{1a} < 1$$
+$$\frac{x_{n+1}}{x_n} = \left(\frac{n+1}n\right)^k \frac1a < 1$$
 \end{proof}
 \begin{conseq}
 $$\lim \frac{a^n}{n!} = 0$$
