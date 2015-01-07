@@ -11,6 +11,10 @@ $$\exists n_k > M = \max\{N, K\}\colon \forall n > n_k \rho(x_n, a) \leqslant \r
 \end{proof}
 \end{enumerate}
 
+\begin{Def}
+Пространство называют полным, если любая фундаментальная последовательность имеет предел.
+\end{Def}   
+
 \begin{theorem}{О сходимости фундаментальных последовательностей}
 \begin{enumerate}
 \item Любая сходящаяся последовательность фундаментальна.
@@ -32,10 +36,7 @@ $$a \in \cl E_n \Ra \forall i>n\:0\leqslant\rho(a, x_i) \leqslant \diam E_n \ra 
 
 Т.о $x_n \ra a$.
 \end{proof}
-
-\begin{Def}
-Пространство называют полным, если любая фундаментальная последовательность имеет предел.
-\end{Def}                                       
+                                                
 \begin{Rem}
 $\R^d$ полно. $\left<\Q, \rho\right>$ не полно. Пространство с дискретной метрикой полно.
 \end{Rem}
@@ -103,8 +104,8 @@ $$z_n \searrow{} \Ra \sup_{k>n} x_k \geqslant a$$
 
 \begin{theorem}{}
 \begin{enumerate}
-\item $$a = \varliminf x_n \Lra \begin{cases}\forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n > a - \epsilon \\ \forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n < a + \epsilon\end{cases}$$
-\item $$a = \varlimsup x_n \Lra \begin{cases}\forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n > a - \epsilon \\ \forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n < a + \epsilon\end{cases}$$
+\item $$a = \varliminf x_n \Lra \begin{cases}\forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n > a - \epsilon \\ \forall \epsilon > 0\: \forall N\colon \exists n>N\: x_n < a + \epsilon\end{cases}$$
+\item $$a = \varlimsup x_n \Lra \begin{cases}\forall \epsilon > 0\: \forall N\colon \exists n>N\: x_n > a - \epsilon \\ \forall \epsilon > 0\: \exists N\colon \forall n>N\: x_n < a + \epsilon\end{cases}$$
 \end{enumerate}
 \end{theorem}
 \begin{proof}
