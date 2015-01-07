@@ -189,7 +189,7 @@ $0<y_n<y_{n+1}$, $\lim x_n = \lim y_n = +\infty$, $\lim \frac{x_n-x_{n+1}}{y_n-y
 \begin{proof}
 $a = 0$:
 $$\epsilon_n \lrh \frac{x_n - x_{n+1}}{y_n - y_{n+1}}$$
-$$x_n = x_1 + \sum_{i=2}^n (x_i - x_i-1) = x_1 + \sum_{i=2}^n \epsilon_i(y_i - y_{i-1})$$
+$$x_n = x_1 + \sum_{i=2}^n (x_i - x_{i-1}) = x_1 + \sum_{i=2}^n \epsilon_i(y_i - y_{i-1})$$
 $$\frac{x_n}{y_n} = \frac{x_1}{y_n} + \sum_{i=2}^n \epsilon_i \frac{y_i - y_{i-1}}{y_n} = $$
 $$\forall \epsilon > 0\: \exists N\colon \forall n > N\: |\epsilon_n| < \epsilon$$
 $$= \frac{x_1}{y_n} + \sum_{i=2}^N + \sum_{i=N+1}^n$$
@@ -208,6 +208,8 @@ $$\left|\frac{x_n}{y_n}\right| < \epsilon \Ra \frac{x_n}{y_n} \ra 0$$
 $a\in\R$:
 $\tilde x_n = x_n - a y_n$. Фактом $x_n\ra\infty$ мы не пользовались.
 
+$$\frac{\tilde x_n - \tilde x_{n - 1}}{y_n - y_{n - 1}} = \frac{(x_n - ay_n) - (x_{n - 1} - ay_{n - 1})}{y_n - y_{n - 1}} = \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} - a \to 0$$
+
 $a=+\infty$: Поменяем местами $x_n$ и $y_n$. Проверим, что $x_n$ монотонно растёт и не ноль.
 $$\frac{x_n - x_{n-1}}{y_n - y_{n-1}} = +\infty \Ra \frac{x_n - x_{n-1}}{y_n - y_{n-1}} > 1 x_n - x_{n11} > y_n - y_{n-1} > 0$$
 
@@ -216,10 +218,34 @@ $a=-\infty$: Сменим знаки $x_n$.
 
 \begin{theorem}{Теорема Штольца №2}
 $0<y_n<y_{n-1}$, $\lim x_n = \lim y_n = 0$, $\lim \frac{x_n-x_{n+1}}{y_n-y_{n+1}} = a \in \bar\R$.
-Тогда $\lim \frac{x_n}{y_n} = 0$.
+Тогда $\lim \frac{x_n}{y_n} = a$.
 \end{theorem}
 \begin{proof}
-Я выпал, иам, видимо, аналогично.
+\begin{enumerate}
+\item Пусть a = 0.
+
+$$\epsilon_n = \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} \to 0$$
+
+$$x_n - x_m = \sum_{k = m + 1}^{n}(x_k - x_{k - 1}) = \sum_{k = m + 1}^{n}\epsilon_k(y_k - y_{k - 1})$$
+
+$$|x_n - x_m| = |\sum| \le \sum_{k = m + 1}^{n}|\epsilon_k|(y_{k - 1} - y_k)$$
+
+Выберем N, такое что $\forall k > N |\epsilon_k| < \epsilon$, тогда при n и m > N 
+
+$$< \sum^{n}_{k = m + 1}\epsilon(y_{k - 1} - y_k) = \epsilon\sum_{k = m + 1}^{n}(y_{k - 1} - y_k) = \epsilon(y_m - y_n)$$
+
+$$|x_n - x_m| < \epsilon|y_n - y_m|$$
+
+устремим n  к бесконености.
+
+$$|x_m| < \epsilon(y_m)$$
+
+$$\frac{x_m}{y_m} < \epsilon \text{при $m > N$}$$
+
+\item $a \in \R$
+
+$$\tilde x_n = x_n - a y_n$$
+\end{enumerate}
 \end{proof}
 
 \chapter{Пределы и непрерывность отображений}
