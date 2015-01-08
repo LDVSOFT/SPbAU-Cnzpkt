@@ -1,35 +1,4 @@
-\begin{conseq}
-$\sin$ и $\cos$ непрерывны. 
-\end{conseq}
-\begin{proof}
-$$\left|\sin x - \sin y\right| = 2 \left|\sin \frac{x-y}2\right| \left|\cos \frac{x+y}2\right| \leqslant \left|x - y\right|$$
-\end{proof}
-
-\begin{conseq}
-$\tg$ и $\ctg$ непрерывны. 
-\end{conseq}
-
-\begin{conseq}
-$$\sin \uparrow   \left[-\frac\pi2,\frac\pi2\right]$$
-$$\cos \downarrow \left[0,\pi\right]$$
-$$\tg  \uparrow   \left(-\frac\pi2,\frac\pi2\right)$$
-\end{conseq}
-
-\begin{Def}
-$$ \arcsin = \left(\sin \mid_{\left[-\frac\pi2,\frac\pi2\right]}\right)^{-1} $$
-$$ \arccos = \left(\cos \mid_{\left[0,\pi\right]}\right)^{-1} $$
-$$ \arctg  = \left(\tg  \mid_{\left(-\frac\pi2,\frac\pi2\right)}\right)^{-1} $$
-\end{Def}
-
-\begin{theorem}{}
-$$\lim_{x \ra 0} \frac{\sin x}x = 1$$
-\end{theorem}
-\begin{proof}
-$0 < x < \frac\pi2$:
-$$\sin x < x < \tg x \Ra \frac{\sin x}x < 1 < \frac1{\cos x} \frac{\sin x}x \Ra \cos x < \frac{\sin x}x < 1 \xra{x\ra0} 1 \leqslant \lim_{x\ra0} \frac{\sin x}x \leqslant 1$$
-\end{proof}
-
-\subsection{Степенная функция}
+\section{Степенная функция}
 $$x^n \quad x \in [0;+\infty); n \in \N$$
 Больше нуля, непрерывна, инфимум 0, супремум бесконечен, строго монотонная.
 $$x^\frac1n\text{ обратная}$$
@@ -38,14 +7,20 @@ $$x^{\frac{m}n} = \left(x^\frac1n\right)m$$
 $$x^{-\frac{m}n}=\frac1{x^{\frac{m}n}}$$
 
 \begin{assertion}
-Определение корректно.
+Определение корректно.  $(x^{\frac1n})^m = (x^{\frac{1}{nk}})^{mk}$
 \end{assertion}
 \begin{assertion}
 Свойства степени выполняются.
+\begin{enumerate}
+\item $x^a x^b = x^{a+b} a, b \in \Q$
+\item $(x^a)^b = x^{ab}$
+\item $x^a y^a = (xy)^a  a \in \Q$
+\item $x^a < y^a$ при x < y
+\item $x^a < x^b$ при x > 1 и a < b или при 0 < x < 1 и a > b 
+\end{enumerate}
 \end{assertion}
-
 \begin{lemma}
-$$\lim_{n\ra+\infty} a^{\frac1n}$$
+$$\lim_{n\ra+\infty} a^{\frac1n} = 1  \text{при a > 0}$$
 \end{lemma}
 \begin{proof}
 $a \geqslant 1$:
@@ -110,29 +85,4 @@ $$a > 0 \Ra \lim_{x \ra 0} a^x = 1$$
 $$\forall \epsilon > 0\; \exists N\colon \forall n > N\; \left|a^{\frac1n} - 1\right| < \epsilon$$
 $$\forall |x| < \frac1N 1 - \epsilon < \frac1{1 + \epsilon} < a^{-\frac1N} < a^x < a^{\frac1N} < 1 + \epsilon$$
 Возьмём $\delta = \frac1N$
-\end{proof}
-
-\begin{theorem}{}
-$$a > 0 \Ra f(x)\lrh a^x\text{ непрерывна}$$
-\end{theorem}
-\begin{proof}
-Надо доказать, что $a^{\lim_{n\ra+\infty} x_n} = \lim_{n\ra+\infty} a^{x_n}$
-
-$x_0 \lrh \lim_{n\ra+\infty} x_n$
-$$a^{x_n}-a^{x_0} = a^{x_0}\left(a^{x_n-x_0} - 1\right) \ra 0$$
-\end{proof}
-
-\begin{conseq}
-Есть обратная $$\log_a x$$
-\end{conseq}
-
-\begin{theorem}{}
-$$\lim_{x\ra\infty} \left(1+\frac1x\right)^x = e$$
-\end{theorem}
-\begin{proof}
-$x_n \ra +\infty$. $[x_n] = k$
-$$\left(1 + 1\frac{k + 1})^k\right) \leqslant \left(1 + \frac1{x_n}\right)^x_n \leqslant \left(1+\frac1k\right)^{k+1}$$
-$x_n \ra +\infty$. $y_n = -x_n$
-$$f(x_n) = \left(1 + \frac1{-y_n}\right)^{-y_n} = \left(1 + \frac1{y_n-1}\right)^{y_n} \ra e$$
-А для смеси возьмём две части, в каждой есть хороший номер.
 \end{proof}
