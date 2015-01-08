@@ -180,21 +180,55 @@ $$x_n = \frac{n!}{n^n}$$
 $$\frac{x_{n+1}}{x_n} = (1+\frac1n)^{-n} \ra \frac1e < 1$$
 \end{proof}
 
-\begin{theorem}{Теорема Штольца}
-$0<y_n<y_{n+1}$, $\lim x_n = \lim y_n = +\infty$, $\lim \frac{x_n-x_{n+1}}{y_n-y_{n+1}} = a \in \bar\R$.
-Тогда $\lim \frac{x_n}{y_n} = a$.
+\begin{theorem}{Теорема Штольца для бесконечно малых}
+$0<y_n<y_{n-1}$, $\lim x_n = \lim y_n = 0$, $\lim \frac{x_n-x_{n-1}}{y_n-y_{n-1}} = a \in \bar\R$.
+Тогда 
+$$\lim \frac{x_n}{y_n} = a$$
 \end{theorem}
 \begin{proof}
-$a = 0$:
-$$\epsilon_n \lrh \frac{x_n - x_{n+1}}{y_n - y_{n+1}}$$
+\begin{enumerate}
+\item $a = 0$.
+$$\epsilon_n = \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} \to 0$$
+$n > m$:
+$$x_n - x_m = \sum_{k = m + 1}^{n}(x_k - x_{k - 1}) = \sum_{k = m + 1}^{n}\epsilon_k(y_k - y_{k - 1})$$
+
+$$|x_n - x_m| = \left|\sum_{k = m + 1}^{n}\epsilon_k(y_k - y_{k - 1})\right| = \sum_{k = m + 1}^{n} |\epsilon_k|(y_{k-1} - y_k) < $$
+
+$$\forall \epsilon < 0\: \exists N\colon \forall k > N\: |\epsilon_k| < \epsilon$$
+
+Тогда при $n > m > N$
+$$< \sum^{n}_{k = m + 1}\epsilon(y_{k - 1} - y_k) = \epsilon\sum_{k = m + 1}^{n}(y_{k - 1} - y_k) = \epsilon(y_m - y_n)$$
+
+$$|x_n - x_m| < \epsilon|y_n - y_m|$$
+$n \ra \infty$
+
+$$|x_m| < \epsilon y_m$$
+$$\frac{x_m}{y_m} < \epsilon$$
+
+\item $a \in \R$: $\tilde x_n = x_n - a y_n$.
+\item $a = +\infty$: Поменяем местами $x_n$ и $y_n$. Проверим свойство для $x$:
+$$\lim \frac{x_n - x_{n-1}}{y_n - y_{n-1}} = +\infty \Ra \frac{x_n - x_{n-1}}{y_n - y_{n-1}} > 1$$
+$$x_n - x_{n-1} < y_n - y_{n-1} < 0$$
+\end{enumerate}
+\end{proof}
+
+\begin{theorem}{Теорема Штольца для бесконечно больших}
+$0<y_n<y_{n+1}$, $\lim x_n = \lim y_n = +\infty$, $\lim \frac{x_n-x_{n-1}}{y_n-y_{n-1}} = a \in \bar\R$.
+Тогда 
+$$\lim \frac{x_n}{y_n} = a$$
+\end{theorem}
+\begin{proof}
+\begin{enumerate}
+\item $a = 0$:
+$$\epsilon_n \lrh \frac{x_n - x_{n-1}}{y_n - y_{n-1}}$$
 $$x_n = x_1 + \sum_{i=2}^n (x_i - x_{i-1}) = x_1 + \sum_{i=2}^n \epsilon_i(y_i - y_{i-1})$$
 $$\frac{x_n}{y_n} = \frac{x_1}{y_n} + \sum_{i=2}^n \epsilon_i \frac{y_i - y_{i-1}}{y_n} = $$
 $$\forall \epsilon > 0\: \exists N\colon \forall n > N\: |\epsilon_n| < \epsilon$$
-$$= \frac{x_1}{y_n} + \sum_{i=2}^N + \sum_{i=N+1}^n$$
+$$= \frac{x_1}{y_n} + \sum_{i=2}^N \epsilon_i \frac{y_i - y_{i-1}}{y_n} + \sum_{i=N+1}^n \epsilon_i \frac{y_i - y_{i-1}}{y_n}$$
 
-$$\left|\sum_{i=N+1}^n \epsilon_i \frac{y_i - y_{i-1}}{y_n}\right| \leqslant \sum_{i=N+1}^n |\epsilon_i| \frac{y_i - y_{i-1}}{y_n} < 
+$$\left|\sum_{i=N+1}^n \epsilon_i \frac{y_i - y_{i-1}}{y_n}\right| = \sum_{i=N+1}^n |\epsilon_i| \frac{y_i - y_{i-1}}{y_n} < 
 \sum_{i=N+1}^n \epsilon \frac{y_i - y_{i-1}}{y_n} <$$
-$$< \frac{\epsilon}{y_n}\sum_{i=N+1}^n (y_i - y_{i-1}) = \frac{\epsilon}{y_n} (y_n - y_N) < \epsilon$$
+$$< \frac{\epsilon}{y_n}\sum_{i=N+1}^n (y_i - y_{i-1}) = \epsilon \frac{y_n - y_N}{y_n} < \epsilon$$
 
 $$\sum_{i=2}^N \epsilon_i \frac{y_i - y_{i-1}}{y_n} \leqslant \frac{1}{y_n}\sum_{i=2}^N \epsilon_i(y_i - y_{i-1}) < \epsilon$$
 
@@ -203,46 +237,16 @@ $$\frac{x_1}{y_n} < \epsilon$$
 Т.о.
 $$\left|\frac{x_n}{y_n}\right| < \epsilon \Ra \frac{x_n}{y_n} \ra 0$$
 
-$a\in\R$:
+\item $a\in\R$:
 $\tilde x_n = x_n - a y_n$. Фактом $x_n\ra\infty$ мы не пользовались.
 
 $$\frac{\tilde x_n - \tilde x_{n - 1}}{y_n - y_{n - 1}} = \frac{(x_n - ay_n) - (x_{n - 1} - ay_{n - 1})}{y_n - y_{n - 1}} = \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} - a \to 0$$
 
-$a=+\infty$: Поменяем местами $x_n$ и $y_n$. Проверим, что $x_n$ монотонно растёт и не ноль.
-$$\frac{x_n - x_{n-1}}{y_n - y_{n-1}} = +\infty \Ra \frac{x_n - x_{n-1}}{y_n - y_{n-1}} > 1 x_n - x_{n11} > y_n - y_{n-1} > 0$$
+\item $a=+\infty$: Поменяем местами $x_n$ и $y_n$. Проверим, что $x_n$ монотонно растёт и не ноль.
+$$\frac{x_n - x_{n-1}}{y_n - y_{n-1}} = +\infty \Ra \frac{x_n - x_{n-1}}{y_n - y_{n-1}} > 1$$
+$$x_n - x_{n-1} > y_n - y_{n-1} > 0$$
 
-$a=-\infty$: Сменим знаки $x_n$.
-\end{proof}
-
-\begin{theorem}{Теорема Штольца №2}
-$0<y_n<y_{n-1}$, $\lim x_n = \lim y_n = 0$, $\lim \frac{x_n-x_{n+1}}{y_n-y_{n+1}} = a \in \bar\R$.
-Тогда $\lim \frac{x_n}{y_n} = a$.
-\end{theorem}
-\begin{proof}
-\begin{enumerate}
-\item Пусть a = 0.
-
-$$\epsilon_n = \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} \to 0$$
-
-$$x_n - x_m = \sum_{k = m + 1}^{n}(x_k - x_{k - 1}) = \sum_{k = m + 1}^{n}\epsilon_k(y_k - y_{k - 1})$$
-
-$$|x_n - x_m| = |\sum| \le \sum_{k = m + 1}^{n}|\epsilon_k|(y_{k - 1} - y_k)$$
-
-Выберем N, такое что $\forall k > N |\epsilon_k| < \epsilon$, тогда при n и m > N 
-
-$$< \sum^{n}_{k = m + 1}\epsilon(y_{k - 1} - y_k) = \epsilon\sum_{k = m + 1}^{n}(y_{k - 1} - y_k) = \epsilon(y_m - y_n)$$
-
-$$|x_n - x_m| < \epsilon|y_n - y_m|$$
-
-устремим n  к бесконености.
-
-$$|x_m| < \epsilon(y_m)$$
-
-$$\frac{x_m}{y_m} < \epsilon \text{при $m > N$}$$
-
-\item $a \in \R$
-
-$$\tilde x_n = x_n - a y_n$$
+\item $a=-\infty$: Сменим знаки $x_n$.
 \end{enumerate}
 \end{proof}
 
@@ -251,10 +255,10 @@ $$\tilde x_n = x_n - a y_n$$
 
 \begin{Def}
 $(X, \rho_x)$ и $(Y, \rho_y)$~--- метрические пространства. $E \subset X$, $a$~--- предельная точка $E$. $f\colon X \ra Y$.
-Тогда говорят, что
+Тогда $b$ является пределом $f$ в $a$ по Коши
 $$\lim_{x \ra a} f(x) = b$$
 если $b \in Y$ и
-$$\forall \epsilon>0\: \exists \delta > 0\colon \forall x \in \dot B_\delta(a)\: \cap E \Ra f(x) \in B_\epsilon (b)$$
+$$\forall \epsilon>0\: \exists \delta > 0\colon \forall x\: x \in \dot B_\delta(a) \cap E \Ra f(x) \in B_\epsilon (b)$$
 или, что то же самое
 $$\forall \epsilon>0\: \exists \delta > 0\colon \forall x\: (x \ne a \land \rho(x, a) < \delta) \Ra \rho(f(x), b) < \epsilon$$
 \end{Def}
@@ -272,5 +276,13 @@ $$\lim_{x \ra a} f(x) = b \Lra \forall \{x_n\}\subset E\colon x_n \ne a\: \lim_{
 Определения равносильны.
 \end{theorem}
 \begin{proof}
+Коши $\Ra$ Гейне:
+$$\forall \epsilon>0\: \exists \delta > 0\colon \forall x\: x \in \dot B_\delta(a) \cap E \Ra f(x) \in B_\epsilon (b)$$
+Рассмотрим произвольную $\{x_n\} \subset E \setminus \{a\}$, $\lim_{n\ra\infty} x_n = a$. Для неё выполнено указанное выше. Тогда $\{f(x_n)\}$ сходится к $b$.
 
+Гейне $\Ra$ Коши: от противного. Пусть
+$$\exists \epsilon>0\colon \forall \delta > 0\: \exists x\: x \in \dot B_\delta(a) \cap E \land f(x) \notin B_\epsilon(b)$$
+Возьмём данный $\epsilon$ и выберем последовательность $\delta_n = \frac1n$. Тогда получим, что
+$$\exists \{x_n\}\colon x_n /ne a \land x_n \ra a \land f(x_n) \nrightarrow b$$
+что противоречит Гейне.
 \end{proof}
