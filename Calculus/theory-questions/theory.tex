@@ -91,6 +91,7 @@
 \newenvironment*{theorem}[1]{
 \theoremheader{#1}%
 }{%
+\par%
 }
 
 %% Environment for consequence body
@@ -101,6 +102,7 @@
 \newenvironment*{conseq}{
 \conseqheader%
 }{%
+\par%
 }
 
 \newcounter{lemma}[section]
@@ -115,7 +117,7 @@
 \newenvironment{assertion}{%
 \par\textbf{Утверждение. }%
 }{%
-%
+\par%
 }
 
 %% Environment for proof body. I like this style, but you are free to change it.
@@ -129,12 +131,14 @@
 \newenvironment{Def}{%
 \par$\mathfrak{Def\colon}$%
 }{%
+\par%
 }
 
 %% Environment for remarks.
 \newenvironment{Rem}{%
 \par\textit{REM: }%
 }{%
+\par%
 }
 
 \setcounter{MaxMatrixCols}{40}
