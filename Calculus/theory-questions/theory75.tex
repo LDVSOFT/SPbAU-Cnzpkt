@@ -1,0 +1,16 @@
+\section{Арифметические действия с производными высших порядков}
+
+\begin{theorem}{Арифметические действия с производными высших порядков}
+\begin{enumerate}
+\item 
+$$ (\alpha x f + \beta g)^{(n)} = \alpha f^{(n)} + \beta g^{(n)} $$
+\item Правило Лейбница
+$$ (fg)^{(n)} = \sum_{i=0}^n \Choose{n}{i} f^{(i)} g^{(n-i)} $$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Метод математической индукции: база $n=1$ уже доказана. Докажем переход
+$$ (fg)^{(n+1)} = \left( \sum_{i=0}^{n} \Choose{n}{i} f^{(i)} g^{(n-i)} \right) = \sum_{i=0}^{n} \Choose{n}{i} \left(f^{(i+1)} g^{(n-i)} + f^{(i)} g^{(n-i+1)}\right) = $$ 
+$$ = \sum_{i=0}^n \Choose{n}{i} f^{(i+1)} g^{(n-i)} + \sum_{i=0}^n \Choose{n}{i} f^{(i)} g^{(n-i+1)} = \sum_{i=0}^{n-1} \left(\Choose{n}{i} + \Choose{n}{i + 1}\right) f^{(i+1)} g^{(n-i)} + fg^{(n+1)} + f^{(n+1)}g = $$
+$$ = \sum_{i=0}^{n+1} \Choose{n}{i} f^{(i)}g^{(n+1-i)} $$
+\end{proof}
