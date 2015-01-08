@@ -14,6 +14,7 @@
 \usepackage{color} %% Coloring almost anything
 \usepackage[russian]{hyperref} %% Clickable links is pdf
 \usepackage{indentfirst}
+\usepackage{ifthen}
 \usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
 %% WARNING: latest minted is used. Download from github!
 %% Works fine, though
@@ -86,7 +87,7 @@
 \newcounter{theorem}[section]
 \renewcommand{\thetheorem}{\thesection.\arabic{theorem}}
 \newcommand*{\theoremheader}[1]{\par\refstepcounter{theorem}%
-\textbf{Теорема \thetheorem. #1.}}
+\textbf{Теорема \thetheorem.\ifthenelse{\equal{#1}{}}{}{ #1.}}}
 \newenvironment*{theorem}[1]{
 \theoremheader{#1}%
 }{%
