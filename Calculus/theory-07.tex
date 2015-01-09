@@ -254,13 +254,13 @@ $$x_n - x_{n-1} > y_n - y_{n-1} > 0$$
 \section{Пределы функций}
 
 \begin{Def}
-$(X, \rho_x)$ и $(Y, \rho_y)$~--- метрические пространства. $E \subset X$, $a$~--- предельная точка $E$. $f\colon X \ra Y$.
+$(X, \rho_x)$ и $(Y, \rho_y)$~--- метрические пространства. $E \subset X$, $a$~--- предельная точка $E$. $f\colon E \ra Y$.
 Тогда $b$ является пределом $f$ в $a$ по Коши
 $$\lim_{x \ra a} f(x) = b$$
 если $b \in Y$ и
 $$\forall \epsilon>0\: \exists \delta > 0\colon \forall x\: x \in \dot B_\delta(a) \cap E \Ra f(x) \in B_\epsilon (b)$$
 или, что то же самое
-$$\forall \epsilon>0\: \exists \delta > 0\colon \forall x\: (x \ne a \land \rho(x, a) < \delta) \Ra \rho(f(x), b) < \epsilon$$
+$$\forall \epsilon>0\: \exists \delta > 0\colon \forall x\in E \: (x \ne a \land \rho(x, a) < \delta) \Ra \rho(f(x), b) < \epsilon$$
 \end{Def}
 
 \begin{Rem}
