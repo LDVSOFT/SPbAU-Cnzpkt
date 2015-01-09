@@ -1,54 +1,45 @@
 ﻿\section{Непрерывность и компактность}
 
 \begin{Def}
-$$f: E \subset x \to y$$
-
-f ~--- ограниченное отображение, если $f(E)$ ~--- ограничено.
-
+$f\colon E \subset x \to y$. $f$~--- ограниченное отображение, если $f(E)$ ограничено.
 \end{Def}
 
 \begin{theorem}{Непрерывный образ компакта ~--- компакт}
- $$f: x \to y, f \text{~--- непрерывен на X}, K \subset X, K \text{~--- компакт} \Ra f(K) \text{~--- компакт}$$
+$f\colon x \ra y$, $f$ непрерывен на $X$, $K \subset X$, $K$~--- компакт. Тогда $f(K)$~--- компакт.
 \end{theorem}
 \begin{proof}
- Пусть $G_{\alpha}$ ~--- открытые множества.
-
- $\cup_{\alpha \in I}G_{\alpha} \supset f(K)$ надо выбрать конечное подпокрытие.
-
- Рассмотрим $f^{-1}(G_{\alpha})$ ~--- открытое множество(по непрерывности f)
-
- $\cup_{\alpha \in I}f^{-1}(G_{\alpha}) \supset K$
-
- $\Ra \exists$ конечное подпокрытие.
-
- $\exists \alpha_1, \ldots, \alpha_n \cup_{i = 1}f^{-1}(G_{\alpha_i}) \supset$
-
- $\cup_{i = 1}^{n}G_{\alpha_1} \supset f(K)$ конечное подпокрытие для f(k)
-
+Пусть $G_{\alpha}$~--- открытые множества.
+$$\bigcup_{\alpha \in I} G_{\alpha} \supset f(K)$$ 
+Надо выбрать конечное подпокрытие. Рассмотрим $f^{-1}(G_{\alpha})$~--- открытое множество (так как $f$ непрерывна).
+$$\bigcup_{\alpha \in I} f^{-1}(G_{\alpha}) \supset K$$
+Существует конечное покрытие
+$$\exists \alpha_1, \ldots, \alpha_n\colon \bigcup_{i=1}^n f^{-1}(G_{\alpha_i}) \supset K$$
+Тогда
+$$\bigcup_{i=1}^n G_{\alpha_1} \supset f(K)$$ 
+является конечным подпокрытием для $f(K)$.
 \end{proof}
 
 
-\begin{conseq}{}
-\begin{enumerate}
- \item Непрерывный образ компакта ~--- замкнут и ограничен.
- \item (Теорема Вейерштрасса)
+\begin{conseq}
+Непрерывный образ компакта ~--- замкнут и ограничен.
+\end{conseq}
+\begin{conseq} Теорема Вейерштрасса.
+$f\colon K \ra \R$ непрерывна на компакте $K$. Тогда $f$ ограничена.
+\end{conseq}
+\begin{conseq}
+$f\colon [a,b] \ra \R$ непрерывена на $[a, b]$. Тогда $f$ ограничена.
+\end{conseq}
 
- $$f:K \to \R \text{непрерывен на K(компакт)} \Ra f \text{~--- ограничена}$$
-
- \item $f:[a,b] \to \R$ непрерывен на [a, b] $\Ra f$ ~--- ограничена
- \item $f: K \to \R$ f ~--- непрерывен на K, K ~--- компакт $\Ra \exists a,b \in K, \forall x \in K f(a) \le f(x) \le f(b)$
-      \begin{proof}
-        f(K) ~--- ограниченное подмножество  $\R$
-        
-        $$A = inf f(K)$$
-
-        $$B = sup f(K)$$
-
-        $$f(K)$$ ~--- замкнуто $\Ra A, B \in f(K)$
-      \end{proof} 
- \item (теорема Вейерштрасса) 
- 
-  $f:[a, b] \to \R$ непрерывна на [a, b], тогда она принимает наибольшее и наименьшее значение.
-\end{enumerate}
+\begin{conseq}
+$f\colon K \to \R$, $f$ непрерывна на компакте $K$. Тогда
+$$\exists a,b \in K\colon \forall x \in K\: f(a) \leqslant f(x) \leqslant f(b)$$
+\end{conseq}
+\begin{proof}
+$f(K)$~--- ограниченное подмножество $\R$.
+$$A = \inf f(K); B = \sup f(K)$$
+$f(K)$~--- замкнуто $\Ra A, B \in f(K)$
+\end{proof} 
+\begin{conseq} Теорема Вейерштрасса.
+$f\colon [a, b] \ra \R$ непрерывна на $[a, b]$. Тогда она принимает наибольшее и наименьшее значение.
 \end{conseq}
 
