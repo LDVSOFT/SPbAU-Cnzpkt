@@ -1,7 +1,20 @@
 \section{Непрерывность тригонометрических функций}
 \begin{theorem}{}
-$$\sin x < x < tg x$$
+$$\forall x \in \left(0; \frac{\pi}2\right)\: \sin x < x < \tg x$$
 \end{theorem}
+\begin{proof}
+\begin{center}
+\def\svgwidth{6.0cm}
+\input{theory56-sin.pdf_tex}
+\end{center}
+$$S_{AOB} < S_{\text{сектор}} < S_{AOC}$$
+\begin{align*}
+S_{AOB} &= \frac12 \sin x \\
+S_{\text{сектор}} &= \frac{x}2 \\
+S_{AOC} &= \frac12 \tg x
+\end{align*}
+$$\sin x < x < \tg x$$
+\end{proof}
                         
 \begin{conseq}
 $\sin$ и $\cos$ непрерывны. 
