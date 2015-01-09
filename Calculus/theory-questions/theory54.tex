@@ -1,43 +1,31 @@
 ﻿\section{Равномерная непрерывность на функции. Теорема Кантора}
 
 \begin{Def}
-$f:X \to Y$ равномерно непрерывна, если
-
-$\forall \epsilon > 0 \exists \delta > 0 \forall x, y \in X \rho(x, y) < \delta: \rho(f(x), f(y)) < \epsilon$ 
-
+$f\colon X \to Y$ равномерно непрерывна, если
+$$\forall \epsilon > 0\: \exists \delta > 0\colon \forall x, y \in X \land \rho(x, y) < \delta\: \rho(f(x), f(y)) < \epsilon$$
 \end{Def}
 
-\begin{theorem}{Кантора}
-
-$f: K \to Y$ K ~-- компакт, f непрерывен на K $\Ra f$ равномерно непрерывно.
-
+\begin{theorem}{Теорема Кантора}
+$f\colon K \to Y$, $K$~--- компакт, $f$ непрерывна на $K$. Тогда $f$ равномерно непрерывно.
 \end{theorem}
 
 \begin{proof}
+От противного. Пусть
 
-От противного.
+$$\exists \epsilon>0\colon \exists x_n, \tilde x_n \in K\colon \rho(x_n, \tilde x_n) < \frac{1}{n} \land \rho(f(x_n), f(\tilde x_n)) \ge \epsilon$$
 
-Пусть для некоторого $\epsilon > 0$ нет $\delta > 0$, т.е не подходит $\delta = \frac1n$
+$x_n$, $\tilde x_n$ последовательность точек из $K$. Возьмём из $x_n$ сходящуюся подпоследовательность $x_{n_{k}}$, $x_{n_k} \to a \in K$. Тогда
+$\tilde x_{n_k} \to a$, так как 
+$$\rho(x_{n_k}, \tilde x_{n_k}) < \frac{1}{n_k} \to 0$$
+$f$ непрерывно в точке $a$
+$$\exists \delta > 0\colon \forall x \in B_{\delta}(a)\: f(x) \in B_{\frac{\epsilon}{2}}(f(a))$$
 
-$$\exists x_n, \tilde x_n \in K \text{т.ч} \rho(x_n, \tilde x_n) < \frac{1}{n} \rho(f(x_n), f(\tilde x_n)) \ge \epsilon$$
+Начиная с какого-то $N$ 
+$$x_{n_k}, \tilde x_{n_k} \in B_{\delta}(a) \Ra f(x_{n_k}), f(\tilde x_{n_k}) \in B_{\frac{\epsilon}2}(f(a))$$
 
-$x_n,\tilde x_n$ последовательность точек из K извлеем из $x_n$ сходящуюся подпоследовательность $x_{n_{k}}$, $x_{n_k} \to a \in K$
-
-$\tilde x_{n_k} \to a$, т.к. $\rho(x_{n_k}, \tilde x_{n_k}) < \frac{1}{n_k} \to 0$
-
-f непрерывно в точке a.
-
-$\exists \delta > 0 \forall x \in B_{\delta}(a): f(x) \in B_{
-frac{\epsilon}{2}}(f(a))$
-
-Начиная с какого-то N $x_{n_k}, \tilde x_{n_k} \in B_{\delta}(a)$
-
-$$\Ra f(x_{n_k}), f(\tilde x_{n_k}) \in B_{\epsilon}(f(a))$$
-
-$$\Ra \rho(f(x_{n_k}), f(\tilde x_{n_k})) < \epsilon \text{противоречие}$$
-
+$$\Ra \rho(f(x_{n_k}), f(\tilde x_{n_k})) < \epsilon \quad \text{противоречие}$$
 \end{proof}
 
-\begin{conseq}{}
- Непрерывное на [a, b] функция равномерно непрерывна.
+\begin{conseq}
+Непрерывная на $[a, b]$ функция равномерно непрерывна.
 \end{conseq}
