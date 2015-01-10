@@ -12,20 +12,23 @@ $$x^{-\frac{m}n}=\frac1{x^{\frac{m}n}}$$
 \begin{assertion}
 Свойства степени выполняются.
 \begin{enumerate}
-\item $x^a x^b = x^{a+b} a, b \in \Q$
+\item $x^a x^b = x^{a+b} \quad a, b \in \Q$
 \item $(x^a)^b = x^{ab}$
-\item $x^a y^a = (xy)^a  a \in \Q$
-\item $x^a < y^a$ при x < y
-\item $x^a < x^b$ при x > 1 и a < b или при 0 < x < 1 и a > b 
+\item $x^a y^a = (xy)^a \quad a \in \Q$
+\item $x^a < y^a$ при $x < y$
+\item $x^a < x^b$ при $x > 1$ и $a < b$ или при $0 < x < 1$ и $a > b $
 \end{enumerate}
 \end{assertion}
+
 \begin{lemma}
-$$\lim_{n\ra+\infty} a^{\frac1n} = 1  \text{при a > 0}$$
+$a>0$
+$$\lim_{n\ra+\infty} a^{\frac1n} = 1$$
 \end{lemma}
 \begin{proof}
 $a \geqslant 1$:
 $$(1+\epsilon)^n \geqslant 1 + \epsilon n > \epsilon n > \epsilon N > a$$
 $$N > \frac{a}\epsilon \Ra \forall n > N\; (1+\epsilon)^n > a \Ra 1 + \epsilon > a^{\frac1n} \geqslant 1^{\frac1n} = 1$$
+
 $0 < a < 1$:
 $$\lim_{n\ra+\infty} a^{\frac1n} = \frac1{\lim_{n\ra+\infty} \left(\frac1a\right)^{\frac1n}} = 1$$
 \end{proof}
@@ -37,7 +40,7 @@ $$\lim_{n\ra+\infty} a^{\frac1n} = \frac1{\lim_{n\ra+\infty} \left(\frac1a\right
 $$a^{x_n} - a^{x_m} = a^{x_n}\left(a^{x_m-x_n} - 1\right)$$
 $$\forall n\; |x_n| \leqslant M \Ra a^{x_n} \in \left[a^{-M}; a^M\right]$$
 Т.о.
-$$\left|a^{x_n} - a^{x_m}\right| \leqslant \underbrace{a^M}_{\lrh C} \left(a_{x_n-x_m} - 1\right) < C\epsilon$$
+$$\left|a^{x_n} - a^{x_m}\right| \leqslant \underbrace{a^M}_{\lrh C} \left(a^{x_n-x_m} - 1\right) < C\epsilon$$
 По лемме 
 $$\exists N\colon \forall k > N\; |a^{\frac1n} < 1| < \epsilon$$
 $$|x_n - x_m| < \frac1N \ra -\epsilon < a^{-\frac1N} < a_{x_n-x_m} - 1 < a^{\frac1N} - 1 < 1 + \epsilon$$
@@ -51,7 +54,7 @@ $$\left\{z_n\right\} = \left\{x_1, y_1, x_2, y_2, \ldots\right\} \ra x$$
 \end{proof}
 
 \begin{Def}
-$$a^x = \lim_{\substack{x_n \ra x \\ x_n \in \Q}}$$
+$$a^x = \lim_{\substack{x_n \ra x \\ x_n \in \Q}} a^{x_n}$$
 \end{Def}
 
 Свойства степени:
@@ -67,7 +70,7 @@ $$x^a_n < x^b_n \Ra x^a \leqslant x^b$$
 Теперь хотим строгое
 $$\left(\frac{x}y\right)^n < 1$$
 $$z\lrh\frac{x}y$$
-$$z^{a_n} < 1 \land z^{a_n} \downarrow \Ra z_a < 1$$
+$$z^{a_n} < 1 \land z^{a_n} \downarrow{} \Ra z_a < 1$$
 \end{proof}
 \item $x^a < x^b$ при $x>1 \land a < b$ или $0<x<1 \land a > b$
 \begin{proof}
