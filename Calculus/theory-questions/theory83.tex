@@ -24,13 +24,16 @@ $f\colon \left<a, b\right> \ra R$, $x_0 \in (a, b)$, $f$ дифференцир�
 \begin{itemize}
 \item $2 \mid n \land f''(x_0) < 0 \Ra x_0\text{~--- точка максимума}$
 \item $2 \mid n \land f''(x_0) > 0 \Ra x_0\text{~--- точка минимума}$
-\item $2 \not \mid 2 \land f''(x_0) \ne 0 \Ra x_0\text{~--- не экстремум}$
+\item $2 \nmid 2 \land f''(x_0) \ne 0 \Ra x_0\text{~--- не экстремум}$
 \end{itemize}
 \end{theorem}
 \begin{proof}
 $$f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x-x_0) + \cdots + \frac{f^{(n-1)}}{(n-1)!}(x-x_0)^{n-1} + \frac{f^{(n)}}{n!}(x-x_0)^{n} + o((x-x_0)^n)$$
 $$f(x) - f(x_0) = \frac{f^{(n)}}{n!}(x-x_0)^{n} + o((x-x_0)^n) = (x-x_0)^n \left(\frac{f^{(n)}(x_0)}{n!} + o(1)\right)$$
-$2 \div n \land f^{(n)}(x_0) > 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; f(x) - f(x_0) > 0$
-$2 \div n \land f^{(n)}(x_0) < 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; f(x) - f(x_0) < 0$
-$2 \not\div n \land f^{(n)}(x_0) \ne 0 \Ra \exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; sign(f(x) - f(x_0)) = sign(x-x_0)$
+$2 \mid n \land f^{(n)}(x_0) > 0$:
+$$\exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; f(x) - f(x_0) > 0$$
+$2 \mid n \land f^{(n)}(x_0) < 0$:
+$$\exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; f(x) - f(x_0) < 0$$
+$2 \nmid n \land f^{(n)}(x_0) \ne 0$:
+$$\exists \epsilon>0\colon \forall x\in(x_0-\epsilon,x_0)\cup(x_0, x_0+\epsilon)\; sign(f(x) - f(x_0)) = sign(x-x_0)$$
 \end{proof}
