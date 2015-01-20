@@ -1,0 +1,36 @@
+﻿\section{Отношение эквивалентности}
+
+\begin{Def}
+    R отношение эквивалентности, если оно рефлексивное, симметричное и транзитивное $a \sim b$.
+    
+    A, R ~--- отношение эквивалентности.
+    $a \in A [a] = \{b \in A| a \sim b\}$ ~--- класс эквивалентности.  
+\end{Def}
+
+\begin{theorem}{}
+$A,\sim$
+$a, b \in A$
+
+Тогда либо $[a]\cap [b] = 0$, либо $[a] = [b]$ 
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item $[a] \cap [b] = 0$ ~--- все доказано.
+\item $\exists c \in [a] \cap [b]$
+
+[a] = [b]?
+
+$$x \in [a], a \sim x$$
+$$c \in [a], a \sim c \Ra c \sim a$$
+$$c \in [b], b \sim c$$
+$$b \sim c, c \sim a, a \sim x$$
+$$b \sim a, a \sim x$$
+$$b \sim x \Ra x \sim [b]$$
+
+$$[a] \subset [b]$$
+$$[b] \subset [a]$$
+\end{enumerate}
+\end{proof}
+
+Множество классов эквивалентности называется фактормножеством.
