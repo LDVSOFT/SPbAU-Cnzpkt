@@ -1,0 +1,44 @@
+﻿\section{Сюръективное отображение конечного множества на себя является биективным}
+
+\begin{theorem}{}
+    A ~--- конечное множество. 
+    $f: A \thra A$, тогда f ~--- биекция.
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}
+        \item $\forall a \exists n_a \{f \circ f \circ \ldots \circ f\}(a) = a$
+        \item $\exists n \forall a (f \circ \ldots \circ f)(a)  = a$
+        \item f ~--- инъекция.
+    \end{enumerate}
+    $$a_0 = a$$
+    $$a_i f^{-1}(\{a_i\}) \ne 0$$
+    $$\exists a_{i + 1} \in f^{-1}(\{a_i\})$$
+    $$\exists m > n a_m = a_n$$
+    \begin{lemma}{}
+        $a_{m - n} = a$   
+    \end{lemma}
+    \begin{proof}
+        Индукция по n.
+        {\bf База:} $n = 0,  a_m = a_0 = a$
+        {\bf Переход:} $$a_m = a_n$$
+        $$f(a_m) = f(a_n)$$
+        $$a_{m - 1} = f(a_m) = f(a_n) = a_{n - 1}$$
+        По индукционному предположению 
+        $$a_{m - n} = a_{(m - 1) - (n - 1)} = a$$
+    \end{proof}
+    $$a_{m - n} \in  f^{-1}(f^{-1}\ldots(\{a\}))$$
+    $$f(f(\ldots f(a_{m - n}))) = a$$
+    $$f(f(\ldots f(a))) = a$$
+    $$(f \circ f \circ \ldots)(a) = a$$
+    $$\forall a \in A \exists n_a \ge 1 \ub{(f \circ \ldots \circ f)}_{n_a}(a) = a$$
+   
+    $$k \in N \ub{(f \circ \ldots \circ f)}_{n_a k}(a) = a$$
+    (индукция по k)
+    
+    $$N = \prod_{a \in A} n_a  \ub{(f \circ \ldots \circ f)}_{N}(a) = a$$
+    
+    $$a, b \in A$$
+    $$f(a) = f(b)$$
+    $$a = (\ub{f \circ \ldots \circ f}_{N - 1} \circ f)(a) = (\ub{f \circ \ldots \circ f}_{N - 1} \circ f)(b) = b$$
+\end{proof}
