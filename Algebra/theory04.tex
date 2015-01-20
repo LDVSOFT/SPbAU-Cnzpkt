@@ -1,0 +1,124 @@
+﻿\section{Равносильность инъективности и обратимости слева}
+
+\begin{Def}
+A, B
+
+$f: A \to B, \Gamma_f, f$ ~--- инъективное отображение(инъекция).
+
+$\forall a_1, a_2 \in A \exists b (a_1, b) \in \Gamma_f \wedge (a_2, b) \in \Gamma_f \Ra a_1 = a_2$
+
+$\forall a_1, a_2 \in A f(a_1) = f(a_2) \Ra a_1 = a_2$
+
+$f: A \rat B$ ~--- инъективное отображение. 
+\end{Def}
+
+
+\begin{Def}
+Отображение f назывется  сюръективным (сюрекцией <<отображение на>>)
+
+$\forall b \in B \exists a \in A (b = f(a))$
+
+$f: A \thra B$
+
+\end{Def}
+
+\begin{Def}
+f называется биективным(или биекцией) если f и сюръективно и инъективное. 
+
+$f: A \thrat B$
+ 
+$\{b \in B| \exists c \in C b = f(c)\} = f(C)$ ~--- образ С.
+
+$\{a \in A| f(a) \in D\} = f'(D)$ ~--- полный прообраз D.
+\end{Def}
+
+$f(f^{-1}(D)) \subset D$ ~--- но не обязательно совпадет.
+
+f инъективно $\Lra$ прообраз любого одноэлементного множества содержит не более одного элемента. 
+
+f сюръективно $f(A) = B, f:A \to B$
+
+\begin{theorem}{}
+$f:A \to B, g:B \to A$
+
+$g \circ f = id_A$ тогда f ~--- инъективно, g ~--- сюръективно.
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item $a_1, a_2 \in A f(a_1) = f(a_2)$
+
+$a_1 = a_2$
+
+$g(f(a_1)) = g(f(a_2))$
+
+$\Uparrow$
+
+$(g \circ f)(a_1) = (g \circ f)(a_2)$
+
+$\Uparrow$
+
+$id_A(a_1) = id_A(a_2)$
+
+$\Uparrow$
+
+$a_1 = a_2 \Ra f$ ~--- инъективна.
+
+\item $a \in A$
+
+$g(f(a)) = (g \circ f)(a) = id_A(a) = a$
+
+$b = f(a)$
+
+$a = g(b)$
+
+$\forall a \in A \exists b \in B a = g(b) \Ra  g$ ~--- сюръективно.   
+\end{enumerate}
+\end{proof}
+
+\begin{theorem}{}
+$f:A \to B (A \ne 0)$
+
+f обратимо слева $\Lra$ f ~--- инъективна.
+
+\end{theorem}
+
+\begin{proof}
+$\Ra$
+
+$\exists g g \circ f = id_A \Ra f$ ~--- инъективно.
+
+$\La$ 
+
+$C = f(A)$
+
+$h_1: C \to A$
+
+$(c, a) \in \Gamma_{h_1} \Lra (a, c) \in \Gamma_{f}$
+
+Почему $\Gamma_{h_1}$ ~--- график?
+
+$\forall c \in C \exists a \in A (a, c) \in \Gamma_{f}$
+
+$\forall c \in C \exists a \in A (c, a) \in \Gamma_{h_1}$
+
+f ~--- инъективно. 
+
+$\forall a_1, a_2 \in A \exists b \in B (a_1, b) \in \Gamma_{f} \wedge (a_2, b)\in \Gamma_{f} \Ra a_1 = a_2$
+
+$\forall a_1, a_2 \in A \exists b \in C (a_1, b) \in \Gamma_{f} \wedge (a_2, b)\in \Gamma_{f} \Ra a_1 = a_2$
+
+$\forall a_1, a_2 \in A \exists b \in C (b, a_1) \in \Gamma_{h_1} \wedge (b, a_2)\in \Gamma_{h_1} \Ra a_1 = a_2$
+
+$\Ra \Gamma_{h_1}$ ~--- график.
+
+$h: B \to A$
+
+возьмем какой-то $a \in A$
+
+$h(b) = \begin{cases} h_1(b), & h_1(b), b \in C\\ a, &b \notin C\end{cases}$
+
+$x \in A$
+
+$(h \circ f)(x) = h(f(x)) = h_1(f(x)) = x$
+\end{proof}
