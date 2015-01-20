@@ -1,0 +1,78 @@
+﻿\section{Отображения. Композиция отображений.}
+
+\begin{Def}
+A,B ~--- множества.
+$\Gamma_{f} \subset A \times B$
+
+$\Gamma$ ~--- график отображения если выполнены два условия:
+
+\begin{enumerate}
+\item $\forall a \in A \exists b \in B (a, b) \in \Gamma_{f}$
+\item $\forall a \in A \exists b_1, b_2 \in B (a, b_1) \in \Gamma_f \wedge (a, b_2) \in \Gamma_f \Ra b_1 = b_2$
+\end{enumerate} 
+\end{Def}
+
+\begin{Def}
+$A, B, \Gamma_f \subset A \times B$
+
+говорим, что задано отображение f из A в B с графком $\Gamma_f$
+
+$$f:A \to B$$
+
+$$A \xrightarrow{f} B$$
+
+$(a, b) \in \Gamma_f \Lra b = f(a)$
+
+A ~--- область определения
+
+B ~--- область назначения
+\end{Def}
+
+$$f: A \to B$$
+
+$$f_1: A_1 \to B_1$$
+
+$$f = f_1 \Lra A = A_1, B = B_1, \Gamma_f = \Gamma_{f_1} $$
+
+\begin{Def}{Композиция отображения}
+
+$$A \xrightarrow{f} B \xrightarrow{g} C$$
+
+$$g \circ f: A \to C$$
+
+$$(g \circ f)(a) = g(f(a))$$
+
+$$\Gamma_{g \circ f}$$
+
+$$(a, c) \in \Gamma_{g \circ f} \Lra \exists b \in B (a, b) \in \Gamma_{f} \wedge (b, c) \in \Gamma_g$$
+
+Область определение $g \circ f$ ~--- область определения f Dom(f) 
+
+Область назначения $g \circ f$ ~--- область назначения g coDom(f)
+
+\end{Def}
+
+\begin{theorem}{Композиция отображения ассоциативна}
+
+$$h \circ (g \circ f) = (h \circ g) \circ f $$
+
+$$ A \xrightarrow{f} B \xrightarrow{g} C \xrightarrow{h} D$$
+\end{theorem}
+
+\begin{proof}
+Область определения $Dom(h \circ (g \circ f)) = Dom(g \circ f) = Dom(f) = A$
+
+$Dom((h \circ g) \circ f) = Dom(f) = A$
+
+
+Область назначений $Dom(h \circ (g \circ f)) = coDom(h) = D$
+
+ $Dom((h \circ g) \circ f) = coDom((h \circ g)) = coDom(h) = D$
+
+ $$\forall a \in A$$
+
+ $$(h \circ (g \circ f))(a) = h(g \circ f(a)) = h(g(f(a)))$$
+
+ $$((h \circ g) \circ f)(a) = (h \circ g)(f(a)) = h(g(f(a)))$$
+     
+\end{proof}
