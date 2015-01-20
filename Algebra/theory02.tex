@@ -44,3 +44,56 @@ $\Ra g = h$
 \item Пусть f обратимое и g и h ~--- два обратных. В частности g ~--- обратное справа, h ~--- обратное слева.
 \end{enumerate}
 \end{proof}
+
+\begin{theorem}{}
+$f:A \to B, g:B \to C$
+
+$g \circ f: A \to C$
+
+\begin{enumerate}
+\item Если f, g обратимы справа, то и $g \circ f$ обратима справа.
+\item Если f, g обратимы слева, то и $g \circ f$ обратима слева.
+\item Если f, g обратимы, то $g \circ f$ обратима $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item
+$$u: B \to A, f \circ u = id_B$$
+$$v: C \to B g \circ v = id_C$$
+$$(g \circ f) \circ (u \circ v) = g \circ (f \circ (u \circ v)) = $$
+$$= g \circ ((f \circ u) \circ v) = g \circ (id_B \circ v) = g \circ v = id_C$$
+
+$u \circ v$ ~--- правый обратный к $g \circ f$
+
+\item аналогично
+
+\item 
+$$(g \circ f)(f^{-1} \circ g^{-1}) = g \circ ((f \circ f^{-1}) \circ g^{-1}) = g \circ (id_B \circ g^{-1}) = g \circ g^{-1} = id_C$$
+
+$$(f^{-1} \circ g^{-1})\circ(g \circ f) = f^{-1}(g^{-1} \circ g) \circ f = f^{-1} \circ id_B \circ f = f^{-1} \circ f = id_A$$
+
+\end{enumerate}
+\end{proof}
+
+\begin{conseq}{}
+Композиция сюръективных ~--- сюръективна.
+
+Композиция инъективных ~--- инъективна.
+
+Композиция биективных ~--- биекция.
+
+\end{conseq}
+
+\begin{theorem}{}
+$f: A \to B$ f ~--- обратима, тогда $f^{-1}$ обратима и $(f^{-1})^{-1} = f$
+\end{theorem}
+
+\begin{proof}
+$f \circ f^{-1} = id_{B}$
+
+$f^{-1} \circ f = id_A \Ra f$ ~--- обратное к $f^{-1}$
+
+В силу единственности обратного $(f^{-1})^{-1} = f$
+\end{proof}
