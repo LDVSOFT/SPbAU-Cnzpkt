@@ -1,0 +1,70 @@
+\section{Алгебраическая форма записи комплексного числа. Комплексное сопряжение.
+Свойства комплексного сопряжения.}
+
+$\R \mapsto \C:~a \mapsto (a, 0)$ - инъективный гомоморфизм колец: \\
+$$
+\begin{cases}
+	\phi(a+b) = \phi(a) + \phi(b) \\
+	\phi(ab) = \phi(a) * \phi(b):\quad(a, 0)*(b, 0) = (ab - 0, 0 + 0) = (ab, 0)
+\end{cases}
+$$
+
+$\C \supseteq \phi(\R) = \{(a, 0) | a \in \R\}$
+
+$\phi(\R) \cong \R$, поэтому говорят, что $\R \subseteq \C$, имея в виду, что $\phi(\R) \subseteq \C$
+
+$i = (0, 1) \Ra i^2 = (-1, 0)$
+\begin{Def}
+	$(a, b) = (a, 0)*(1, 0) + (b, 0)*(0, 1) = a + bi$ - алгебраическая запись числа.\\
+	\hspace*{1cm}$a$ называется вещественной частью комплексного числа($a = Re(z), z \in \C$) \\
+	\hspace*{1cm}$b$ называется мнимой частью комплексного числа($b = Im(z), z \in \C$) 
+\end{Def}  
+
+\begin{Def}
+	$z \in \C,~z = a + bi,~a, b \in \R$ \\
+	\hspace*{1cm} $\overline{z}$ называется комплексно сопряжённым с $z$, если $\overline{z} = a - bi$ 
+\end{Def}
+\begin{Rem}
+	Сопряжение $\equiv$ симметрия относительно вещественной оси. \\
+	Рисунок1.
+\end{Rem}
+
+\underline{Cвойства:}
+\begin{itemize}
+\item[1.] $\overline{\overline{z}} = z$
+\item[2.] $z = \overline{z} \Lra z \in \R$
+\item[3.] $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$
+\item[3'.] $\overline{z_1 + z_2 + \dots + z_n} = \overline{z_1} + \overline{z_2} + \dots + \overline{z_n}$ (По индукции из св-ва 3.)
+\item[4.] $\overline{z_1*z_2} = \overline{z_1} * \overline{z_2}$
+\item[4'.] $\overline{z_1 * z_2 * \dots * z_n} = \overline{z_1} * \overline{z_2} * \dots * \overline{z_n}$ (По индукции из св-ва 4.)
+\item[5.] $f \in \R[x]~f = a_0 + a_1x + a_2x^2 + \dots + a_nx^n$ Тогда: $\overline{f(z)} = f(\overline{z})$
+\item[6.] \begin{itemize}
+			\item[\bullet] $z + \overline{z} \in \R$ 
+			\item[\bullet] $z*\overline{z} \in \R,~z*\overline{z} \ge 0$
+			\item[\bullet] $z*\overline{z} \Lra z = 0$
+		 \end{itemize}	
+		 Два последних пункта следуют из того, что $z*\overline{z} = a^2 + b^2$
+\begin{proof}
+Только 5 свойство:
+$f(z)=a_0 + a_1z + \dots + a_nz^n$
+$\overline{f(z)} = \overline{a_0 + a_1z + \dots + a_nz^n} = \overline{a_0} + \overline{a_1z} + \dots + \overline{a_nz^n} = \overline{a_0} + \overline{a_1} \cdot \overline{z} + \dots + \overline{a_n} \cdot \overline{z^n} = a_0 + a_1\overline{z} + \dots + a_n\overline{z^n} = a_0 + a_1\overline{z} + \dots + a_n{\overline{z}}^n = f(\overline{z})$
+\end{proof}   
+\\
+
+$\overline{z}$(Сопряжение): $\C \mapsto \C$ - гомоморфизм из $\C$ в $\C$:\\
+$$
+	\begin{cases}
+	\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2} \\
+	\overline{z_1 \cdot z_1} = \overline{z_1} \cdot \overline{z_2}
+	\end{cases}
+$$
+
+$\overline{z} \cdot \overline{z} = id \Ra $ сопряжение - нетождественный изоморфизм из $\C$ на себя(автоморфизм).
+\begin{Def}
+	Автоморфизм - изоморфизм поля с самим собой.
+\end{Def}
+\item[7.] $z \ne 0,~z \cdot \overline{z} = |z|^2,~|z| \ne 0$(т.к. $z \ne 0$) \\
+$$ z \cdot \frac{\overline{z}}{|z|^2} = 1 \Ra \boxed{z^{-1} = \frac{\overline{z}}{|z|^2} = \frac{a - bi}{a^2 + b^2}} $$ \\
+PS: определение и проч. про модуль в следующем вопросе.
+\end{itemize}
+
