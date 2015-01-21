@@ -1,0 +1,27 @@
+\section{Характеристика кольца}
+$A$ - кольцо с $1$\\
+
+\begin{Def}
+	Характеристика кольца - наименьшее $n > 0$, т.ч. $\underbrace{1+...+1}_{n} = 0$
+		$$ \mathrm{char} A = n $$
+	Если такого $n$ нет, тосчитается, что $\mathrm{char} A = 0$\\
+\end{Def}
+
+\textbf{Примеры:}
+	$$ \mathrm{char} \Z = 0, \mathrm{char} \Q = 0, \mathrm{char} \R = 0 $$
+	$ \mathbb{F}_2, \mathbb{F}_3$ - поля из 2-х и 3-х элементов соответсвенно\\
+	$$ \mathrm{char} \mathbb{F}_2 = 2, \mathrm{char} \mathbb{F}_3 = 3 $$
+
+\begin{Rem} 
+	$A$ - поле $\Ra$ $\mathrm{char} A$ либо $0$, либо простое число
+\end{Rem}
+
+\begin{proof}
+	\begin{enumerate}
+	\item $\forall n \underbrace{1 + ... + 1}_{n} \neq 0 \Ra \mathrm{char} A = 0$
+	\item $\mathrm{char} A > 0 \underbrace{1 + ... + 1}_{n} = 0, n > 1$ т.к. в поле $1 \neq 0$\\
+	$n = ab, 1 < a, b < n$ \\
+	по дистрибутивности $\Ra \underbrace{1+...+1}_a = 0 \vee \underbrace{1+...+1}_b = 0 \Ra$
+	наименьшее $n$, чтобы $\underbrace{1 + ... + 1}_{n} = 0$ должно быть простым
+	\end{enumerate}
+\end{proof}

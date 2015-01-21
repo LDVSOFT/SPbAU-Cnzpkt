@@ -1,0 +1,28 @@
+\section{Мультипликативная группа кольца}
+
+\begin{Def}	 
+	$A$ - кольцо с 1\\
+	$A^* = \lbrace a \in A: \exists b \in A ab = ba = 1 \rbrace$\\
+	$(A^*, \cdot)$ - мультипликативная группа кольца\\
+\end{Def}
+
+\begin{theorem}{}
+	$A^*$ - группа по умножению\\
+\end{theorem}
+\begin{proof}
+	$$ A^* \ni 1_A $$
+	$$ A^* \times A^* \rightarrow A^* $$
+	$$ a_1, a_2 \in A \exists b_1, b_2 : a_1b_1 = b_1a_1 = 1 \wedge a_2b_2 = b_2a_2= 1 $$
+	$$ (a_1a_2)(b_1b_2) = a_1(a_2b_2)b_1 = a_1b_1 = 1 $$
+	$$ (b_2b_1)(a_1a_2) = b_2(b_1a_1)a_2 = b_2a_2 = 1 $$
+	$b_2b_1$ - обратный к $a_1a_2$\\
+	$$ \forall a \in A^* 1 \cdot a = a \cdot 1 = a $$
+	$$ a \in A^* \Rightarrow \exists b ab = ba = 1 \Rightarrow b \in A^*$$
+	обратный к $b$ - это $a$ 
+\end{proof}
+	 
+\textbf{ Примеры: }
+\begin{itemize}
+	\item $K$ - поле, $K^* = K \setminus \lbrace 0 \rbrace$
+	\item $\Z, \Z^* = {-1, 1}$
+\end{itemize}

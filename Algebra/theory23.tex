@@ -1,0 +1,69 @@
+\section{Степень многочлена}	
+	Алтернативная запись:\\
+		$ a = (a, 0, 0, ...)$\\		
+		$ x = (0, 1, 0, ...)$\\		
+		$ x^i = (0, ..., \underbrace{1}_{i-ая позиция}, ...)$\\
+		$ (a_0, a_1, a_2, ...) = (a_0, 0, 0, ...) + (0, a_1, 0, 0, ...) + ... = $\\
+		$= (a_0, 0, 0, ...) \cdot (1, 0, 0, ...) + (0, a_1, 0, 0, ...) \cdot (0, 1, 0, 0, ...) + ... = a_0 + a_1x + a_2x^2 + ... + a_nx^n$ - альтернативная запись в форме многочлена\\
+	
+\begin{Def}
+	$ A[x] = \lbrace a_0 + a_1x + ... + a_nx^n | n \in \N \cup \lbrace 0 \rbrace \wedge a_i \in A \rbrace$\\
+	$ f \in A[x]$ - многочлен
+\end{Def}
+	
+\begin{Def}
+	$ f = a_0 + a_1x + ... + a_nx^n, a_n \neq 0, f \neq 0$	\\
+	$n$ - степень многочлена $f$, $n = \deg f$\\
+	$f = 0 \Ra \deg f = - \infty$
+\end{Def}
+	 
+\begin{theorem}{}
+	\begin{enumerate}
+	\item $deg(f + g) \leq max(\deg f, \deg g)$
+	\item $deg(fg)  \leq \deg f + \deg g)$
+	\begin{Rem}
+		Если $A$ - область целостности, то $\deg (fg) = \deg f + \deg g$
+	\end{Rem}
+	\end{enumerate}		
+\end{theorem}			 
+
+\begin{proof}
+	\begin{enumerate}
+	\item следует из доказательства замкнутости относительно сложения:\\
+	$f = a_0 + ... + a_nx^n \wedge a_n \neq 0$\\
+	$g = b_0 + ... + b_mx^m \wedge a_m \neq 0$
+	\item $fg = c_0 + c_1 + ... + c_{n+m}x^{n+m} + \underbrace{0 + ... }_{все нули}$\\
+	очевидно, что $\deg (fg) = \deg f + \deg g$\\
+	\item для области целостности:\\
+	$a_n \neq 0, b_m \neq 0$\\
+	$c_{n+m} = a_nb_m \neq 0 \Ra \deg (fg) = deg f + def g$\\
+	Если $f = 0 \vee g = 0$, тогда $\deg (fg) = \underbrace{\deg f}_{-\infty} + \underbrace{\deg g}_{-\infty} = -\infty \Lra fg = 0$
+	\end{enumerate}
+\end{proof}	 
+
+\begin{conseq}
+	Если $A$ - область целостности, то и $A[x]$ - область целостности
+\end{conseq}
+
+\begin{proof}
+	$f, g \neq 0$\\
+	$\deg f, \deg g \geq 0$\\
+	$\deg (fg) \geq 0 \Ra fg \neq 0$
+\end{proof}
+	 
+\begin{Rem}
+	$A = \Z / 4 \Z, f = 2x, g = 2x^2 \Ra fg = 4x^2 = 0$ 
+\end{Rem}	 
+	 
+\begin{conseq}
+	$A$ - область целостности $\Ra (A[x])^* = A^*$ 
+\end{conseq}	 
+	 
+\begin{proof}
+	$"\Ra"$
+		$fg = 1 ?$\\
+		$\deg f + \deg g = 0$ многочлены вида $(*, 0, ...)$\\
+		$\deg f = \deg g = 0 \Ra f, g \in A: fg = 1$\\
+	$"\La"$
+		если элемент обратим в кольце $A$, то он обратим и в кольце многочленов
+\end{proof}
