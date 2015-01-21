@@ -1,0 +1,29 @@
+﻿\section{Метод Лагранжа}
+
+\begin{tabular}{c|c|c}
+$x_1$ & $x_2 \ldots x_i$ & $x_n$\\
+\hline
+0 & 0 \ldots 1 & 0\\
+\end{tabular}
+
+$deg L_i < n$
+
+$L_i = \frac{(x - x_1) \ldots (x - x_{i - 1})(x - x_{i + 1}) \ldots(x - x_n)}{(x_i - x_1) \ldots (x_i - x_n)}$
+
+\begin{tabular}{c|c|c}
+$x_1$ & $x_2 \ldots$ & $x_n$\\
+\hline
+$y_1$ & $y_2 \ldots$ & $y_n$\\
+\end{tabular}
+
+$$f = y_1L_1 + y_2L_2 + \ldots + y_n L_n$$
+$$f(x_i) = \sum_{j = 1}^{n}y_jL_j(x_i) = y_iL_i(x_i) = y_i$$
+$$f(x) = \sum_{k = 1}^{n}y_kL_k$$
+$$L_k(x) = \frac{(x - x_1) \ldots (x - x_n)}{(x_k - x_1) \ldots (x_k - x_n)}$$
+$$g(x) = (x - x_1) \ldots (x - x_n)$$
+Числитель $L_k = \frac{g(x)}{(x - x_k)}$
+$$g'(x) = 1(x - x_2)* \ldots * (x - x_n) +$$
+$$(x - x_1)1 \ldots (x - x_n) + \ldots$$
+$g'(x_k)$ ~--- знаменатель $L_k$
+$deg f \le n$
+$$f(x) = \sum_{k = 1}^{n}f(x_k)\frac{g(x)}{(x - x_k)g'(x_k)}$$ 
