@@ -1,0 +1,46 @@
+\section{Конструкция комплексных чисел, как множества пар.}
+
+% \mathds{R} - вещественные
+
+\begin{flushleft}
+$\R^2 = \{(a, b)~|~a, b \in \R\}$ \\
+Operations:
+\begin{itemize} 
+\item $+$~: $\R^2 \mapsto \R^2$ \\
+$(a, b) + (c, d) \mapsto (a + c, b + d) $
+\item $*$~: $\R^2 \mapsto \R^2$ \\
+$(a, b)*(c, d) \mapsto (ac - bd, ad + bc)$
+\end{itemize}
+\begin{theorem}{}
+	$\R^2$ с введёнными операциями является полем.
+\end{theorem}
+\begin{Def}
+	Это поле называется полем комплексных чисел $\C$ (Complex).
+\end{Def}
+\begin{proof}
+	\underline{Упр.} \\
+	Некотрые заметки:
+	\begin{enumerate}
+	\item $0_c = (0, 0)$
+	\item $-(a, b) = (-a, -b) $
+	\item $(1, 0) * (a, b) = (a, b) $
+	\item$ (a, b) \ne 0,~(a, b)^{-1}-?$ \\
+	$$(a, b)^{-1} = (c, d) \Lra (a, b)*(c, d) = (1, 0)$$
+	$$
+	+\begin{cases}
+	ac - bd = 1 | \cdot a,~\cdot (-b) \\
+	bc + ad = 0 | \cdot b,~\cdot a 
+	\end{cases}
+	$$
+	$$
+	\begin{cases}
+	(a^2 + b^2) \cdot c = a \\
+	(a^2 + b^2) \cdot d = -b
+	\end{cases}
+	$$
+	$$ \Ra a = \frac{a}{a^2 + b^2},~d = \frac{-b}{a^2 + b^2}$$
+	Найденные значения корректны, т.к. $(a, b) \ne 0 \Ra a^2 + b^2 > 0$
+	\end{enumerate}
+\end{proof}
+
+\end{flushleft}
