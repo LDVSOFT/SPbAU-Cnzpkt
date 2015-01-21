@@ -1,0 +1,40 @@
+\section{Теорема о деление с остатком}
+\begin{theorem}{}
+	$A$ - коммутативное кольцо с $1$
+	$f, g \in A[x]$\\
+	$f = a_0 + a_1x + a_2x^2 + ... + a_nx^n, n = \deg f, a_n \in A^*$\\
+	тогда $\exists q, r \in A[x] :  g = qf + r, \deg r < \deg f$\\
+\end{theorem}
+
+\begin{Rem}
+	Если $A$ - область целостности, то такое представление единственно\\
+\end{Rem}
+
+\begin{proof}
+	\textbf{Существоване:}\\
+	Индукция по $m = \deg g$:\\
+	\textbf{База:} $m < n$\\
+	$$ q = 0, r = g $$
+	\textbf{Переход:} доказали для всех многочленов $\deg g < m$, докажем для $m$
+	$$ g = b_mx^m + ... + b_0 $$
+	$$ g_1 = g - b_m a_n^{-1}x^{m-n}f $$
+	коэффицент при $x^m$ в $g_1$: $b_m - b_m a_n^{-1} a_n = 0 \Ra \deg g_1 < m$\\
+	по предположению индукции $g_1 = fq_1 + r_1, \deg r_1	< \deg f $, тогда:
+		$$ r = r_1 $$
+		$$ q = q_1 + b_m a_n^{-1} x^{m-n} $$
+		$$ g = fq	+ r $$
+		
+	\textbf{Единственность:}\\
+	$A$ - область целостности\\
+	$$ g = fq + r = f \tilde{q} + \tilde{r}, \deg r, \deg \tilde{r} < f$$
+	$$ f (q - \tilde{q}) = \tilde{r} - r $$
+	если $q - \tilde{q} \neq 0$, то степень левого многочлена $\geq \deg f$ и степень правого $< deg f$ $\Ra$ 
+	$q -\tilde{q} = 0, r - \tilde{r} = 0 \Ra q = \tilde{q}, r = \tilde{r}$
+\end{proof}
+
+\begin{Rem}
+	условие обратимости старших коэффицентов существенно:
+	$A = \Z$\\
+	$f = 2x, g = x^2 + 1$\\
+	в $\Z[x]$ разложения: $g = fq + r, q, r \in \Z[x], deg r < deg f$ - не существует
+\end{Rem}
