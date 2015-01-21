@@ -13,10 +13,8 @@ $$\left(\begin{matrix}z_1 & w_1 \\ -\bar w_1 & \bar z_1\end{matrix}\right) \left
 Свойства сложения уже видны. Единица есть. Найдём обратный:
 $$\left(\begin{matrix}z & w \\ -\bar w & \bar z\end{matrix}\right)\left(\begin{matrix}z' & w' \\ -\bar{w'} & \bar{z'}\end{matrix}\right) = \left(\begin{matrix}1 & 0 \\ 0 & 1\end{matrix}\right) 
 \Lra \left\{\begin{aligned}zz'-w\bar{w'} &= 1 \\ zw'+w\bar{z'} &= 0\end{aligned}\right.\xLongleftrightarrow{z, w \ne 0} \left\{\begin{aligned}z' &= \bar z\frac1{|z|^2+|w|^2} \\ w' &= -w\frac1{|z|^2+|w|^2}\end{aligned}\right.$$
-Остальные проверять \textit{скууууучно}.
 \end{proof}
 
-$$\left(\begin{matrix}a + bi & c+di \\ -c+di & a-bi\end{matrix}\right) = a \left(\begin{matrix}1 & 0 \\ 0 & 1\end{matrix}\right) + b \left(\begin{matrix}i & 0 \\ 0 & -i\end{matrix}\right) + c\left(\begin{matrix}0 & 1 \\ -1 & 0\end{matrix}\right) + d\left(\begin{matrix}0 & i \\ i & 0\end{matrix}\right) = a\mathbb{1} + b\mathbb{i} + c\mathbb{j} + d\mathbb{k}$$
-
-$$\mathbb{i}^2 = \mathbb{j}^2 = \mathbb{k}^2 = -\mathbb{1}$$
-$$\mathbb{ij} = \mathbb{k} = -\mathbb{ji}$$
+Коммутативности нет:
+$$\left(\begin{matrix}i & 0 \\ 0 & -i\end{matrix}\right) \left(\begin{matrix}0 & 1 \\ -1 & 0\end{matrix}\right) = \left(\begin{matrix}0 & i \\ i & 0\end{matrix}\right)$$
+$$\left(\begin{matrix}0 & 1 \\ -1 & 0\end{matrix}\right) \left(\begin{matrix}i & 0 \\ 0 & -i\end{matrix}\right) = \left(\begin{matrix}0 & -i \\ -i & 0\end{matrix}\right)$$
