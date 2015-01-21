@@ -1,0 +1,66 @@
+﻿\section{Метод Ньютона}
+\begin{Def}
+$A$ ~--- поле.
+\begin{tabular}{c|c|c}
+$x_1$ & $x_2 \ldots$ & $x_n$\\
+\hline
+$y_1$ & $y_2 \ldots$ & $y_n$\\
+\end{tabular}
+
+$x_i \ne x_j$
+
+Интерполяционная задача: найти многочлен f, deg f< n, $f(x_i) = y_i, i = 1, \ldots, n$
+
+Пусть f имеет решение f
+$$g = (x - x_1) \ldots (x - x_n)$$
+
+$f_1 = f + gh$ ~--- тоже решение.
+
+$f_1(x_1) = f(x_i) + g(x_i)h(x_i) = f(x_i) = y_i$
+
+\end{Def}
+
+\begin{theorem}{Единственность}
+В данной постановке задача имеет не более одного решения. 
+\end{theorem}
+
+\begin{proof}
+Пусть f, $f_1$ ~--- решение одной задачи.
+
+$f(x_i) = f_1(x_i) = y_i, deg f, deg f_1 < n$
+
+$f - f_1$ принимают 0 в $x_1 \ldots x_n$
+
+$deg(f - f_1) < n \Ra f - f_1 = 0 \Ra f = f_1$
+\end{proof}
+
+{\bf Метод Ньютона}   
+\begin{tabular}{c|c|c}
+$x_1$ & $x_2 \ldots$ & $x_n$\\
+\hline
+$y_1$ & $y_2 \ldots$ & $y_n$\\
+\end{tabular}
+$f_i(x), deg f_i < i$
+
+$f_i$ решает интерприционную задачу на первых i точках.
+
+\begin{enumerate}
+\item i = 1
+   $f_1(x) = y_1$
+\item $i \to i + 1$
+
+$$f_i \to f_{i + 1}$$
+$$f_{i + 1}(x) = f_i(x) + c_i(x - x_1)\ldots(x - x_i)$$
+$$y_{i + 1} = f_{i + 1}(x_{i + 1}) = f_i(x_{i + 1}) + c_i(x_{i + 1} - x_1) \ldots (x_{i + 1} - x_i)$$
+$$c_i = \frac{y_{i + 1} - f_i(x_{i + 1})}{(x_{i + 1} - x_{1}) \ldots (x_{i + 1} - x_{i})}$$
+$$deg f_{i + 1} < i + 1$$
+
+\end{enumerate}
+
+
+
+\begin{Rem}
+$c_1 = \frac{y_2 - y_1}{x_2 - x_1}$
+\end{Rem}
+
+                    
