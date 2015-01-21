@@ -1,0 +1,69 @@
+﻿\section{Биномиальная формула}
+\begin{Def}
+$$(((A[x_1])[x_2])[x_3] \ldots )[x_n]$$
+кольцо многочленов от n переменных.
+$$(A[x_2])[x_1] = (A[x_1])[x_2]$$
+$$x_1 \to x_1$$
+$$x_2 \to x_2$$
+
+$$\sum c_{i_1, i_2}x_{1}^{i_1}x_2^{i_2}$$
+$A[x_1, \ldots, x_n]$ ~--- кольцо многочленов от нескольких переменных.
+$$\sum c_{i_1, \ldots, i_n}x_1^{i_1}\ldots x_n^{i_n} $$
+\end{Def}
+
+{\bf Биномиальная формула:} $(x = y)^n = ?$
+{\bf Биномиальные коэффициенты:} $C_n^k = \frac{n!}{k!(n - k)!}$
+
+\begin{lemma} 
+\begin{enumerate}
+\item $C_n^0 = 1$
+\item $C_n^n = 1$
+\item $C_n^k + C_n^{k + 1} = C_{n + 1}^{k + 1}$
+\item $C_n^{k} = C_{n}^{n - k}$
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+$$C_n^k + C_n^{k + 1} = \frac{n!}{k!(n - k)!} + \frac{n!}{(k + 1)!(n - k - 1)!} = $$
+$$= \frac{n!(k + 1) + n!(n - k)}{(k + 1)! \ldots (n - k)!} = \frac{n!(n + 1)}{(k + 1)!(n + 1 - (k + 1))!} = C_{n + 1}^{k + 1}$$
+\end{proof}
+
+\begin{Def}
+\begin{tabular}{c|ccccc}
+-&0&1&2&3&4\\
+\hline
+0&1&-&-&-&-\\
+1&1&1&-&-&-\\
+2&1&2&1&-&-\\
+3&1&3&3&1&-\\
+4&1&4&6&4&1\\
+\end{tabular}
+\end{Def}
+
+\begin{theorem}{Биномиальная формула}
+$$(x + y)^k = \sum_{k = 0}^nC_n^kx^ky^{n - k}$$
+\end{theorem}
+
+\begin{proof}
+Индукция по n
+    \begin{enumerate}
+        \item n = 0
+         $$1 = C^0_0x^0y^0 = 1$$
+        \item n = 1
+         $$x + y = C_1^0x^1y^0 + C_1^1x^0y^1$$
+        \item $n \to n + 1$
+        $$(x + y)^{n + 1} = (x + y)^{n}(x + y) = (\sum_{k = 0}^{n}C_n^k)x^ky^{n - k})(x + y) = $$
+        $$ = \sum_{k = 0}^{n}C_n^kx^{k + 1}y^{n - k} + \sum_{k = 0}^{n}C_n^kx^ky^{n - k + 1} = $$
+        $$ = C_n^nx^{n + 1} + \sum_{k = 0}^{n - 1}C_n^kx^{k + 1}y^{n - k} + \sum_{k = 1}^{n}C_n^kx^ky^{n - k + 1} + C_n^0y^{n + 1} = $$
+        $$ = C_{n + 1}^{n + 1}x^{n + 1} + \sum_{k = 1}^{n}C_n^{k - 1}x^{k}y^{n + 1 - k} + \sum_{k = 1}^{n}C_n^kx^ky^{n - k + 1} + C_{n + 1}^0y^{n + 1} = $$
+        $$ = C_{n + 1}^{n + 1}x^{n + 1} + \sum_{k = 1}^{n}(C_n^{k - 1} + C_n^{k - 1})x^{k}y^{n + 1 - k} + C_{n + 1}^0y^{n + 1} = $$
+        $$ = \sum_{k = 0}^{n + 1}C_{n + 1}^{k}x^{k}y^{n + 1 - k}$$
+    \end{enumerate}
+\end{proof}
+
+\begin{conseq}
+\begin{enumerate}
+\item $\sum_{k = 0}^{n}C_n^k = 2^k$
+\item $\sum_{k \text{четное}} C_n^k = 2^{n - 1}$
+\item $\sum_{k \text{нечетное}} C_n^k = 2^{n - 1}$
+\end{enumerate}
+\end{conseq}
