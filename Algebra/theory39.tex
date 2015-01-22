@@ -1,19 +1,24 @@
 \section{Формула Муавра}
 
 \begin{theorem}{}
-$z = r(\cos \phi + i \sin \phi):\quad r = |z|, \phi = arg(z), z \ne 0, n \in \Z$ \\
-\hspace*{1cm}Тогда $z^n = r^n(\cos{\phi n} + i \sin{ \phi n})$
+$z = r(\cos \phi + i\sin \phi)$, $z \ne 0$, $n \in \Z$. Тогда 
+\begin{gather*}
+z^n = r^n(\cos n\phi + i\sin n\phi)
+\end{gather*}
 \end{theorem} 
 \begin{proof}
 \begin{itemize}
-\item Если $n \in \N$, то очевидно.
-\item $n = 0$, 1 = 1.
-\item $n = -1:$ 
-$$z^{-1} = \frac{\overline{z}}{|z|^2} = \frac{r\overline{(\cos \phi + i \sin \phi)}}{r^2} = r^{-1}(\cos \phi - i \sin \phi) = r^{-1}(\cos{-\phi} + i \sin{-\phi})$$ 
-чтд.
-\item Общий случай: $n < 0$.
-$$z^n = (z^{-1})^n = (r^{-1}(\cos{-\phi} + i \sin{-\phi}))^{|n|} = r^{-|n|}( \cos(-|n| \phi) + i \sin(-|n| \phi)) = r^n(\cos{n \phi} + i \sin{n \phi})$$
-чтд.
+\item Если $n \in \N$, то очевидно из умножения в тригинометрической форме.
+\item Если $n = 0$, то написано $1 = 1$.
+\item Если $n = -1$:
+\begin{gather*} 
+z^{-1} = \frac{\bar z}{|z|^2} = \frac{r\overline{(\cos \phi + i \sin \phi)}}{r^2} = r^{-1}(\cos \phi - i \sin \phi) = r^{-1}(\cos(-\phi) + i\sin(-\phi))
+\end{gather*}
+\item Если $n < 0$:
+\begin{gather*}
+z^n = \left(z^{-1}\right)^n = \left(r^{-1}(\cos{-\phi} + i \sin{-\phi})\right)^{|n|} = \\ 
+= r^{-|n|}(\cos(-|n| \phi) + i \sin(-|n| \phi)) = r^n(\cos{n \phi} + i \sin{n \phi})
+\end{gather*}
 \end{itemize}
 \end{proof}
 
