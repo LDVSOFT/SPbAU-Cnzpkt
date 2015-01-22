@@ -1,0 +1,30 @@
+\section{теорема Безу}
+\begin{theorem}{}
+\textbf{(Безу)}\\
+	$A$ - коммутативное кольцо с $1$
+	$$ c \in A, f \in A[x] \Ra \exists q \in A[x]: f(x) = (x - c)q(x) + f(c) $$
+\end{theorem}
+
+\begin{proof}
+	Рассмотрим $x - c$, по теоремо о делении с остаток получаем:
+	$$ f(x) = (x - c)q(x) + r_0, \deg r_0 < \deg (x - c) = 1 $$
+	$$ r = r_0 \in A $$
+	$$ f(x) = (x - c)q(x) + r_0 $$
+	$$ f(c) = (c - c)q(c) + r_0 $$
+	$$ f(c) = r_0 \Ra f(x) = (x - c)q(x) + r_0 $$
+\end{proof}
+
+\begin{Def}
+	$A, B, A \subseteq B$, коммутативные с 1\\
+	$f \in A[x]$\\
+	$c \in B$ - корень $f$, если $f(c) = 0$\\
+\end{Def}
+
+\begin{conseq}
+	$c$ - корень $\Lra$ $(x - c) | f$\\
+\end{conseq}
+
+\begin{proof}
+	$"\La"$	$f(x) = (x - c)g(x) \Ra f(c) = (c-c)g(c) = 0$ $\Ra$ $c$ - корень\\
+	$"\Ra"$	$f(c) = 0 \Ra$ теорема Безу $\Ra f(x) = (x-c)g(x) + f(c) = (x-c)g(x) \Ra (x-c) | f$
+\end{proof}
