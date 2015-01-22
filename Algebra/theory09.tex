@@ -1,36 +1,31 @@
 ﻿\section{Отношение эквивалентности}
 
 \begin{Def}
-    R отношение эквивалентности, если оно рефлексивное, симметричное и транзитивное $a \sim b$.
-    
-    A, R "--- отношение эквивалентности.
-    $a \in A [a] = \{b \in A| a \sim b\}$ "--- класс эквивалентности.  
+    $R$ "--- отношение эквивалентности, если оно рефлексивное, симметрично и транзитивно. Стандартное
+    обозначение: $a \sim b$.
+\end{Def}
+\begin{Def}
+    Для $a \in A$ определён
+    класс эквивалентности: $[a] = \{b \in A \mid a \sim b\}$
 \end{Def}
 
 \begin{theorem}{}
-$A,\sim$
-$a, b \in A$
-
-Тогда либо $[a]\cap [b] = 0$, либо $[a] = [b]$ 
+Пусть $a, b \in A$. Тогда либо $[a]\cap [b] = \varnothing$, либо $[a] = [b]$ 
 \end{theorem}
 
 \begin{proof}
 \begin{enumerate}
-\item $[a] \cap [b] = 0$ "--- все доказано.
-\item $\exists c \in [a] \cap [b]$
+\item $[a] \cap [b] = \varnothing$ "--- всё доказано. Заметим, что тогда $a \nsim b$, в противном случае $a, b \in [a], [b]$.
+\item $\exists c \in [a] \cap [b]$. Тогда $c \sim a$ и $c \sim b$ $\Ra a \sim b$.
 
-[a] = [b]?
+Покажем, что $[a] \subset [b]$ и $[b] \subset [a]$:
 
-$$x \in [a], a \sim x$$
-$$c \in [a], a \sim c \Ra c \sim a$$
-$$c \in [b], b \sim c$$
-$$b \sim c, c \sim a, a \sim x$$
-$$b \sim a, a \sim x$$
-$$b \sim x \Ra x \sim [b]$$
-
-$$[a] \subset [b]$$
-$$[b] \subset [a]$$
+\begin{enumerate}
+\item $x \in [a] \Ra x \sim a \Ra x \sim b \Ra x \in [b]$
+\item Аналогично
 \end{enumerate}
+\end{enumerate}
+
 \end{proof}
 
-Множество классов эквивалентности называется фактормножеством.
+Множество классов эквивалентности называется фактормножеством по отношению $R$.
