@@ -48,6 +48,7 @@
 %% Simpy adds cyrillic to maths!
 
 \frenchspacing %% One space before sentence, not two!
+\allowdisplaybreaks[4]
 
 %% Shortcuts:
 \def\la{\leftarrow}
@@ -172,6 +173,12 @@
 \DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\coDom}{coDom}
+\AtBeginDocument{\let\Re\relax}
+\AtBeginDocument{\newcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}}
+\AtBeginDocument{\let\Im\relax}
+\AtBeginDocument{\newcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}}
 \newcommand{\emod}[1]{\mathop{\equiv}\limits_{#1}}
 
 \newcommand{\Choose}[2]{{\left(#1 \atop #2\right)}}
