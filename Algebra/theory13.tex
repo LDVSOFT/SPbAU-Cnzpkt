@@ -15,7 +15,7 @@
 	\begin{enumerate}
 		\item $f(e_G) = e_H$
 		\item $f(x^{-1}) = (f(x))^{-1}$
-		\item $f(x) \subset H$
+		\item $f(G)$ "--- подгруппа $H$
 		\item $G \xrightarrow{f} H \xrightarrow{g} K$, $f$, $g$ "--- гомоморфизмы, тогда $g \circ f: G \to K$ "--- тоже гомоморфизм
 		\item $f: G \to H$ "--- изоморфизм, тогда $f^{-1}: H \to G$ "--- изоморфизм
 	\end{enumerate}
@@ -25,12 +25,17 @@
 		\item $f(e_G) = f(e_G e_G) = f(e_G)f(e_G) = e_H e_H = e_H$
 		\item $f(e_G) = f(x x^{-1}) = f(x)f(x^{-1}) = e_H \Ra f(x^{-1}) = (f(x))^{-1}$
 		\item
+		    Покажем замкнутость относительно операции $\cdot$
 		    \begin{gather*}
 			e_H \in f(G); \\
-			c, d \in f(G), \exists a, b \in G\colon c = f(a), d = f(b); \\
-			cd = f(a)f(b) = f(ab), cd \in f(G); \\
+			c, d \in f(G) \iff \exists a, b \in G \colon c = f(a), d = f(b); \\
+			cd = f(a)f(b) = f(ab) \Ra cd \in f(G); \\
 			\end{gather*}
-			По п. 2 $f(a)^{-1} = f(a^{-1}) \in G \Ra G$ "--- подгруппа(замкнутость относительно операции и взятия обратного).
+
+			Покажем замкнутость относительно взятия обратного (из пункта 2 теоремы):
+			\[f(a)^{-1} = f(a^{-1}) \in f(G)\]
+
+			Таким образом, $f(G)$ "--- подгруппа.
 		\item Пусть $a, b \in G$, тогда:
 			\[(g \circ f)(ab) = g(f(ab)) = g(f(a)f(b)) = g(f(a))g(f(b)) = (g \circ f)(a)(g \circ f)(b)\]
 		\item
