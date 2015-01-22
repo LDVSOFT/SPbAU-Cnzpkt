@@ -11,6 +11,8 @@
         \item $\exists n \forall a (f \circ \ldots \circ f)(a)  = a$
         \item f "--- инъекция.
     \end{enumerate}
+    \begin{enumerate}
+    \item
     $$a_0 = a$$
     $$a_i f^{-1}(\{a_i\}) \ne 0$$
     $$\exists a_{i + 1} \in f^{-1}(\{a_i\})$$
@@ -32,13 +34,14 @@
     $$f(f(\ldots f(a))) = a$$
     $$(f \circ f \circ \ldots)(a) = a$$
     $$\forall a \in A \exists n_a \ge 1 \ub{(f \circ \ldots \circ f)}_{n_a}(a) = a$$
-   
+    \item 
     $$k \in N \ub{(f \circ \ldots \circ f)}_{n_a k}(a) = a$$
     (индукция по k)
     
     $$N = \prod_{a \in A} n_a  \ub{(f \circ \ldots \circ f)}_{N}(a) = a$$
-    
+    \item
     $$a, b \in A$$
     $$f(a) = f(b)$$
     $$a = (\ub{f \circ \ldots \circ f}_{N - 1} \circ f)(a) = (\ub{f \circ \ldots \circ f}_{N - 1} \circ f)(b) = b$$
+    \end{enumerate}
 \end{proof}
