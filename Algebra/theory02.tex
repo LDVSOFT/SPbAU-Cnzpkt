@@ -1,99 +1,90 @@
 ﻿\section{Обратимые отображения и их свойства}
 
-$f: A \to B$
-
 \begin{Def}
-f "--- обратное справа, если $\exists g: B \to A$
+Пусть $f: A \to B$. Тогда $f$ обратимо справа, если $\exists g: B \to A \colon$ \[f \circ g = id_B\].
 
-$f \circ g = id_B$
+$f$ обратимо слева, если $\exists g: B \to A \colon$ \[g \circ f = id_A\].
 
-f "--- обратим слева, если $\exists g: B \to A$
+$f$ обратимо, если $\exists g: B \to A \colon$ \[g \circ f = id_A, f \circ g = id_B\].
 
-$g \circ f = id_A$
-
-f обратимо, если $\exists g: B \to A$
-
-$$g \circ f = id_A, f \circ g = id_B$$
-
-g "--- отображение, обратное к f.(обозначение $f^{-1}$)
+Здесь $g$ "--- отображение, обратное к $f$, обозначается $g=f^{-1}$.
 \end{Def}
 
 \begin{theorem}{}
 
 \begin{enumerate}
-\item f обратимо $\Lra$ f обратимо слава и справа.
-\item f обратимо, то обратное отображение единственно.
+\item $f$ обратимо $\iff$ $f$ обратимо слева и справа.
+\item $f$ обратимо $\Ra$ обратное отображение единственно.
 \end{enumerate}
 
-\end{theorem}
-
-\begin{proof}
-\begin{enumerate}
-\item f обратимо $\Ra$ f обратимо слева и справа.
-
-Если у f есть и левый и правый обратный, то они совпадают. 
-
-g "--- правый обратный к f, h "--- левый.
-
-$(h \circ f) \circ g = id_A \circ g = g$
-
-$h \circ (f \circ g) = h \circ id_B = h$
-
-$\Ra g = h$
-
-\item Пусть f обратимое и g и h "--- два обратных. В частности g "--- обратное справа, h "--- обратное слева.
-\end{enumerate}
-\end{proof}
-
-\begin{theorem}{}
-$f:A \to B, g:B \to C$
-
-$g \circ f: A \to C$
-
-\begin{enumerate}
-\item Если f, g обратимы справа, то и $g \circ f$ обратима справа.
-\item Если f, g обратимы слева, то и $g \circ f$ обратима слева.
-\item Если f, g обратимы, то $g \circ f$ обратима $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
-\end{enumerate}
 \end{theorem}
 
 \begin{proof}
 \begin{enumerate}
 \item
-$$u: B \to A, f \circ u = id_B$$
-$$v: C \to B g \circ v = id_C$$
-$$(g \circ f) \circ (u \circ v) = g \circ (f \circ (u \circ v)) = $$
-$$= g \circ ((f \circ u) \circ v) = g \circ (id_B \circ v) = g \circ v = id_C$$
+Покажем, что если у $f$ есть и левый и правый обратный, то они совпадают.
+Пусть $g$ "--- правый обратный к $f$, $h$ "--- левый, тогда:
+\begin{gather*}
+(h \circ f) \circ g = id_A \circ g = g; \\
+h \circ (f \circ g) = h \circ id_B = h; \\
+\Ra g = h\\
+\end{gather*}
 
-$u \circ v$ "--- правый обратный к $g \circ f$
+\item Пусть $f$ обратимо и $g$, $h$ "--- два обратных. В частности, $g$ "--- обратное справа, $h$ "--- обратное слева, то есть по п.1 они совпадают.
+\end{enumerate}
+\end{proof}
 
-\item аналогично
+\begin{theorem}{}
+Если $A \xrightarrow{f} B \xrightarrow{g} C$, то:
+
+\begin{enumerate}
+\item Если $f$, $g$ обратимы справа, то и $g \circ f$ обратимо справа.
+\item Если $f$, $g$ обратимы слева, то и $g \circ f$ обратимо слева.
+\item Если $f$, $g$ обратимы, то $g \circ f$ обратимо и $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item Из условия знаем, что существуют:
+\begin{gather*}
+u: B \to A, f \circ u = id_B; \\
+v: C \to B, g \circ v = id_C; \\
+\end{gather*}
+
+Покажем, что $u \circ v$ "--- правый обратный к $g \circ f$:
+\begin{gather*}
+(g \circ f) \circ (u \circ v) = g \circ (f \circ (u \circ v)) = \\
+= g \circ ((f \circ u) \circ v) = g \circ (id_B \circ v) = g \circ v = id_C;
+\end{gather*}
+
+\item Аналогично.
 
 \item 
-$$(g \circ f)(f^{-1} \circ g^{-1}) = g \circ ((f \circ f^{-1}) \circ g^{-1}) = g \circ (id_B \circ g^{-1}) = g \circ g^{-1} = id_C$$
-
-$$(f^{-1} \circ g^{-1})\circ(g \circ f) = f^{-1}(g^{-1} \circ g) \circ f = f^{-1} \circ id_B \circ f = f^{-1} \circ f = id_A$$
-
+\begin{gather*}
+(g \circ f)(f^{-1} \circ g^{-1}) = g \circ ((f \circ f^{-1}) \circ g^{-1}) = g \circ (id_B \circ g^{-1}) = g \circ g^{-1} = id_C; \\
+(f^{-1} \circ g^{-1})\circ(g \circ f) = f^{-1}(g^{-1} \circ g) \circ f = f^{-1} \circ id_B \circ f = f^{-1} \circ f = id_A;
+\end{gather*}
 \end{enumerate}
 \end{proof}
 
 \begin{conseq}{}
-Композиция сюръективных "--- сюръективна.
+Композиция сюръективных "--- сюръекция.
 
-Композиция инъективных "--- инъективна.
+Композиция инъективных "--- инъекцию.
 
 Композиция биективных "--- биекция.
-
 \end{conseq}
 
 \begin{theorem}{}
-$f: A \to B$ f "--- обратима, тогда $f^{-1}$ обратима и $(f^{-1})^{-1} = f$
+Если $f: A \to B$ и f обратима, тогда $f^{-1}$ обратима и $(f^{-1})^{-1} = f$
 \end{theorem}
 
 \begin{proof}
-$f \circ f^{-1} = id_{B}$
+\begin{gather*}
+f \circ f^{-1} = id_{B}; \\
+f^{-1} \circ f = id_A \Ra f \text{ "--- обратное к }f^{-1}
+\end{gather*}
 
-$f^{-1} \circ f = id_A \Ra f$ "--- обратное к $f^{-1}$
-
-В силу единственности обратного $(f^{-1})^{-1} = f$
+В силу единственности обратного $(f^{-1})^{-1} = f$.
 \end{proof}
