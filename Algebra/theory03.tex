@@ -1,33 +1,25 @@
 ﻿\section{Тождественное отображение}
 
-\begin{Def}
-$A, id_{A}: A \to A$
+\begin{Def} Пусть есть $A$. Тогда тождественное отображение $id_{A}: A \to A$ задаётся как:
 
-$\forall a \in A id_A(a) = a$
+$\forall a \in A\colon id_A(a) = a$.
 
-$id_A$ "--- тождественное  отображение множетсва A.
-
-$\Gamma_{id_A}$ = диагональ $A \times A \{(a, a)| a \in A\}$ 
+$\Gamma_{id_A}$ есть диагональ $A \times A$, то есть $\Gamma_{id_a} = \{(a, a) \mid a \in A\}$
 \end{Def}
 
 \begin{theorem}{}
-$f: A \to B$
+$f: A \to B$, тогда:
 
 $f \circ id_A = f =  id_B \circ f$
 \end{theorem}
 
 \begin{proof}
 
-Области определения и назначения совпадают. 
+Области определения и назначения совпадают.
 
-$\forall y \in B, id_{B}(y) = y$
-
-$a \in A$
-
-$(f \circ id_A)(a) = f(id_A(a)) = f(a)$
-
-$a \in A$
-
-$(id_B \circ f)(a) = id_B(f(a)) = f(a)$
+Пусть $a \in A$. Проверим первое равенство:
+\[(f \circ id_A)(a) = f(id_A(a)) = f(a)\]
+и второе:
+\[(id_B \circ f)(a) = id_B(f(a)) = f(a)\]
 
 \end{proof}
