@@ -15,9 +15,21 @@ $\sigma $-- нечетная, если $|Inv(\sigma)|$ нечетно.
 
 \begin{theorem}{$\sigma \in S_n, \tau = (i j)$ ~--- транспозиция. Тогда $\sigma$ и $\sigma\tau$ имеют различную четность.}
 \begin{proof}
-Не умаляя общности, будем считать, что $i < j$. Тогда\\
-$\sigma = (\sigma(1) \dotsc \sigma(i) \dotsc \sigma(j) \dotsc \sigma(n))$\\
-$\sigma\tau = (\sigma(1) \dotsc \sigma(j) \dotsc \sigma(i) \dotsc \sigma(n))$\\
+Не умаляя общности, будем считать, что $i < j$. Тогда
+\begin{gather*}
+\sigma=\left(
+\begin{matrix}
+1 & \cdots & i & \cdots & j & \cdots & n \\
+\sigma_1 & \cdots & \sigma_i & \cdots & \sigma_j & \cdots & \sigma_n \\
+\end{matrix}
+\right) \\
+\sigma\tau=\left(
+\begin{matrix}
+1 & \cdots & i & \cdots & j & \cdots & n \\
+\sigma_1 & \cdots & \sigma_j & \cdots & \sigma_i & \cdots & \sigma_n \\
+\end{matrix}
+\right)
+\end{gather*}
 
 $$
 	\begin{tabular}{|c|c|c|c|}
