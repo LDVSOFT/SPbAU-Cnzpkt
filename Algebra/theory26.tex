@@ -1,27 +1,32 @@
-\section{Характеристика кольца}
-$A$ - кольцо с $1$\\
-
+\section{Характеристика кольца. Теорема о характеристике поля}
 \begin{Def}
-	Характеристика кольца - наименьшее $n > 0$, т.ч. $\underbrace{1+...+1}_{n} = 0$
-		$$ \mathrm{char} A = n $$
-	Если такого $n$ нет, тосчитается, что $\mathrm{char} A = 0$\\
+	Характеристика кольца $A$ с единицей "--- это наименьшее $n > 0$ такое, что $\underbrace{1+\dots+1}_{n} = 0$.
+	Обозначается $\Char A = n$.
+	Если такого $n$ нет, то считается, что $\Char A = 0$.
 \end{Def}
 
-\textbf{Примеры:}
-	$$ \mathrm{char} \Z = 0, \mathrm{char} \Q = 0, \mathrm{char} \R = 0 $$
-	$ \mathbb{F}_2, \mathbb{F}_3$ - поля из 2-х и 3-х элементов соответсвенно\\
-	$$ \mathrm{char} \mathbb{F}_2 = 2, \mathrm{char} \mathbb{F}_3 = 3 $$
+\begin{exmp}
+	$\Char \Z = \Char \Q = \Char \R = 0$
+\end{exmp}
+\begin{exmp}
+	Пусть $\mathbb{F}_2$ и $\mathbb{F}_3$ "--- поля из 2 и 3 элементов, соответственно. Тогда:
+	\begin{gather*}
+	\Char \mathbb{F}_2 = 2 \\
+	\Char \mathbb{F}_3 = 3
+	\end{gather*}
+\end{exmp}
 
-\begin{Rem} 
-	$A$ - поле $\Ra$ $\mathrm{char} A$ либо $0$, либо простое число
-\end{Rem}
-
+\begin{theorem} 
+	Если $A$ "--- поле, то $\Char A$ либо $0$, либо простое число.
+\end{theorem}
 \begin{proof}
+	Два случая:
 	\begin{enumerate}
-	\item $\forall n \underbrace{1 + ... + 1}_{n} \neq 0 \Ra \mathrm{char} A = 0$
-	\item $\mathrm{char} A > 0 \underbrace{1 + ... + 1}_{n} = 0, n > 1$ т.к. в поле $1 \neq 0$\\
-	$n = ab, 1 < a, b < n$ \\
-	по дистрибутивности $\Ra \underbrace{1+...+1}_a = 0 \vee \underbrace{1+...+1}_b = 0 \Ra$
-	наименьшее $n$, чтобы $\underbrace{1 + ... + 1}_{n} = 0$ должно быть простым
+	\item $\forall n > 0 \colon \underbrace{1 + \dots + 1}_{n} \neq 0 \Ra \mathrm{char} A = 0$
+	\item $\Char A > 0 \colon \underbrace{1 + \dots + 1}_{n} = 0$. Тогда $n > 1$, так как в поле $1 \neq 0$.
+	От противного: пусть $n = ab, 1 < a, b < n$.
+	Рассмотрим $\underbrace{1+\dots+1}_a = A$ и $\underbrace{1+\dots+1}_b = B$, по дистрибутивности
+	знаем, что $AB=0$. Так как поле "--- область целостности, то $A=0$ или $B=0$, то
+	есть меньшим количеством единиц можно получить ноль, противоречие.
 	\end{enumerate}
 \end{proof}

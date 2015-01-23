@@ -2,39 +2,40 @@
 
 \begin{Def}
 $A$ "--- коммутативное кольцо с $1$.
+Введём кольцо многочленов от одной переменной $A[x]$ над кольцом $A$:
 \begin{gather*}
-A[x] = \{ \underbrace{a_1, a_2, \ldots, a_n, \ldots}_{\text{счётная последовательность}} \mid a_i \in A \land\text{почти все нули}\}
+A[x] = \{ \underbrace{a_0, a_1, a_2, \ldots, a_n, \ldots}_{\text{счётная последовательность}} \mid a_i \in A \land\text{почти все нули}\}
 \end{gather*}
-$A[x]$ "--- кольцо многочленов от одной переменной над кольцом $A$
 \end{Def}
 		 
 \begin{Rem}
-Почти все "--- все кроме конечного числа.
+<<Почти все>> "--- все, кроме конечного числа.
 \end{Rem}
 	 
 \begin{Def}	
 Сложение многочленов: 
 \begin{gather*}
-+\colon A[x] \times A[x] \ra A[x] \\ 
-(a_1, a_2, \ldots) + (b_1, b_2, \ldots) = (a_1 + b_1, a_2 + b_2, \ldots)
++\colon A[x] \times A[x] \to A[x] \\ 
+(a_0, a_1, a_2, \ldots) + (b_0, b_1, b_2, \ldots) = (a_0 + b_0, a_1 + b_1, a_2 + b_2, \ldots)
 \end{gather*}
 \end{Def}
 	
 \begin{Rem}
-$\exists n, m\colon \forall i > \max\{n, m\}\: a_i = 0 \land b_i = 0 \Ra a_i + b_i = 0$
+Сложение тоже порождает многочлен: пусть начиная с позиции $n$ в $a_i$ все нули,
+а начиная с позиции $m$ в $b_i$ все нули, тогда начиная с $\max(n, m)$ элементы $a_i+b_i$ все нули.
 \end{Rem}
 	 
 \begin{Def}	
 Умножение многочленов:
 \begin{gather*}
-\cdot\colon A[x] \times A[x] \ra A[x] \\
-(a_1, a_2, \ldots) \cdot (b_1, b_2, \ldots) = (c_1, c_2, \ldots) \\
+\cdot\colon A[x] \times A[x] \to A[x] \\
+(a_0, a_1, a_2, \ldots) \cdot (b_0, b_1, b_2, \ldots) = (c_0, c_1, c_2, \ldots) \\
 c_n = \sum_{i=0}^n a_ib_{n - i} = \sum_{i + j = n} a_ib_j
 \end{gather*}
 \end{Def}
 		 
 \begin{Rem}
-$\exists n, m\colon \forall i>n \land j>m\: a_i = 0 \land b_j = 0 \Ra \forall k > n + m\: c_k = 0 $
+$\exists n, m\colon \forall i>n, \forall j>m \colon a_i = 0 \land b_j = 0 \Ra \forall k > n + m\colon c_k = 0 $
 \end{Rem}
 	
 \begin{proof}
