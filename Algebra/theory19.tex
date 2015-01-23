@@ -1,19 +1,21 @@
 \section{Четность перестановки. Теорема об изменении четности перестановки при умножении на транспозицию. Следствия из неё.}
 
 \begin{Def}
-$\sigma \in S_n; i, j \in \{1, \dotsc, n\}. i, j $ образуют инферсию относительно $\sigma$, если $i < j$, а $\sigma(i) > \sigma(j)$.
+$\sigma \in S_n$, $i, j = 1..n$. $i$ и $j$ образуют инферсию относительно $\sigma$, если $i < j$, а $\sigma(i) > \sigma(j)$.
 \end{Def}
 \begin{Def}
-$INV(\sigma)$ -- множество всех инверсий относительно $\sigma$.
+$Inv(\sigma)$ "--- множество всех инверсий относительно $\sigma$.
 \end{Def}
 \begin{Def}
-$\sigma $-- четная, если $|Inv(\sigma)|$ четно.
+$\sigma$ "--- четная, если $|Inv(\sigma)|$ четно.
 \end{Def}
 \begin{Def}
-$\sigma $-- нечетная, если $|Inv(\sigma)|$ нечетно.
+$\sigma$ "--- нечетная, если $|Inv(\sigma)|$ нечетно.
 \end{Def}
 
-\begin{theorem}{$\sigma \in S_n, \tau = (i j)$ ~--- транспозиция. Тогда $\sigma$ и $\sigma\tau$ имеют различную четность.}
+\begin{theorem}{}
+$\sigma \in S_n, \tau = (i j)$ ~--- транспозиция. Тогда $\sigma$ и $\sigma\tau$ имеют различную четность.
+\end{theorem}
 \begin{proof}
 Не умаляя общности, будем считать, что $i < j$. Тогда
 \begin{gather*}
@@ -76,16 +78,18 @@ $$
 
 	\end{tabular}
 $$	
-Как глубокоуважаемый читатель уже догадался, самое интересное здесь - это последние 6 стрк.\\
-$r = \{k | i < k < j \wedge (i k)$ образует инверсию $\}$\\
-$s = \{k | i < k < j \wedge (k j)$ образует инверсию $\}$\\
-$|Inv(\sigma\tau)| = |Inv(\sigma)| - r + (j - i - 1 - r) - s + (j - i - 1 - s) \pm 1 \Rightarrow$ четность изменилась.\\
+Как глубокоуважаемый читатель уже догадался, самое интересное здесь - это последние 6 строк.
+\begin{gather*}
+r = |\{k \mid i < k < j \land (i k)\text{ образует инверсию}\}| \\
+s = |\{k \mid i < k < j \land (k j)\text{ образует инверсию}\}| \\
+|Inv(\sigma\tau)| = |Inv(\sigma)| - r + (j - i - 1 - r) - s + (j - i - 1 - s) \pm 1
+\end{gather*}
+Таким обазом, чётность изменилась.
 \end{proof}
 
-\begin{theorem}{Следствия}
-\end{theorem}
+Следствия:
 \begin{enumerate}
-\item $\sigma = \sqcap_{j = 1}^r \tau_j, \tau_j$ -- транспозиция.\\
+\item $\sigma = \prod_{j = 1}^r \tau_j, \tau_j$ -- транспозиция.\\
 $\sigma$ четна(нечетна) $\Leftrightarrow$ число сомножителей четно(нечетно, соответственно).
 \begin{proof}\\
 $"\Leftarrow:" id$ четна. При каждом добавлении $\tau_j$ четность меняется.\\
@@ -98,8 +102,7 @@ $"\Rightarrow": \sigma$ четна, $r$ -- число транспозиций, 
 \begin{enumerate}
 \item Непусто($id$ четна)
 \item Замкнуто(по третьему следствию)
-\item Обратный элемент к $\sigma = \sqcap_{j = 1}^{2r} \tau_j$ -- это $\sigma^{-1} = \sqcap_{j = 1}^{2r} \tau_{2r + 1 - j}$ 
+\item Обратный элемент к $\sigma = \prod_{j = 1}^{2r} \tau_j$ -- это $\sigma^{-1} = \prod_{j = 1}^{2r} \tau_{2r + 1 - j}$ 
 \end{enumerate}
 \end{proof}
 \end{enumerate}
-\end{theorem}
