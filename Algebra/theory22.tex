@@ -58,14 +58,14 @@
 			\item ассоциативность:\\
 			$\alpha = (a_0, a_1, ...), \beta = (b_0, b_1, ...), \gamma = (c_0, c_1, ...)$\\
 			$\alpha\beta = d, (\alpha\beta)\gamma = e$\\
-			$\beta\alpha = f, \alpha(\beta\gamma) = g$\\
-			$ek = gk \forall k$
+			$\beta\gamma = f, \alpha(\beta\gamma) = g$\\
+			$e_k = g_k \forall k$
 			\begin{proof}
-				$$ ek = \sum_{i = 0}^k f_ic_{k-i} = \sum_{i = 0}^k(\sum_{j = 0}^i a_jb_{i-j})c_{k-i} = $$
+				$$ e_k = \sum_{i = 0}^k f_ic_{k-i} = \sum_{i = 0}^k(\sum_{j = 0}^i a_jb_{i-j})c_{k-i} = $$
 				\textit{меняем порядок суммирования}
 				$$ = \sum_{j = 0}^k(\sum_{i = j}^k a_jb_{i - j}c_{k - i}) = \sum_{j = 0}^k a_j(\sum_{i = j}^k b_{i - j}c_{k - i}) = $$
 				\textit{делаем замену $l = i - j$}
-				$$ = \sum_{j = 0}^k a_j(\sum_{l = 0}^{k - j} b_lc_{k - l - j}) = \sum_{j = 0}^k a_jf_{k-j} = gk$$
+				$$ = \sum_{j = 0}^k a_j(\sum_{l = 0}^{k - j} b_lc_{k - l - j}) = \sum_{j = 0}^k a_jf_{k-j} = g_k$$
 			\end{proof}
 		\end{enumerate}
 	\end{proof}
