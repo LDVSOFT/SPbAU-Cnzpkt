@@ -406,6 +406,23 @@ $\overline{z_1z_2} =
 			\hline
 		\end{tabular}\end{center}
 	\end{itemize}
+
+\item
+	Используем команды \verb'\textbf{}' и \verb'\textit{}' вместо '{\bf ...}' и '{\it ...}'.
+
+\item
+	Чтобы в больших формулах скобки подстраивались по размеру под внутренности
+	используем \verb'\left(...\right)'
+	(команды \verb'\left' и \verb'\right' должны образовывать правильную скобочную последовательность,
+	они <<вытягивают>> соответствующие символы по вертикали):
+	\begin{center}\begin{tabular}{|c|c|c|}
+		\hline Это... & ...верстается так & \\
+		\hline \verb'\[(a+b)^2\]'                        & \begin{minipage}{3cm}\[(a+b)^2\]\end{minipage} \ok \\
+		\hline \verb'\[\left(a+b\right)^2\]'             & \begin{minipage}{3cm}\[\left(a+b\right)^2\]\end{minipage} \ok \\
+		\hline \verb'\[(\frac{a+b}{c+d})^2\]'            & \begin{minipage}{3cm}\[(\frac{a+b}{c+d})^2\]\end{minipage} \bad \\
+		\hline \verb'\[\left(\frac{a+b}{c+d}\right)^2\]' & \begin{minipage}{3cm}\[\left(\frac{a+b}{c+d}\right)^2\]\end{minipage} \ok \\
+		\hline
+	\end{tabular}\end{center}
 \end{enumerate}
 
 \section{Особенности правописания}
@@ -442,6 +459,9 @@ $\overline{z_1z_2} =
 		\hline 123-го и 239-го \ok \\
 		\hline
 	\end{tabular}\end{center}
+
+\item
+	Заголовки: без точек в конце, с большой буквы. Например: <<Интегралы. Их свойства>>
 \end{enumerate}
 
 \section{Исходный код}
