@@ -148,7 +148,7 @@
 скорее относится к русскому языку, чем к математическому выражению, то её стоит вынести за доллары. Примеры:
 
 \begin{center}\begin{tabular}{|c|c|c|}
-\hline Пример & Код & \\
+\hline Это... & ...верстается так & \\
 \hline \verb!Имеется n слагаемых! & Имеется n слагаемых \bad \\
 \hline \verb!Имеется $n$ слагаемых! & Имеется $n$ слагаемых \ok \\
 \hline \verb!с графиком $\Gamma_f,$ обозначим! & с графиком $\Gamma_f,$ обозначим \bad \\
@@ -200,15 +200,64 @@ $$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
 \item \verb'exmp' для примеров.
 \end{enumerate}
 \item Вообще говоря, есть всякие сокращения для нужных символов (например, \verb'\Lra' для $\Lra$). Они помогают! Если вам нужно ещё "--- добавляйте в преамбулу на здоровье.
-\item В продолжение предыдущего пункта "--- абсолютно все операторы математичского режима прямым шрифтом (вот так: $\inf$, а не так: $inf$). Для этого в преамбулу можно добавлять \verb'\DeclareMathOperator', если вдруг такого оператора совсем нет (но скорее всего есть!).
+\item В продолжение предыдущего пункта "--- абсолютно все операторы математичского режима прямым шрифтом (вот так: $\inf$ (\verb'$\inf$'), а не так: $inf$ (\verb'$inf$')). Для этого в преамбулу можно добавлять \verb'\DeclareMathOperator', если вдруг такого оператора совсем нет (но скорее всего есть!).
 \item Некоторые правила набора символов
 \begin{itemize}
 \item Черта в множествах "--- \verb'\mid', а не \verb'|'.
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline Это... & ...верстается так & \\
+\hline \verb'$\{n | 2 \div n\}$' & $\{n | nx > y\}$ \bad \\
+\hline \verb'$\{n \mid 2 \div n\}$' & $\{n \mid nx > y\}$ \ok \\
+\hline
+\end{tabular}\end{center}
 \item Двоеточие в определении отношения и функции "--- \verb'\colon', а не \verb':'.
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline Это... & ...верстается так & \\
+\hline \verb'$f: \R \ra \R$' & $f:\R\ra\R$ \bad \\
+\hline \verb'$f\colon \R \ra \R$' & $f\colon\R\ra\R$ \ok \\
+\hline
+\end{tabular}\end{center}
 \item Нестрогие равенства "--- \verb'\leqslant' и \verb'\geqslant', а не \verb'\leq' и \verb'\geq' (возможно, мы просто переопределим эти комманды, и тогда достаточно коротких комманд).
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline Это... & ...верстается так & \\
+\hline \verb'$a \le b$' & $a \le b$ \bad \\
+\hline \verb'$a \leq b$' & $a \leq b$ \bad \\
+\hline \verb'$a \leqslant b$' & $a \leqslant b$ \ok \\
+\hline
+\end{tabular}\end{center}
 \item Черта над одной буквой "--- \verb'\bar', а не \verb'\overline'.
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline Это... & ...верстается так & \\
+\hline
+\begin{minipage}{6cm}
+\begin{verbatim}
+$\overline{z_1z_2} = 
+\overline{z_1}\overline{z_2}$
+\end{verbatim}
+\end{minipage}
+& $\overline{z_1z_2} = \overline{z_1}\overline{z_2}$ \bad \\
+\hline \verb'$\overline{z_1z_2} = \bar z_1 \bar z_2$' & $\overline{z_1z_2} = \bar z_1 \bar z_2$ \ok \\
+\hline
+\end{tabular}\end{center}
 \item Треугольные скобки "--- \verb'\left< \right>' или хотя бы \verb'\langle \rangle', но никак не \verb'< >'!
-\item Тире ставим так: \verb'"---', окружая пробелами.
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline Это... & ...верстается так & \\
+\hline \verb'$<G, \cdot>$' & $<G, \cdot>$ \bad \\
+\hline \verb'\langle G, \cdot \rangle' & $\langle G, \cdot \rangle$ \ok \\
+\hline \verb'\left<G, \cdot \right>' & $\left<G, \cdot \right>$ \ok \\
+\hline \verb'$<a, \cfrac23>$' & $<a, \cfrac23>$ \bad \\
+\hline \verb'\langle a, \cfrac23\rangle' & $\langle a, \cfrac23\rangle$ \bad \\
+\hline \verb'\left<a, \cfrac23\right>' & $\left<a, \cfrac23\right>$ \ok \\
+\hline
+\end{tabular}\end{center}
+\item Тире ставим так: \verb'"---', окружая пробелами (не минусиками "--- это дефисы!!!).
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline Это... & ...верстается так & \\
+\hline \verb'Слово - не воробей' & Поспешишь - людей насмешишь \bad \\
+\hline \verb'Слово"---не воробей' & Поспешишь"---людей насмешишь \bad \\
+\hline \verb'Слово "--- не воробей' & Поспешишь "--- людей насмешишь \ok \\
+\hline
+\end{tabular}\end{center}
 \end{itemize}
 \end{enumerate}
 \end{document}
