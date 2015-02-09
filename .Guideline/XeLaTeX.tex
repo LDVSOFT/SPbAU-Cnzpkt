@@ -311,12 +311,12 @@ $$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
 \hline \verb'$f\colon \R \ra \R$' & $f\colon\R\ra\R$ \ok \\
 \hline
 \end{tabular}\end{center}
-\item Нестрогие равенства "--- \verb'\leqslant' и \verb'\geqslant', а не \verb'\leq' и \verb'\geq' (возможно, мы просто переопределим эти комманды, и тогда достаточно коротких комманд).
+\item Нестрогие равенства "--- \verb'\le' и \verb'\ge', а не \verb'\leq' и \verb'\geq' (вообще говоря, мы переопределили \verb'\le', чтобы она делала \verb'\leqslant'. Используем первую как короткую).
 \begin{center}\begin{tabular}{|c|c|c|}
 \hline Это... & ...верстается так & \\
-\hline \verb'$a \le b$' & $a \le b$ \bad \\
+\hline \verb'$a \le b$' & $a \le b$ \ok \\
 \hline \verb'$a \leq b$' & $a \leq b$ \bad \\
-\hline \verb'$a \leqslant b$' & $a \leqslant b$ \ok \\
+\hline \verb'$a \leqslant b$' & $a \leqslant b$ \bad \\
 \hline
 \end{tabular}\end{center}
 \item Черта над одной буквой "--- \verb'\bar', а не \verb'\overline'.
