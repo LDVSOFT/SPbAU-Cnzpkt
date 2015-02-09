@@ -456,6 +456,48 @@ $\overline{z_1z_2} =
 		\hline \verb'\[\left(\frac{a+b}{c+d}\right)^2\]' & \begin{minipage}{3cm}\[\left(\frac{a+b}{c+d}\right)^2\]\end{minipage} \ok \\
 		\hline
 	\end{tabular}\end{center}
+
+\item
+	Для выравнивания нескольких формул в столбики вокруг (не)равенства
+	мы используем окружения \texttt{align*}/\texttt{aligned}.
+	Последний может быть использован только в math mode, а окружение \texttt{align*}
+	"--- только в text mode, оно просто включает внутри себя math и делает \texttt{aligned}.
+	Пример использования:
+
+	\begin{center}\begin{tabular}{|c|c|}
+		\hline Это... & ...верстается так \\
+		\hline \begin{minipage}{0.5\linewidth}\begin{verbatim}
+\[\begin{aligned}
+    a &= b & c &= 0 + d \\
+0 + a &= b & c &= d \\
+\end{aligned}\]
+\end{verbatim}\end{minipage}
+        &
+		\begin{minipage}{0.35\linewidth}
+\[\begin{aligned}
+    a &= b & c &= 0 + d \\
+0 + a &= b & c &= d \\
+\end{aligned}\]\end{minipage} \\
+		\hline \begin{minipage}{0.5\linewidth}\begin{verbatim}
+\begin{align*}
+    a &= b + 0 & c &= 0 + d \\
+0 + a &= b & 0 + c &= d \\
+\end{align*}
+\end{verbatim}\end{minipage}
+        &
+		\begin{minipage}{0.35\linewidth}
+\[\begin{aligned}
+    a &= b + 0 & c &= 0 + d \\
+0 + a &= b & 0 + c &= d \\
+\end{aligned}\]\end{minipage} \\
+		\hline
+	\end{tabular}\end{center}
+
+	Обратите внимание, что это окружение ориентировано на выравнивание
+	нескольких столбцов выражений "--- между соседними добавляется небольшое пространство.
+	На более низком уровне эти окружения представляю собой таблицу, нечётные столбцы
+	которой выравниваются вправо, а чётные "--- влево.
+	Таким образом знак \verb'&' надо ставить \textit{перед} оператором (не)равенства.
 \end{enumerate}
 
 \section{Особенности правописания}
