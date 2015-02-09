@@ -200,6 +200,17 @@ $$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
 \end{theorem}
 \item Текст посреди математики всегда включаем в \verb'\text'. Иначе вы его даже не увидите, или увидите сильно не то!
 \item Не допускаются сокращения, кроме <<и т. п.>> и <<<и т. д.>> (а эти выражения не рекомендуется использовать). Следует писать полностью (<<то есть>>, <<так как>>).
+\item Не используйте программистские обозначения в формулах, используйте математические (\verb!\cdot! для умножения чисел,
+\verb!\times! для декартова произведения):
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline \verb!$2*n$! & $2*n$ \bad \\
+\hline \verb!$2n$! & $2n$ \ok \\
+\hline \verb!$2\cdot n$! & $2\cdot n$ \ok \\
+\hline \verb!$2\times n$! & $2\times n$ \bad \\
+\hline \verb!$[a,b]\cdot [c,d]$! & $[a,b]\cdot [c,d]$ \bad \\
+\hline \verb!$[a,b]\times [c,d]$! & $[a,b]\times [c,d]$ \ok \\
+\hline
+\end{tabular}\end{center}
 \item Используйте окружения для единого стиля:
 \begin{enumerate}
 \item \verb'theorem' для тела теорем, у которых может быть название (не для доказательств!).
