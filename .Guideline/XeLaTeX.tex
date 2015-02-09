@@ -175,29 +175,48 @@
 \end{tabular}\end{center}
 
 \item Выключенные формулы (которые отдельно от текста), если их несколько подряд, набирайте в \verb'\begin{gather*}':
+\begin{center}\begin{tabular}{|c|c|}
+\hline
+\begin{minipage}{8cm}
 \begin{verbatim}
 \begin{gather*}
 \int x \d x = \frac{x^2}{2} + c \\
 \int x^2 \d x = \frac{x^3}{3} + c
 \end{gather*}
 \end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{8cm}
 \begin{gather*}
 \int x \d x = \frac{x^2}{2} + c \\
 \int x^2 \d x = \frac{x^3}{3} + c
 \end{gather*}
+\end{minipage} \\
+\hline
+\end{tabular}\end{center}
 Перед ним не стоит разрывать параграф пустой строкой!
 \item Математику в условии теоремы, утверждения пишем в тексте (\verb'$...$'), а вывод "--- уже выделенно (\verb'\begin{gather*}').
 \item Если вы перечисляете в тексте какие-то математические записи, запятые, их разделяющие, пишутся через не в математическом режиме.
+\begin{center}\begin{tabular}{|c|c|}
+\hline
+\begin{minipage}{8.6cm}
 \begin{verbatim}
-\begin{theorem}{Теорема Больцано "--- Коши}
-$f\colon [a, b] \ra \R$, $f$ "--- непрерывна на $[a, b]$. Тогда
-$$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
+\begin{theorem}{Теорема Больцано
+"--- Коши}
+$f\colon [a, b] \ra \R$, $f$ 
+"--- непрерывна на $[a, b]$. Тогда
+$$\forall C\in [f(a), f(b)]\: 
+\exists c \in (a, b)\colon f(c) = C$$
 \end{theorem}
 \end{verbatim}
+\end{minipage} & \begin{minipage}{8.6cm}
 \begin{theorem}{Теорема Больцано "--- Коши}
 $f\colon [a, b] \ra \R$, $f$ "--- непрерывна на $[a, b]$. Тогда
 $$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
-\end{theorem}
+\end{theorem}\end{minipage}
+\\
+\hline
+\end{tabular}\end{center}
 \item Текст посреди математики всегда включаем в \verb'\text'. Иначе вы его даже не увидите, или увидите сильно не то!
 \item Не допускаются сокращения, кроме <<и т. п.>> и <<<и т. д.>> (а эти выражения не рекомендуется использовать). Следует писать полностью (<<то есть>>, <<так как>>).
 \item Не используйте псевдографику, не заменяйте одни символы другими, не забывайте, что одни и те же команды имеют разный
