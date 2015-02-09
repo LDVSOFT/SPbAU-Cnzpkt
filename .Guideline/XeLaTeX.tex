@@ -200,6 +200,23 @@ $$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
 \end{theorem}
 \item Текст посреди математики всегда включаем в \verb'\text'. Иначе вы его даже не увидите, или увидите сильно не то!
 \item Не допускаются сокращения, кроме <<и т. п.>> и <<<и т. д.>> (а эти выражения не рекомендуется использовать). Следует писать полностью (<<то есть>>, <<так как>>).
+\item Не используйте псевдографику, не заменяйте одни символы другими, не забывайте, что одни и те же команды имеют разный
+смысл в math-mode и в text-mode (и могут иметь разные пробелы, соответственно):
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline \verb!A --> B! & A --> B \bad \\
+\hline \verb!A $-->$ B! & A $-->$ B \bad \\
+\hline \verb!A \rightarrow B! & A \rightarrow B \bad \\
+\hline \verb!A $\rightarrow$ B! & A $\rightarrow$ B \ok \\
+\hline \verb!A ==> B! & A ==> B \bad \\
+\hline \verb!A $==>$ B! & A $==>$ B \bad \\
+\hline \verb!A \Rightarrow B! & A \Rightarrow B \bad \\
+\hline \verb!A $\Rightarrow$ B! & A $\Rightarrow$ B \ok \\
+\hline \verb!$\Sigma_l^r x_n$! & $\Sigma_l^r x_n$ \bad \\
+\hline \verb!$\sum_l^r x_n$! & $\sum_l^r x_n$ \ok \\
+\hline \verb!$\sqcap_l^r x_n$! & $\sqcap_l^r x_n$ \bad \\
+\hline \verb!$\prod x_n$! & $\prod_l^r x_n$ \ok \\
+\hline
+\end{tabular}\end{center}
 \item Не используйте программистские обозначения в формулах, используйте математические (\verb!\cdot! для умножения чисел,
 \verb!\times! для декартова произведения):
 \begin{center}\begin{tabular}{|c|c|c|}
