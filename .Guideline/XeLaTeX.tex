@@ -1,0 +1,197 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage{metalogo}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage[russian]{hyperref}
+\usepackage{indentfirst}
+\usepackage{datetime}
+\usepackage{extarrows}
+\usepackage{verbatim}
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+%% WARNING: latest minted is used. Download directly from github!
+%% Works fine, though
+%% Hard installation!
+%% \usepackage{minted}
+\usepackage[math-style=ISO,vargreek-shape=unicode]{unicode-math} %% MAGIC! INCLUDE AS LAST!
+
+\setdefaultlanguage[spelling=modern,babelshorthands=true]{russian} %% Languages for polyglossia
+\setotherlanguage{english}
+
+% \RequirePackage{cm-unicode,lm-math}
+
+\frenchspacing %% One space before sentence, not two!
+
+\defaultfontfeatures{Ligatures={TeX}} %% Fonts and ligatures.
+\setmainfont{CMU Serif} %% There are original Knuth's fonts in Unicode, called Computer Modern Unicode. Download anywhere, just install them.
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}  
+%\setmonofont{Courier New}
+\setmathfont{Latin Modern Math} %% Download too. Very close to original Computer Modern. You may change it :)
+\newcommand{\Setminus}{\mathbin{\backslash}} %% Latin Modern Math contains an Elder bug~--- no setminus(
+
+%% Magic as black as my working table
+%% Add cyrilic in math mode
+\DeclareSymbolFont{cyrletters}{\encodingdefault}{\familydefault}{m}{it}
+\newcommand{\makecyrmathletter}[1]{%
+  \begingroup\lccode`a=#1\lowercase{\endgroup
+  \Umathcode`a}="0 \csname symcyrletters\endcsname\space #1
+}
+\count255="409
+\loop\ifnum\count255<"44F
+  \advance\count255 by 1
+  \makecyrmathletter{\count255}
+\repeat
+
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\lra{\leftrightarrow}
+\def\La{\Leftarrow}
+\def\Ra{\Rightarrow}
+\def\Lra{\Leftrightarrow}
+\def\lrh{\leftrightharpoons}
+\def\btu{\bigtriangleup}
+
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+
+\def\d{\mathup{d}}
+
+\def\LraDef{\stackrel{\mathrm{Def}}{\Lra}}
+\def\eqDef{\stackrel{\mathrm{Def}}{=}}
+
+%% Change Chapter and Section numeration style
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+
+%% Environment for theorem body
+\newcounter{theorem}[section]
+\renewcommand{\thetheorem}{\thesection.\arabic{theorem}}
+\newcommand*{\theoremheader}[1]{\par\refstepcounter{theorem}%
+\textbf{Теорема \thetheorem.\ifthenelse{\equal{#1}{}}{}{ #1.}}}
+\newenvironment*{theorem}[1]{%
+\theoremheader{#1}%
+}{%
+\par%
+}
+
+%% Environment for consequence body
+\newcounter{conseq}[theorem]
+\renewcommand{\theconseq}{\arabic{conseq}}
+\newcommand*{\conseqheader}{\par\refstepcounter{conseq}%
+\textit{Следствие \thetheorem.} }
+\newenvironment*{conseq}{%
+\conseqheader%
+}{%
+\par%
+}
+
+%% Environment for proof body. I like this style, but you are free to change it.
+\newenvironment{proof}{%
+\par$\blacktriangleright$%
+}{%
+\hfill$\blacktriangleleft$\par%
+}
+
+%% Environment for definitions. Pretty raw one.
+\newenvironment{Def}{%
+\par$\mathfrak{Def\colon}$%
+}{%
+\par%
+}
+
+%% Environment for remarks.
+\newenvironment{Rem}{%
+\par\textit{REM: }%
+}{%
+\par%
+}
+
+%% In-line code highlighting. Using: \py|a = input()|
+% \newmintinline[cinl]{c}{} %\c is defined :(
+% \newmintinline[cpp]{cpp}{}
+% \newmintinline[python]{python}{}
+% \newmintinline[bash]{bash}{}
+% \newmintinline[make]{make}{}
+
+%% Escaped code highlighting. Using: \begin{cppcode} ... \end{cppcode}
+% \setminted{obeytabs,tabsize=4,linenos,texcomments}
+% \newminted{c}{}
+% \newminted{cpp}{}
+% \newminted{python}{}
+% \newminted{bash}{}
+% \newminted{make}{}
+
+\begin{document}
+\begin{center}
+{\huge \bf Guideline} \\
+{\Large \bf по вёрстке конспектов в \XeLaTeX} \\
+\vspace{0.5em}
+{\large \bf Авторы: Лапшин Дмитрий, Егор Суворов} \\
+\vspace{0.5em}
+{Собрано: \today~\currenttime} \\
+\end{center}
+
+\section{Общие идеи}
+\begin{enumerate}
+\item Не стоит как-то руками выставлять пробелы (в том числе неразрывные \verb'~') и переводы строк. Просто аккуратно делите на абзацы.
+\item Математические символы, записи и так далее оборачивать в \verb'$...$'. А то сравните:
+\begin{center}\begin{tabular}{|c|c|}
+\hline С долларами & Без долларов \\
+\hline $a$ слагаемых & a слагаемых \\
+\hline $f$, $g$ непрерывны & f, g непрерывны \\
+\hline 
+\end{tabular}\end{center}
+
+\item Выключенные формулы (которые отдельно от текста), если их несколько подряд, набирайте в \verb'\begin{gather*}':
+\begin{verbatim}
+\begin{gather*}
+\int x \d x = \frac{x^2}{2} + c \\
+\int x^2 \d x = \frac{x^3}{3} + c
+\end{gather*}
+\end{verbatim}
+\begin{gather*}
+\int x \d x = \frac{x^2}{2} + c \\
+\int x^2 \d x = \frac{x^3}{3} + c
+\end{gather*}
+Перед ним не стоит разрывать параграф пустой строкой!
+\item Математику в условии теоремы, утверждения пишем в тексте (\verb'$...$'), а вывод "--- уже выделенно (\verb'\begin{gather*}').
+\item Если вы перечисляете в тексте какие-то математические записи, запятые, их разделяющие, пишутся через не в математическом режиме.
+\begin{verbatim}
+\begin{theorem}{Теорема Больцано "--- Коши}
+$f\colon [a, b] \ra \R$, $f$ "--- непрерывна на $[a, b]$. Тогда
+$$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
+\end{theorem}
+\end{verbatim}
+\begin{theorem}{Теорема Больцано "--- Коши}
+$f\colon [a, b] \ra \R$, $f$ "--- непрерывна на $[a, b]$. Тогда
+$$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
+\end{theorem}
+\item Текст посреди математики всегда включаем в \verb'\text'. Иначе вы его даже не увидите, или увидите сильно не то!
+\item Используйте окружения для единого стиля:
+\begin{enumerate}
+\item \verb'theorem' для тела теорем, у которых может быть название (не для доказательств!).
+\item \verb'conseq' для следствий. Они сами нумеруются, не вписывайте все следствия в одно.
+\item \verb'lemma' для тел лемм.
+\item \verb'proof' для доказательств чего угодно.
+\item \verb'assertion' для утверждений.
+\item \verb'Def' для определений.
+\item \verb'Rem' для замечаний.
+\item \verb'exmp' для примеров.
+\end{enumerate}
+\item Вообще говоря, есть всякие сокращения для нужных символов (например, \verb'\Lra' для $\Lra$). Они помогают! Если вам нужно ещё "--- добавляйте в преамбулу на здоровье.
+\item В продолжение предыдущего пункта "--- абсолютно все операторы математичского режима прямым шрифтом (вот так: $\inf$, а не так: $inf$). Для этого в преамбулу можно добавлять \verb'\DeclareMathOperator', если вдруг такого оператора совсем нет (но скорее всего есть!).
+\item Некоторые правила набора символов
+\begin{itemize}
+\item Черта в множествах "--- \verb'\mid', а не \verb'|'.
+\item Двоеточие в определении отношения и функции "--- \verb'\colon', а не \verb':'.
+\item Нестрогие равенства "--- \verb'\leqslant' и \verb'\geqslant', а не \verb'\leq' и \verb'\geq' (возможно, мы просто переопределим эти комманды, и тогда достаточно коротких комманд).
+\item Черта над одной буквой "--- \verb'\bar', а не \verb'\overline'.
+\item Треугольные скобки "--- \verb'\left< \right>' или хотя бы \verb'\langle \rangle', но никак не \verb'< >'!
+\end{itemize}
+\end{enumerate}
+\end{document}
