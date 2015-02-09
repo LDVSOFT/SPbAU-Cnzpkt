@@ -319,15 +319,29 @@ $$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
 \item \verb'Rem' для замечаний.
 \item \verb'exmp' для примеров.
 \end{enumerate}
-\item
-  Вообще говоря, есть всякие сокращения для нужных символов (например, \verb'\Lra' для $\Lra$).
-  Они помогают!
-  Если вам нужно ещё "--- добавляйте в преамбулу на здоровье.
-\item
-  В продолжение предыдущего пункта "--- абсолютно все операторы математичского режима
-  прямым шрифтом (вот так: $\inf$ (\verb'$\inf$'), а не так: $inf$ (\verb'$inf$')).
-  Для этого в преамбулу можно добавлять \verb'\DeclareMathOperator', если вдруг такого
-  оператора совсем нет (но скорее всего есть!).
+\item Части доказательства и шаги индукции мы набираем окружением \verb'\begin{description}' вот так:
+\begin{center}\begin{tabular}{|c|c|}
+\hline
+\begin{minipage}{8cm}
+\begin{verbatim}
+Докажем по индукции:
+\begin{description}
+\item[База:] Для $n = 1$ всё 
+очевидно
+\item[Переход:] Пусть для $k$ всё 
+доказано...
+\end{description}
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{7cm}
+Докажем по индукции:
+\begin{description}
+\item[База:] Для $n = 1$ всё очевидно
+\item[Переход:] Пусть для $k$ всё доказано...
+\end{description}
+\end{minipage}\\
+\hline\end{tabular}\end{center}
 \item Некоторые правила набора символов
 \begin{itemize}
 \item Черта в множествах "--- \verb'\mid', а не \verb'|'.
