@@ -50,6 +50,8 @@ You can typeset using different tools, like manually from terminal, via TeXworks
 
 * Windows:
   * Install MikTeX
+  * Install Computer Modern fonts from http://sourceforge.net/projects/cm-unicode/files/cm-unicode/0.7.0/cm-unicode-0.7.0-ttf.tar.xz/download
+  * Install Latin Modern Math font from http://www.gust.org.pl/projects/e-foundry/lm-math/download/latinmodern-math-1959.zip
   * To typeset, execute once
 
     texify --pdf --engine=xetex --tex-option=--shell-escape --tex-option=-8bit <document>
