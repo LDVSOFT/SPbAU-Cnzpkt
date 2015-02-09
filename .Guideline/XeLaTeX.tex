@@ -324,6 +324,8 @@ $$\forall C\in [f(a), f(b)]\: \exists c \in (a, b)\colon f(c) = C$$
 \hline
 \end{tabular}\end{center}
 \item Черта над одной буквой "--- \verb'\bar', а не \verb'\overline'.
+При этом если буква имеет индексы, черта всё равно ставится только над буквой.
+Над выражением "--- \verb'\overline'.
 \begin{center}\begin{tabular}{|c|c|c|}
 \hline Это... & ...верстается так & \\
 \hline
@@ -334,7 +336,9 @@ $\overline{z_1z_2} =
 \end{verbatim}
 \end{minipage}
 & $\overline{z_1z_2} = \overline{z_1}\overline{z_2}$ \bad \\
+\hline \verb'$\overline{z_1z_2} = \bar{z_1} \bar{z_2}$' & $\overline{z_1z_2} = \bar{z_1} \bar{z_2}$ \bad \\
 \hline \verb'$\overline{z_1z_2} = \bar z_1 \bar z_2$' & $\overline{z_1z_2} = \bar z_1 \bar z_2$ \ok \\
+\hline \verb'$\overline{z_1z_2} = \bar{z}_1 \bar{z}_2$' & $\overline{z_1z_2} = \bar z_1 \bar z_2$ \ok \\
 \hline
 \end{tabular}\end{center}
 \item Треугольные скобки "--- \verb'\left< \right>' или хотя бы \verb'\langle \rangle', но никак не \verb'< >'!
