@@ -127,7 +127,8 @@
 % \newminted{bash}{}
 % \newminted{make}{}
 
-
+\newcommand{\ok}{& \textcolor{green!60!black}{Правильно}}
+\newcommand{\bad}{& \textcolor{red}{Неправильно}}
 
 \begin{document}
 \begin{center}
@@ -142,11 +143,23 @@
 \section{Общие идеи}
 \begin{enumerate}
 \item Не стоит как-то руками выставлять пробелы (в том числе неразрывные \verb'~') и переводы строк. Просто аккуратно делите на абзацы.
-\item Математические символы, записи и так далее оборачивать в \verb'$...$'. А то сравните:
-\begin{center}\begin{tabular}{|c|c|}
-\hline С долларами & Без долларов \\
-\hline $a$ слагаемых & a слагаемых \\
-\hline $f$, $g$ непрерывны & f, g непрерывны \\
+\item Математические символы, записи следует оборачивать в \verb'$...$'. Также следует оборачивать запятые
+и прочие символы пунктуации, если они идут в одном <<математическом предложении>>. Если пунктуация
+скорее относится к русскому языку, чем к математическому выражению, то её стоит вынести за доллары. Примеры:
+
+\begin{center}\begin{tabular}{|c|c|c|}
+\hline Пример & Код & \\
+\hline \verb!Имеется n слагаемых! & Имеется n слагаемых \bad \\
+\hline \verb!Имеется $n$ слагаемых! & Имеется $n$ слагаемых \ok \\
+\hline \verb!с графиком $\Gamma_f,$ обозначим это! & с графиком $\Gamma_f,$ обозначим это \bad \\
+\hline \verb!с графиком $\Gamma_f$, обозначим это! & с графиком $\Gamma_f$, обозначим это \ok \\
+\hline \verb!пусть f, g непрерывны! & пусть f, g непрерывны \bad \\
+\hline \verb!пусть $f, g$ непрерывны! & пусть $f, g$ непрерывны \bad \\
+\hline \verb!пусть $f$, $g$ непрерывны! & пусть $f$, $g$ непрерывны \ok \\
+\hline \verb!где a, b $\in \mathbb{R}$! & где a, b $\in \mathbb{R}$ \bad \\
+\hline \verb!где $a$, $b \in \mathbb{R}$! & где $a$, $b \in \mathbb{R}$ \bad \\
+\hline \verb!где $a$, $b$ $\in \mathbb{R}$! & где $a$, $b$ $\in \mathbb{R}$ \bad \\
+\hline \verb!где $a, b \in \mathbb{R}$! & где $a, b \in \mathbb{R}$ \ok \\
 \hline 
 \end{tabular}\end{center}
 
