@@ -166,6 +166,14 @@
 \hline 
 \end{tabular}\end{center}
 
+В примере ниже это критично (хотя таких ситуаций лучше вообще избегать):
+	
+\begin{center}\begin{tabular}{|c|c|l|}
+\hline \verb!$a < b, c < d$! & $a < b, c < d$ & Двойное неравенство на $b$, $c$ \\
+\hline \verb!$a < b$, $c < d$! & $a < b$, $c < d$ & Два независимых неравенства \\
+\hline
+\end{tabular}\end{center}
+
 \item Выключенные формулы (которые отдельно от текста), если их несколько подряд, набирайте в \verb'\begin{gather*}':
 \begin{verbatim}
 \begin{gather*}
