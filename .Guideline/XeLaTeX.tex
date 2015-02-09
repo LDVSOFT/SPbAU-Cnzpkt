@@ -235,6 +235,28 @@ $$\forall C\in [f(a), f(b)]\:
 	\end{tabular}\end{center}
 
 \item
+	Последовательности кванторов отделяем запятыми и \verb'\colon' (в зависимости от квантора):
+	\begin{center}\begin{tabular}{|c|c|c|}
+		\hline Это... & ...верстается так & \\
+		\hline \begin{minipage}{0.5\linewidth}\begin{verbatim}$\forall a \exists b
+\forall c P(A, B, C)$\end{verbatim}\end{minipage}
+		           & $\forall a \exists b \forall c: P(A, B, C)$ \bad \\
+		\hline \begin{minipage}{0.5\linewidth}\begin{verbatim}$\forall a: \exists b:
+\forall c: P(A, B, C)$\end{verbatim}\end{minipage}
+		           & $\forall a: \exists b: \forall c: P(A, B, C)$ \bad \\
+		\hline \begin{minipage}{0.5\linewidth}\begin{verbatim}$\forall a\colon \exists b\colon
+\forall c\colon P(A, B, C)$\end{verbatim}\end{minipage}
+		           & $\forall a\colon \exists b\colon \forall c\colon P(A, B, C)$ \bad \\
+		\hline \begin{minipage}{0.5\linewidth}\begin{verbatim}$\forall a, \exists b\colon
+\forall c, P(A, B, C)$\end{verbatim}\end{minipage}
+		           & $\forall a, \exists b\colon \forall c, P(A, B, C)$ \ok \\
+		\hline \begin{minipage}{0.5\linewidth}\begin{verbatim}$\exists a\colon \forall b,
+\exists c\colon P(A, B, C)$\end{verbatim}\end{minipage}
+		           & $\exists a\colon \forall b, \exists c\colon P(A, B, C)$ \ok \\
+		\hline
+	\end{tabular}\end{center}
+
+\item
 	Текст посреди математики всегда включаем в \verb'\text'.
 	Иначе вы его даже не увидите, или увидите сильно не то!
 
